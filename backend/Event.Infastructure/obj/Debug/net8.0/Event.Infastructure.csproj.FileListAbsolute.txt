@@ -1,0 +1,12 @@
+C:\VSProjects\TestTask\backend\Event.Infastructure\bin\Debug\net8.0\Event.Infastructure.deps.json
+C:\VSProjects\TestTask\backend\Event.Infastructure\bin\Debug\net8.0\Event.Infastructure.dll
+C:\VSProjects\TestTask\backend\Event.Infastructure\bin\Debug\net8.0\Event.Infastructure.pdb
+C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\Event.Infastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\Event.Infastructure.AssemblyInfoInputs.cache
+C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\Event.Infastructure.AssemblyInfo.cs
+C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\Event.Infastructure.csproj.CoreCompileInputs.cache
+C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\Event.Infastructure.sourcelink.json
+C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\Event.Infastructure.dll
+C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\refint\Event.Infastructure.dll
+C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\Event.Infastructure.pdb
+C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\ref\Event.Infastructure.dll

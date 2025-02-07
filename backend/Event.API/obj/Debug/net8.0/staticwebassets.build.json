@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "JF15W/69h8oAPmOvkXQAdeV3CJYUh9aPSNPgSoAteUs=",
+  "Source": "Event.API",
+  "BasePath": "_content/Event.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

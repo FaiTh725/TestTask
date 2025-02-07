@@ -1,0 +1,13 @@
+C:\VSProjects\TestTask\backend\Event.Domain\bin\Debug\net8.0\Event.Domain.deps.json
+C:\VSProjects\TestTask\backend\Event.Domain\bin\Debug\net8.0\Event.Domain.dll
+C:\VSProjects\TestTask\backend\Event.Domain\bin\Debug\net8.0\Event.Domain.pdb
+C:\VSProjects\TestTask\backend\Event.Domain\obj\Debug\net8.0\Event.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\VSProjects\TestTask\backend\Event.Domain\obj\Debug\net8.0\Event.Domain.AssemblyInfoInputs.cache
+C:\VSProjects\TestTask\backend\Event.Domain\obj\Debug\net8.0\Event.Domain.AssemblyInfo.cs
+C:\VSProjects\TestTask\backend\Event.Domain\obj\Debug\net8.0\Event.Domain.csproj.CoreCompileInputs.cache
+C:\VSProjects\TestTask\backend\Event.Domain\obj\Debug\net8.0\Event.Domain.sourcelink.json
+C:\VSProjects\TestTask\backend\Event.Domain\obj\Debug\net8.0\Event.Domain.dll
+C:\VSProjects\TestTask\backend\Event.Domain\obj\Debug\net8.0\refint\Event.Domain.dll
+C:\VSProjects\TestTask\backend\Event.Domain\obj\Debug\net8.0\Event.Domain.pdb
+C:\VSProjects\TestTask\backend\Event.Domain\obj\Debug\net8.0\ref\Event.Domain.dll
+C:\VSProjects\TestTask\backend\Event.Domain\obj\Debug\net8.0\Event.Domain.csproj.AssemblyReference.cache

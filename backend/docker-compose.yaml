@@ -1,0 +1,40 @@
+version: "3.8"
+
+name: testTask
+
+services:
+  ms-sql-database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql_server_db
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=goblinusik111W
+    volumes:
+      - sql-server:/var/opt/mssql
+    networks:
+      - app_network
+
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite:latest
+    container_name: files-storages
+    volumes:
+      - blobs:/data
+    ports:
+      - '10000:10000'
+    environment:
+      - AZURITE_ACCOUNTS=faith725:ZGV2c3RvcmVhY2NvdW50Mw==
+    networks:
+      - app_network
+
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  sql-server:
+    driver: local
+  blobs:
+    driver: local
