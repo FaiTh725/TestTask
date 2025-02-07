@@ -10,3 +10,4 @@ C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\Event.Infast
 C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\refint\Event.Infastructure.dll
 C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\Event.Infastructure.pdb
 C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\ref\Event.Infastructure.dll
+C:\VSProjects\TestTask\backend\Event.Infastructure\obj\Debug\net8.0\Event.Infastructure.csproj.AssemblyReference.cache
