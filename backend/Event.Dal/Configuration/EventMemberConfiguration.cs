@@ -13,8 +13,8 @@ namespace Event.Dal.Configuration
             builder.HasOne(x => x.EventEntity)
                 .WithMany(x => x.Members);
 
-            builder.HasIndex(x => x.Email)
-                .IsUnique();
+            builder.Property(x => x.Email)
+                .IsRequired();
 
             builder.Property(x => x.FirstName)
                 .IsRequired();

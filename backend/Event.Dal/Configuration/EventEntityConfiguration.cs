@@ -10,18 +10,18 @@ namespace Event.Dal.Configuration
         {
             builder.HasKey(x => x.Id);
 
+            builder.HasIndex(x => x.Name)
+                .IsUnique();
+
             builder.Property(x => x.Location)
                 .IsRequired();
 
             builder.Property(x => x.Category)
                 .IsRequired();
 
-            builder.Property(x => x.Name)
-                .IsRequired();
-
             builder.HasMany(x => x.Members)
                 .WithOne(x => x.EventEntity)
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.Property(x => x.MaxMember)
                 .IsRequired();

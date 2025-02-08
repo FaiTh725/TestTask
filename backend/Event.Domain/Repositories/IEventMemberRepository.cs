@@ -11,6 +11,6 @@ namespace Event.Domain.Repositories
 
         Task<Result<EventMember>> AddEventMember(EventMember eventMember);
 
-        Task CancelMemberParticipation(EventMember eventMember);
+        Task RemoveEventMember(long memberId);
     }
 }

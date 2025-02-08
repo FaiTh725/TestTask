@@ -1,6 +1,7 @@
 ﻿using Application.Shared.Exceptions;
 using Azure.Storage.Blobs;
 using Event.API.Configuraions;
+using StackExchange.Redis;
 
 namespace Event.API.Extentions
 {
@@ -17,6 +18,15 @@ namespace Event.API.Extentions
                 $"BlobEndpoint={blobConf.BaseUrl}:{blobConf.Port}/{blobConf.AccountName};";
 
             services.AddSingleton(_ => new BlobServiceClient(connectionString));
+        }
+
+        public static void AddRedisCach(this IServiceCollection services, IConfiguration configuration)
+        {
+            var redisConnection = configuration.GetConnectionString("RedisConnection") ??
+                throw new ApplicationConfigurationException("Redis Connection String");
+
+            services.AddSingleton<IConnectionMultiplexer>(
+                ConnectionMultiplexer.Connect(redisConnection));
         }
     }
 }

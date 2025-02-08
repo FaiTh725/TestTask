@@ -28,9 +28,11 @@ namespace Event.Dal.Repositories
             return Result.Success(entity.Entity);
         }
 
-        public Task CancelMemberParticipation(EventMember eventMember)
+        public async Task RemoveEventMember(long memberId)
         {
-            throw new NotImplementedException();
+            await context.Members.
+                Where(x => x.Id == memberId)
+                .ExecuteDeleteAsync();
         }
 
         public async Task<Result<EventMember>> GetEventMember(long eventMemberId)

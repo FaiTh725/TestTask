@@ -7,14 +7,22 @@ namespace Event.Domain.Repositories
     {
         IQueryable<EventEntity> GetEvents();
 
+        IQueryable<EventEntity> GetEventsWithMembers();
+
         Task<Result<EventEntity>> AddEvent(EventEntity eventEntity);
 
         Task<Result<EventEntity>> GetEvent(long eventId);
 
-        Task<bool> RemoveEvent(long eventId);
+        Task<Result<EventEntity>> GetEvent(string eventName);
 
-        // TODO get by property
+        Task<Result<EventEntity>> GetEventWithMembers(long eventId);
 
-        // TODO add images to event
+        Task RemoveEvent(long eventId);
+
+        Task UpdateEvent(long eventId, EventEntity updateEntity);
+
+        // TODO: get by property
+
+        // TODO: add images to event
     }
 }

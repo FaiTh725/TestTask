@@ -64,6 +64,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
@@ -120,7 +124,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\VSProjects\\TestTask\\backend\\Event.Domain\\Event.Domain.csproj": {
+                "projectPath": "C:\\VSProjects\\TestTask\\backend\\Event.Domain\\Event.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -343,7 +351,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Event.Application.csproj": {
+                "projectPath": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Event.Application.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -365,6 +377,10 @@
             "Azure.Storage.Blobs": {
               "target": "Package",
               "version": "[12.23.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.24, )"
             }
           },
           "imports": [

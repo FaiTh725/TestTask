@@ -25,7 +25,10 @@ namespace Event.API.Infastructure
             var problemDetails = new ProblemDetails
             {
                 Status = StatusCodes.Status500InternalServerError,
-                Title = "Internal Server Error",
+                Title = "API Error",
+                Detail = "Internal Server Error",
+                Instance = "API",
+                Extensions = new Dictionary<string, object?>()
             };
 
             if(exception is ApplicationConfigurationException confEx)
@@ -42,7 +45,8 @@ namespace Event.API.Infastructure
             }
 
             httpContext.Response.ContentType = "application/json";
-            await httpContext.Response.WriteAsJsonAsync(problemDetails);
+            httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
+            await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken);
 
             return true;
         }

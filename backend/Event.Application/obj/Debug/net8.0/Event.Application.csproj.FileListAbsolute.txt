@@ -10,3 +10,9 @@ C:\VSProjects\TestTask\backend\Event.Application\obj\Debug\net8.0\Event.Applicat
 C:\VSProjects\TestTask\backend\Event.Application\obj\Debug\net8.0\refint\Event.Application.dll
 C:\VSProjects\TestTask\backend\Event.Application\obj\Debug\net8.0\Event.Application.pdb
 C:\VSProjects\TestTask\backend\Event.Application\obj\Debug\net8.0\ref\Event.Application.dll
+C:\VSProjects\TestTask\backend\Event.Application\obj\Debug\net8.0\Event.Application.csproj.AssemblyReference.cache
+C:\VSProjects\TestTask\backend\Event.Application\bin\Debug\net8.0\Application.Shared.dll
+C:\VSProjects\TestTask\backend\Event.Application\bin\Debug\net8.0\Application.Shared.pdb
+C:\VSProjects\TestTask\backend\Event.Application\obj\Debug\net8.0\Event.Ap.C934F138.Up2Date
+C:\VSProjects\TestTask\backend\Event.Application\bin\Debug\net8.0\Event.Domain.dll
+C:\VSProjects\TestTask\backend\Event.Application\bin\Debug\net8.0\Event.Domain.pdb

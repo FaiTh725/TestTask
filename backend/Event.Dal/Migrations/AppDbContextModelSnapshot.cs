@@ -47,12 +47,15 @@ namespace Event.Dal.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("TimeEvent")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Events", t =>
                         {
@@ -73,7 +76,7 @@ namespace Event.Dal.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("EventEntityId")
                         .HasColumnType("bigint");
@@ -91,9 +94,6 @@ namespace Event.Dal.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Email")
-                        .IsUnique();
-
                     b.HasIndex("EventEntityId");
 
                     b.ToTable("Members");
@@ -104,7 +104,7 @@ namespace Event.Dal.Migrations
                     b.HasOne("Event.Domain.Entities.EventEntity", "EventEntity")
                         .WithMany("Members")
                         .HasForeignKey("EventEntityId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("EventEntity");
                 });

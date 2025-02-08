@@ -33,7 +33,8 @@ namespace Event.Domain.Entities
             string description,
             string location,
             string category,
-            int maxMember)
+            int maxMember,
+            DateTime timeEvent)
         {
             Name = name;
             Description = description;
@@ -41,7 +42,7 @@ namespace Event.Domain.Entities
             Category = category;
             MaxMember = maxMember;
 
-            TimeEvent = DateTime.UtcNow;
+            TimeEvent = timeEvent;
         }
 
         public static Result<EventEntity> Initialize(
@@ -49,7 +50,8 @@ namespace Event.Domain.Entities
             string description,
             string location,
             string category,
-            int maxMember)
+            int maxMember,
+            DateTime timeEvent)
         {
             if(name is null ||
                 description is null ||
@@ -73,13 +75,19 @@ namespace Event.Domain.Entities
                 return Result.Failure<EventEntity>("Max member count less than zero");
             }
 
+            if (timeEvent < DateTime.UtcNow)
+            {
+                return Result.Failure<EventEntity>("Tive Event Is The Past Time");
+            }
+
             return Result.Success(
                 new EventEntity(
                     name,
                     description,
                     location,
                     category,
-                    maxMember));
+                    maxMember,
+                    timeEvent));
         }
     }
 }

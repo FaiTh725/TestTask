@@ -184,4 +184,9 @@ C:\VSProjects\TestTask\backend\Event.API\bin\Debug\net8.0\ru\Microsoft.CodeAnaly
 C:\VSProjects\TestTask\backend\Event.API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\VSProjects\TestTask\backend\Event.API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\VSProjects\TestTask\backend\Event.API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\VSProjects\TestTask\backend\Event.API\bin\Debug\net8.0\FluentValidation.dll
+C:\VSProjects\TestTask\backend\Event.API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\VSProjects\TestTask\backend\Event.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\VSProjects\TestTask\backend\Event.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\VSProjects\TestTask\backend\Event.API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\VSProjects\TestTask\backend\Event.API\bin\Debug\net8.0\StackExchange.Redis.dll
