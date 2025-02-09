@@ -3,6 +3,9 @@ using Application.Shared.Responses;
 using Event.Application.Interfaces;
 using Event.Application.Models.Events;
 using Event.Application.Models.Members;
+using Event.Application.Specifications;
+using Event.Application.Specifications.Event;
+using Event.Domain.Common.Specifications;
 using Event.Domain.Entities;
 using Event.Domain.Repositories;
 
@@ -140,6 +143,66 @@ namespace Event.Application.Implementations
 
             return new DataResponse<IEnumerable<EventResponse>>
             {
+                StatusCode = StatusCode.Ok,
+                Description = "Get Events",
+                Data = eventsResponse
+            };
+        }
+
+        public async Task<DataResponse<IEnumerable<EventResponse>>> GetEvents(string? location, string? category, DateTime? eventTime)
+        {
+            Specification<EventEntity> specification = new IncludeMemberSpecification();
+
+            if(!string.IsNullOrEmpty(location))
+            {
+                var locationSpecification = new LocationSpecification(location);
+
+                specification = new AndSpecification<EventEntity>(locationSpecification, specification);
+            }
+
+            if(!string.IsNullOrEmpty(category))
+            {
+                var categorySpecification = new CategorySpecification(category);
+
+                specification = new AndSpecification<EventEntity>(categorySpecification, specification);
+            }
+
+            if (eventTime.HasValue)
+            {
+                var dateSpecification = new DateSpecification(eventTime.Value);
+
+                specification = new AndSpecification<EventEntity>(dateSpecification, specification);
+            }
+
+            var events = eventRepository
+                .GetEvents(specification)
+                .ToList();
+
+            var eventTasks = events.Select(async x => new EventResponse
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Description = x.Description,
+                Category = x.Category,
+                Location = x.Location,
+                MaxMembers = x.MaxMember,
+                TimeEvent = x.TimeEvent,
+                Members = x.Members.Select(y => new MemberResponse
+                {
+                    Id = y.Id,
+                    FirstName = y.FirstName,
+                    SecondName = y.SecondName,
+                    Email = y.Email,
+                    BirthDate = y.BirthDate,
+                    RegistrationDate = y.RegistrationDate
+                }).ToList(),
+                UrlImages = await blobService.DownloadBlobs(x.ImagesFolder)
+            }).ToList();
+
+            var eventsResponse = await Task.WhenAll(eventTasks);
+
+            return new DataResponse<IEnumerable<EventResponse>> 
+            { 
                 StatusCode = StatusCode.Ok,
                 Description = "Get Events",
                 Data = eventsResponse

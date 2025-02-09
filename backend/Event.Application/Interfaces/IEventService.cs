@@ -15,9 +15,10 @@ namespace Event.Application.Interfaces
         Task<DataResponse<EventResponse>> RegistrNewEvent(EventRequest request);
 
         Task<BaseResponse> CancelEvent(long eventId);
+
         Task<BaseResponse> UpdateEvent(UpdateEventRequest request);
 
-        // TODO: get events by query
+        Task<DataResponse<IEnumerable<EventResponse>>> GetEvents(string? location, string? category, DateTime? eventTime);
         
         // TODO: add images to events
     }

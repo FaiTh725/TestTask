@@ -1,4 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
+using Event.Domain.Common.Specifications;
 using Event.Domain.Entities;
 
 namespace Event.Domain.Repositories
@@ -8,6 +9,8 @@ namespace Event.Domain.Repositories
         IQueryable<EventEntity> GetEvents();
 
         IQueryable<EventEntity> GetEventsWithMembers();
+
+        IQueryable<EventEntity> GetEvents(Specification<EventEntity> specification);
 
         Task<Result<EventEntity>> AddEvent(EventEntity eventEntity);
 
@@ -20,8 +23,6 @@ namespace Event.Domain.Repositories
         Task RemoveEvent(long eventId);
 
         Task UpdateEvent(long eventId, EventEntity updateEntity);
-
-        // TODO: get by property
 
         // TODO: add images to event
     }

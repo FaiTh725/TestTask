@@ -95,8 +95,8 @@
   },
   {
     "ContainingType": "Event.API.Controllers.EventController",
-    "Method": "GetEventByQuery",
-    "RelativePath": "api/Event/GetEventByQuery",
+    "Method": "GetEvents",
+    "RelativePath": "api/Event/GetEvents",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -105,12 +105,28 @@
   },
   {
     "ContainingType": "Event.API.Controllers.EventController",
-    "Method": "GetEvents",
-    "RelativePath": "api/Event/GetEvents",
+    "Method": "GetEventsByQuery",
+    "RelativePath": "api/Event/GetEventsByQuery",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "location",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "eventTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {

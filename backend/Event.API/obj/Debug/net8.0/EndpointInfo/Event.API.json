@@ -113,10 +113,34 @@
         }
       }
     },
-    "/api/Event/GetEventByQuery": {
+    "/api/Event/GetEventsByQuery": {
       "get": {
         "tags": [
           "Event"
+        ],
+        "parameters": [
+          {
+            "name": "location",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "eventTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
         ],
         "responses": {
           "200": {

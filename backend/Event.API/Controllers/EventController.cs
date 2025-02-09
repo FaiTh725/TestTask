@@ -59,9 +59,11 @@ namespace Event.API.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetEventByQuery()
+        public async Task<IActionResult> GetEventsByQuery(string? location, string? category, DateTime? eventTime)
         {
-            throw new NotImplementedException();
+            var response = await eventService.GetEvents(location, category, eventTime);
+
+            return new JsonResult(response);
         }
 
         [HttpPost("[action]")]

@@ -1,4 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
+using Event.Application.Specifications;
+using Event.Domain.Common.Specifications;
 using Event.Domain.Entities;
 using Event.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -57,6 +59,12 @@ namespace Event.Dal.Repositories
         public IQueryable<EventEntity> GetEvents()
         {
             return context.Events;
+        }
+
+        public IQueryable<EventEntity> GetEvents(Specification<EventEntity> specification)
+        {
+            return SpecificationEvaluator
+                .GetQuery(context.Events, specification);
         }
 
         public IQueryable<EventEntity> GetEventsWithMembers()
