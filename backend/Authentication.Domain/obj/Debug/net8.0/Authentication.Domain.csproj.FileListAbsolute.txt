@@ -1,0 +1,13 @@
+C:\VSProjects\TestTask\backend\Authentication.Domain\bin\Debug\net8.0\Authentication.Domain.deps.json
+C:\VSProjects\TestTask\backend\Authentication.Domain\bin\Debug\net8.0\Authentication.Domain.dll
+C:\VSProjects\TestTask\backend\Authentication.Domain\bin\Debug\net8.0\Authentication.Domain.pdb
+C:\VSProjects\TestTask\backend\Authentication.Domain\obj\Debug\net8.0\Authentication.Domain.csproj.AssemblyReference.cache
+C:\VSProjects\TestTask\backend\Authentication.Domain\obj\Debug\net8.0\Authentication.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\VSProjects\TestTask\backend\Authentication.Domain\obj\Debug\net8.0\Authentication.Domain.AssemblyInfoInputs.cache
+C:\VSProjects\TestTask\backend\Authentication.Domain\obj\Debug\net8.0\Authentication.Domain.AssemblyInfo.cs
+C:\VSProjects\TestTask\backend\Authentication.Domain\obj\Debug\net8.0\Authentication.Domain.csproj.CoreCompileInputs.cache
+C:\VSProjects\TestTask\backend\Authentication.Domain\obj\Debug\net8.0\Authentication.Domain.sourcelink.json
+C:\VSProjects\TestTask\backend\Authentication.Domain\obj\Debug\net8.0\Authentication.Domain.dll
+C:\VSProjects\TestTask\backend\Authentication.Domain\obj\Debug\net8.0\refint\Authentication.Domain.dll
+C:\VSProjects\TestTask\backend\Authentication.Domain\obj\Debug\net8.0\Authentication.Domain.pdb
+C:\VSProjects\TestTask\backend\Authentication.Domain\obj\Debug\net8.0\ref\Authentication.Domain.dll

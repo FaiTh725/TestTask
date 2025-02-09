@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Authentication.Application\Authentication.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Application.Shared">
+      <HintPath>..\..\..\DurakOnline\backend\Application.Shared\bin\Debug\net8.0\Application.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

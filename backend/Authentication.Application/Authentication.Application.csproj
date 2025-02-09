@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Authentication.Domain\Authentication.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Application.Shared">
+      <HintPath>..\..\..\DurakOnline\backend\Application.Shared\bin\Debug\net8.0\Application.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

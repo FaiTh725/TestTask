@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>e8326479-eddb-4403-8fcd-eb5dab6ca738</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Infastructure\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Authentication.Application\Authentication.Application.csproj" />
+    <ProjectReference Include="..\Authentication.Dal\Authentication.Dal.csproj" />
+    <ProjectReference Include="..\Authentication.Domain\Authentication.Domain.csproj" />
+    <ProjectReference Include="..\Authentication.Infastructure\Authentication.Infastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Application.Shared">
+      <HintPath>..\..\..\DurakOnline\backend\Application.Shared\bin\Debug\net8.0\Application.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
