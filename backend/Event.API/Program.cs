@@ -17,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>();
 
 builder.Services.AddBlobStorage(builder.Configuration);
 builder.Services.AddRedisCach(builder.Configuration);
+builder.Services.AddValidators();
 
 builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<ICachService, CashService>();

@@ -11,13 +11,16 @@ namespace Event.Application.Implementations
     {
         private readonly IEventMemberRepository memberRepository;
         private readonly IEventRepository eventRepository;
+        private readonly ICachService cachService;
 
         public MemberService(
             IEventMemberRepository memberRepository, 
-            IEventRepository eventRepository)
+            IEventRepository eventRepository,
+            ICachService cachService)
         {
             this.memberRepository = memberRepository;
             this.eventRepository = eventRepository;
+            this.cachService = cachService;
         }
 
         public async Task<DataResponse<MemberResponse>> AddEventMember(long eventId, MemberRequest request)
@@ -74,19 +77,23 @@ namespace Event.Application.Implementations
 
             await memberRepository.AddEventMember(newMember.Value);
 
+            var newMemberResponse = new MemberResponse
+            {
+                Id = newMember.Value.Id,
+                BirthDate = newMember.Value.BirthDate,
+                FirstName = newMember.Value.FirstName,
+                SecondName = newMember.Value.SecondName,
+                Email = newMember.Value.Email,
+                RegistrationDate = newMember.Value.RegistrationDate,
+            };
+
+            await cachService.SetData("Members:" + newMemberResponse.Id, newMemberResponse, 60);
+
             return new DataResponse<MemberResponse>
             {
                 StatusCode = StatusCode.Ok,
                 Description = "Add New Member",
-                Data = new MemberResponse
-                {
-                    Id = newMember.Value.Id,
-                    BirthDate = newMember.Value.BirthDate,  
-                    FirstName = newMember.Value.FirstName,
-                    SecondName = newMember.Value.SecondName,
-                    Email = newMember.Value.Email,
-                    RegistrationDate = newMember.Value.RegistrationDate,
-                }
+                Data = newMemberResponse
             };
         }
 
@@ -104,6 +111,7 @@ namespace Event.Application.Implementations
             }
 
             await memberRepository.RemoveEventMember(memberId);
+            await cachService.RemoveData("Members:" + member.Value.Id);
 
             return new BaseResponse
             {
@@ -114,6 +122,18 @@ namespace Event.Application.Implementations
 
         public async Task<DataResponse<MemberResponse>> GetMember(long memberId)
         {
+            var cachMember = await cachService.GetData<MemberResponse>("Members:" + memberId);
+
+            if(cachMember.IsSuccess)
+            {
+                return new DataResponse<MemberResponse> 
+                { 
+                    StatusCode = StatusCode.Ok,
+                    Description = "Get Member",
+                    Data = cachMember.Value
+                }; 
+            }
+
             var member = await memberRepository.GetEventMember(memberId);
 
             if(member.IsFailure)
@@ -126,19 +146,23 @@ namespace Event.Application.Implementations
                 };
             }
 
+            var memberResponse = new MemberResponse
+            {
+                Id = member.Value.Id,
+                BirthDate = member.Value.BirthDate,
+                Email = member.Value.Email,
+                FirstName = member.Value.FirstName,
+                SecondName = member.Value.SecondName,
+                RegistrationDate = member.Value.RegistrationDate
+            };
+
+            await cachService.SetData("Members:" + memberResponse.Id, memberResponse, 60);
+
             return new DataResponse<MemberResponse>
             {
                 StatusCode = StatusCode.Ok,
-                Description = "Get Member By Id",
-                Data = new MemberResponse
-                {
-                    Id = member.Value.Id,
-                    BirthDate = member.Value.BirthDate,
-                    Email = member.Value.Email,
-                    FirstName = member.Value.FirstName,
-                    SecondName = member.Value.SecondName,
-                    RegistrationDate = member.Value.RegistrationDate
-                }
+                Description = "Get Member",
+                Data = memberResponse
             };
         }
 

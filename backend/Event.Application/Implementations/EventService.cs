@@ -15,13 +15,16 @@ namespace Event.Application.Implementations
     {
         private readonly IEventRepository eventRepository;
         private readonly IBlobService blobService;
+        private readonly ICachService cachService;
 
         public EventService(
             IEventRepository eventRepository,
-            IBlobService blobService)
+            IBlobService blobService,
+            ICachService cachService)
         {
             this.eventRepository = eventRepository;
             this.blobService = blobService;
+            this.cachService = cachService;
         }
 
         public async Task<BaseResponse> CancelEvent(long eventId)
@@ -39,6 +42,10 @@ namespace Event.Application.Implementations
 
             await eventRepository.RemoveEvent(eventId);
 
+            await blobService.DeleteBlobFolder(eventEntity.Value.ImagesFolder);
+            await cachService.RemoveData("Events:" + eventEntity.Value.Id);
+            await cachService.RemoveData("Events:" + eventEntity.Value.Name);
+
             return new BaseResponse
             {
                 StatusCode = StatusCode.Ok,
@@ -46,9 +53,30 @@ namespace Event.Application.Implementations
             };
         }
 
-        // TODO: create universal method to get event by propperties
         public async Task<DataResponse<EventResponse>> GetEvent(long eventId)
         {
+            var eventCach = await cachService.GetData<EventResponse>("Events:" + eventId.ToString());
+
+            if (eventCach.IsSuccess)
+            {
+                return new DataResponse<EventResponse>
+                {
+                    StatusCode = StatusCode.Ok,
+                    Description = "Get Event",
+                    Data = new EventResponse
+                    {
+                        Id = eventCach.Value.Id,
+                        Description = eventCach.Value.Description,
+                        Category = eventCach.Value.Category,
+                        Location = eventCach.Value.Location,
+                        MaxMembers = eventCach.Value.MaxMembers,
+                        Name = eventCach.Value.Name,
+                        TimeEvent = eventCach.Value.TimeEvent,
+                        UrlImages = eventCach.Value.UrlImages
+                    }
+                };
+            }
+
             var eventEntity = await eventRepository.GetEvent(eventId);
 
             if (eventEntity.IsFailure)
@@ -61,27 +89,54 @@ namespace Event.Application.Implementations
                 };
             }
 
+            var eventResponse = new EventResponse
+            {
+                Id = eventEntity.Value.Id,
+                Description = eventEntity.Value.Description,
+                Category = eventEntity.Value.Category,
+                Location = eventEntity.Value.Location,
+                MaxMembers = eventEntity.Value.MaxMember,
+                Name = eventEntity.Value.Name,
+                TimeEvent = eventEntity.Value.TimeEvent,
+                UrlImages = await blobService
+                        .DownloadBlobs(eventEntity.Value.ImagesFolder)
+            };
+
+            await cachService.SetData("Events:" + eventResponse.Id, eventResponse);
+            await cachService.SetData("Events:" + eventResponse.Name, eventResponse);
+
             return new DataResponse<EventResponse>
             {
                 StatusCode = StatusCode.Ok,
                 Description = "Get Event",
-                Data = new EventResponse
-                { 
-                    Id = eventEntity.Value.Id,
-                    Description = eventEntity.Value.Description,
-                    Category = eventEntity.Value.Category,
-                    Location = eventEntity.Value.Location,
-                    MaxMembers = eventEntity.Value.MaxMember,
-                    Name = eventEntity.Value.Name,
-                    TimeEvent = eventEntity.Value.TimeEvent,
-                    UrlImages = await blobService
-                        .DownloadBlobs(eventEntity.Value.ImagesFolder)
-                }
+                Data = eventResponse
             };
         }
 
         public async Task<DataResponse<EventResponse>> GetEvent(string eventName)
         {
+            var eventCach = await cachService.GetData<EventResponse>("Events:" + eventName);
+
+            if (eventCach.IsSuccess)
+            {
+                return new DataResponse<EventResponse>
+                {
+                    StatusCode = StatusCode.Ok,
+                    Description = "Get Event",
+                    Data = new EventResponse
+                    {
+                        Id = eventCach.Value.Id,
+                        Description = eventCach.Value.Description,
+                        Category = eventCach.Value.Category,
+                        Location = eventCach.Value.Location,
+                        MaxMembers = eventCach.Value.MaxMembers,
+                        Name = eventCach.Value.Name,
+                        TimeEvent = eventCach.Value.TimeEvent,
+                        UrlImages = eventCach.Value.UrlImages
+                    }
+                };
+            }
+
             var eventEntity = await eventRepository.GetEvent(eventName);
 
             if (eventEntity.IsFailure)
@@ -94,27 +149,44 @@ namespace Event.Application.Implementations
                 };
             }
 
+            var eventResponse = new EventResponse
+            {
+                Id = eventEntity.Value.Id,
+                Description = eventEntity.Value.Description,
+                Category = eventEntity.Value.Category,
+                Location = eventEntity.Value.Location,
+                MaxMembers = eventEntity.Value.MaxMember,
+                Name = eventEntity.Value.Name,
+                TimeEvent = eventEntity.Value.TimeEvent,
+                UrlImages = await blobService
+                        .DownloadBlobs(eventEntity.Value.ImagesFolder)
+            };
+
+            await cachService.SetData("Events:" + eventResponse.Id, eventResponse);
+            await cachService.SetData("Events:" + eventResponse.Name, eventResponse);
+
             return new DataResponse<EventResponse>
             {
                 StatusCode = StatusCode.Ok,
                 Description = "Get Event",
-                Data = new EventResponse
-                {
-                    Id = eventEntity.Value.Id,
-                    Description = eventEntity.Value.Description,
-                    Category = eventEntity.Value.Category,
-                    Location = eventEntity.Value.Location,
-                    MaxMembers = eventEntity.Value.MaxMember,
-                    Name = eventEntity.Value.Name,
-                    TimeEvent = eventEntity.Value.TimeEvent,
-                    UrlImages = await blobService
-                        .DownloadBlobs(eventEntity.Value.ImagesFolder)
-                }
+                Data = eventResponse
             };
         }
 
         public async Task<DataResponse<IEnumerable<EventResponse>>> GetEvents()
         {
+            var cachEvents = await cachService.GetData<IEnumerable<EventResponse>>("Events");
+
+            if (cachEvents.IsSuccess)
+            {
+                return new DataResponse<IEnumerable<EventResponse>>
+                {
+                    StatusCode = StatusCode.Ok,
+                    Description = "Get Events",
+                    Data = cachEvents.Value
+                };
+            }
+
             var events = eventRepository.GetEventsWithMembers()
                 .ToList();
 
@@ -140,6 +212,8 @@ namespace Event.Application.Implementations
             }).ToList();
 
             var eventsResponse = await Task.WhenAll(eventTasks);
+
+            await cachService.SetData("Events", eventsResponse);
 
             return new DataResponse<IEnumerable<EventResponse>>
             {
@@ -258,22 +332,27 @@ namespace Event.Application.Implementations
 
             var urlImages = await Task.WhenAll(tasks);
 
+            var newEvent = new EventResponse
+            {
+                Id = entityFromDb.Value.Id,
+                Description = entityFromDb.Value.Description,
+                Category = entityFromDb.Value.Category,
+                Location = entityFromDb.Value.Location,
+                Name = entityFromDb.Value.Name,
+                MaxMembers = entityFromDb.Value.MaxMember,
+                TimeEvent = entityFromDb.Value.TimeEvent,
+                UrlImages = urlImages,
+                Members = Enumerable.Empty<MemberResponse>()
+            };
+
+            await cachService.SetData("Events:" + newEvent.Id, newEvent);
+            await cachService.SetData("Events:" + newEvent.Name, newEvent);
+
             return new DataResponse<EventResponse>
             {
                 StatusCode = StatusCode.Ok,
                 Description = "Create New Event",
-                Data = new EventResponse
-                {
-                    Id = entityFromDb.Value.Id,
-                    Description = entityFromDb.Value.Description,
-                    Category = entityFromDb.Value.Category,
-                    Location = entityFromDb.Value.Location,
-                    Name = entityFromDb.Value.Name,
-                    MaxMembers = entityFromDb.Value.MaxMember,
-                    TimeEvent = entityFromDb.Value.TimeEvent,
-                    UrlImages = urlImages,
-                    Members = Enumerable.Empty<MemberResponse>()
-                }
+                Data = newEvent
             };
                                     
         }
@@ -321,6 +400,9 @@ namespace Event.Application.Implementations
 
             await eventRepository.UpdateEvent(
                 eventEntity.Value.Id, eventToUpdate.Value);
+
+            await cachService.RemoveData("Events:" + request.EventId);
+            await cachService.RemoveData("Events:" + eventEntity.Value.Name);
 
             return new BaseResponse
             {

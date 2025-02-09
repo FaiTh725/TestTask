@@ -1,17 +1,12 @@
-﻿using Event.API.Contracts.Event;
+﻿using Event.Application.Models.Events;
 using FluentValidation;
 
 namespace Event.API.Validators.Event
 {
-    public class CreateEventValidator : AbstractValidator<CreateEventRequest>
+    public class UpdateEventValidator : AbstractValidator<UpdateEventRequest>
     {
-        public CreateEventValidator()
+        public UpdateEventValidator()
         {
-            RuleFor(x => x.Category)
-                .NotNull()
-                .NotEmpty()
-                .WithMessage("Category Is Requred");
-
             RuleFor(x => x.Location)
                 .NotNull()
                 .NotEmpty()
@@ -20,11 +15,6 @@ namespace Event.API.Validators.Event
             RuleFor(x => x.TimeEvent)
                 .NotNull()
                 .WithMessage("Time Event Is Required");
-
-            RuleFor(x => x.Name)
-                .NotNull()
-                .NotEmpty()
-                .WithMessage("Name Is Requred");
 
             RuleFor(x => x.MaxMember)
                 .NotNull()
