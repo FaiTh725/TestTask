@@ -177,5 +177,34 @@ namespace Event.Application.Implementations
                 Data = eventMembers
             };
         }
+
+        public async Task<DataResponse<IEnumerable<MemberResponse>>> GetMembersEvent(
+            long eventId, int page, int size)
+        {
+            var eventEntity = await eventRepository
+                .GetEventWithMembers(eventId);
+
+            if (eventEntity.IsFailure)
+            {
+                return new DataResponse<IEnumerable<MemberResponse>>
+                {
+                    StatusCode = StatusCode.NotFound,
+                    Description = "Such Event Does Not Exist",
+                    Data = new List<MemberResponse>()
+                };
+            }
+
+            var eventMembers = mapper.Map<IEnumerable<MemberResponse>>(
+                eventEntity.Value.Members
+                .Skip((page - 1) * size)
+                .Take(size));
+
+            return new DataResponse<IEnumerable<MemberResponse>>
+            {
+                StatusCode = StatusCode.Ok,
+                Description = "Get Members Event",
+                Data = eventMembers
+            };
+        }
     }
 }

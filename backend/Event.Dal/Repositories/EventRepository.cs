@@ -4,7 +4,6 @@ using Event.Domain.Common.Specifications;
 using Event.Domain.Entities;
 using Event.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace Event.Dal.Repositories
 {

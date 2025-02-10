@@ -27,6 +27,14 @@ namespace Event.API.Controllers
         }
 
         [HttpGet("[action]")]
+        public async Task<IActionResult> GetEventsPagination(int page, int size)
+        {
+            var events = await eventService.GetEvents(page, size);
+
+            return new JsonResult(events);
+        }
+
+        [HttpGet("[action]")]
         public async Task<IActionResult> GetEventById([FromQuery] long id)
         {
             var response = await eventService.GetEvent(id);

@@ -12,5 +12,7 @@ namespace Event.Application.Interfaces
         Task<BaseResponse> CancelMemberParticipation(long memberId);
 
         Task<DataResponse<IEnumerable<MemberResponse>>> GetMembersEvent(long eventId);
+
+        Task<DataResponse<IEnumerable<MemberResponse>>> GetMembersEvent(long eventId, int page, int size);
     }
 }

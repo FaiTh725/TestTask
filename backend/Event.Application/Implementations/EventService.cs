@@ -47,8 +47,15 @@ namespace Event.Application.Implementations
             await eventRepository.RemoveEvent(eventId);
 
             await blobService.DeleteBlobFolder(eventEntity.Value.ImagesFolder);
-            await cachService.RemoveData("Events:" + eventEntity.Value.Id);
-            await cachService.RemoveData("Events:" + eventEntity.Value.Name);
+            await cachService.RemoveByPattern("Events*");
+
+            var removeEvent = new List<Task>()
+            {
+                Task.Run(() => cachService.RemoveData("Events:" + eventEntity.Value.Id)),
+                Task.Run(() => cachService.RemoveData("Events:" + eventEntity.Value.Name))
+
+            };
+            await Task.WhenAll(removeEvent);
 
             return new BaseResponse
             {
@@ -89,8 +96,13 @@ namespace Event.Application.Implementations
             eventResponse.UrlImages = await blobService
                 .DownloadBlobs(eventEntity.Value.ImagesFolder);
 
-            await cachService.SetData("Events:" + eventResponse.Id, eventResponse);
-            await cachService.SetData("Events:" + eventResponse.Name, eventResponse);
+            var setEvent = new List<Task>()
+            {
+                Task.Run(() => cachService.SetData("Events:" + eventResponse.Id, eventResponse)),
+                Task.Run(() => cachService.SetData("Events:" + eventResponse.Name, eventResponse))
+
+            };
+            await Task.WhenAll(setEvent);
 
             return new DataResponse<EventResponse>
             {
@@ -132,8 +144,13 @@ namespace Event.Application.Implementations
             eventResponse.UrlImages = await blobService
                 .DownloadBlobs(eventEntity.Value.ImagesFolder);
 
-            await cachService.SetData("Events:" + eventResponse.Id, eventResponse);
-            await cachService.SetData("Events:" + eventResponse.Name, eventResponse);
+            var setEvent = new List<Task>()
+            {
+                Task.Run(() => cachService.SetData("Events:" + eventResponse.Id, eventResponse)),
+                Task.Run(() => cachService.SetData("Events:" + eventResponse.Name, eventResponse))
+
+            };
+            await Task.WhenAll(setEvent);
 
             return new DataResponse<EventResponse>
             {
@@ -233,6 +250,50 @@ namespace Event.Application.Implementations
             };
         }
 
+        public async Task<DataResponse<IEnumerable<EventResponse>>> GetEvents(int page, int size)
+        {
+            var cachEvents = await cachService.GetData<IEnumerable<EventResponse>>($"Events-{page}-{size}");
+
+            if (cachEvents.IsSuccess)
+            {
+                return new DataResponse<IEnumerable<EventResponse>>
+                {
+                    StatusCode = StatusCode.Ok,
+                    Description = "Get Events",
+                    Data = cachEvents.Value
+                };
+            }
+
+            var events = eventRepository.GetEventsWithMembers();
+
+            var eventsPagination = events
+                .Skip( (page - 1) * size )
+                .Take(size)
+                .ToList();
+
+            var eventTasks = eventsPagination.Select(async x =>
+            {
+                var eventResponse = mapper.Map<EventResponse>(x);
+                eventResponse.Members = mapper
+                    .Map<IEnumerable<MemberResponse>>(x.Members);
+                eventResponse.UrlImages = await blobService
+                    .DownloadBlobs(x.ImagesFolder);
+
+                return eventResponse;
+            }).ToList();
+
+            var eventsResponse = await Task.WhenAll(eventTasks);
+
+            await cachService.SetData($"Events-{page}-{size}", eventsResponse);
+
+            return new DataResponse<IEnumerable<EventResponse>>
+            {
+                StatusCode = StatusCode.Ok,
+                Description = "Get Events",
+                Data = eventsResponse
+            };
+        }
+
         public async Task<DataResponse<EventResponse>> RegistrNewEvent(EventRequest request)
         {
             var eventEntity = await eventRepository.GetEvent(request.Name);
@@ -286,8 +347,14 @@ namespace Event.Application.Implementations
             newEvent.Members = Enumerable.Empty<MemberResponse>();
             newEvent.UrlImages = urlImages;
 
-            await cachService.SetData("Events:" + newEvent.Id, newEvent);
-            await cachService.SetData("Events:" + newEvent.Name, newEvent);
+            await cachService.RemoveByPattern("Events*");
+            var setEvent = new List<Task>()
+            {
+                Task.Run(() => cachService.SetData("Events:" + newEvent.Id, newEvent)),
+                Task.Run(() => cachService.SetData("Events:" + newEvent.Name, newEvent))
+
+            };
+            await Task.WhenAll(setEvent);
 
             return new DataResponse<EventResponse>
             {
@@ -342,6 +409,7 @@ namespace Event.Application.Implementations
             await eventRepository.UpdateEvent(
                 eventEntity.Value.Id, eventToUpdate.Value);
 
+            await cachService.RemoveByPattern("Events*");
             await cachService.RemoveData("Events:" + request.EventId);
             await cachService.RemoveData("Events:" + eventEntity.Value.Name);
 

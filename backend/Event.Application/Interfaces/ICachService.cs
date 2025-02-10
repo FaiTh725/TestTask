@@ -11,5 +11,7 @@ namespace Event.Application.Interfaces
         Task SetData<T>(string key, T value, int durationSeconds = 120);
 
         Task RemoveData(string key);
+
+        Task RemoveByPattern(string pattern);
     }
 }

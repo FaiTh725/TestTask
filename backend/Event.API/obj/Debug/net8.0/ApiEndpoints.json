@@ -131,6 +131,27 @@
   },
   {
     "ContainingType": "Event.API.Controllers.EventController",
+    "Method": "GetEventsPagination",
+    "RelativePath": "api/Event/GetEventsPagination",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventController",
     "Method": "UpdateEvent",
     "RelativePath": "api/Event/UpdateEvent",
     "HttpMethod": "PATCH",
@@ -204,6 +225,32 @@
       {
         "Name": "eventId",
         "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventMemberController",
+    "Method": "GetEventMembersPagination",
+    "RelativePath": "api/EventMember/GetEventMembersPagination",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "size",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],

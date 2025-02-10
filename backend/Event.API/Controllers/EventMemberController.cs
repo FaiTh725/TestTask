@@ -42,6 +42,17 @@ namespace Event.API.Controllers
         }
 
         [HttpGet("[action]")]
+        public async Task<IActionResult> GetEventMembersPagination(
+            [FromQuery] long eventId, 
+            [FromQuery] int page, 
+            [FromQuery] int size)
+        {
+            var response = await memberService.GetMembersEvent(eventId, page, size);
+
+            return new JsonResult(response);
+        }
+
+        [HttpGet("[action]")]
         public async Task<IActionResult> GetEventMember([FromQuery] long id)
         {
             var response = await memberService.GetMember(id);

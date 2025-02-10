@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BB259471-BDAE-4D5D-880F-442E079C552B}|..\\Authentication.Infastructure\\Authentication.Infastructure.csproj|c:\\vsprojects\\testtask\\backend\\authentication.infastructure\\backgroundservices\\initializeroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AC74CF49-63C5-40D7-A5FB-8DD3E9ED58DF}|..\\Authentication.Application\\Authentication.Application.csproj|c:\\vsprojects\\testtask\\backend\\authentication.application\\implmentations\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,6 +37,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "InitializeRoles.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Infastructure\\BackGroundServices\\InitializeRoles.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Infastructure\\BackGroundServices\\InitializeRoles.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Infastructure\\BackGroundServices\\InitializeRoles.cs",
+              "RelativeToolTip": "..\\Authentication.Infastructure\\BackGroundServices\\InitializeRoles.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T21:39:02.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Implmentations\\AuthService.cs",
               "RelativeDocumentMoniker": "..\\Authentication.Application\\Implmentations\\AuthService.cs",

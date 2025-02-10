@@ -1,12 +1,13 @@
 ﻿using Application.Shared.Responses;
 using Event.Application.Models.Events;
-using Event.Application.Models.Members;
 
 namespace Event.Application.Interfaces
 {
     public interface IEventService
     {
         Task<DataResponse<IEnumerable<EventResponse>>> GetEvents();
+
+        Task<DataResponse<IEnumerable<EventResponse>>> GetEvents(int page, int size);
 
         Task<DataResponse<EventResponse>> GetEvent(long eventId);
 

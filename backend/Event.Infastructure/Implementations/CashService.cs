@@ -93,5 +93,18 @@ namespace Event.Infastructure.Implementations
 
             return data;
         }
+
+        public async Task RemoveByPattern(string pattern)
+        {
+            var redisKeys = server.Keys(pattern: pattern).ToList();
+
+            var tasks = new List<Task>();
+
+            var tasksDelete = redisKeys
+                .Select(x => cache.RemoveAsync(x))
+                .ToList();
+
+            await Task.WhenAll(tasksDelete);
+        }
     }
 }
