@@ -4,6 +4,7 @@ using Event.Domain.Common.Specifications;
 using Event.Domain.Entities;
 using Event.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Event.Dal.Repositories
 {
@@ -78,6 +79,20 @@ namespace Event.Dal.Repositories
             var eventEntity = await context.Events
                 .Include(x => x.Members)
                 .FirstOrDefaultAsync(x => x.Id == eventId);
+
+            if (eventEntity is null)
+            {
+                return Result.Failure<EventEntity>("Not Found");
+            }
+
+            return Result.Success(eventEntity);
+        }
+
+        public async Task<Result<EventEntity>> GetEventWithMembers(string eventName)
+        {
+            var eventEntity = await context.Events
+                .Include(x => x.Members)
+                .FirstOrDefaultAsync(x => x.Name == eventName);
 
             if (eventEntity is null)
             {

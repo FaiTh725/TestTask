@@ -1,5 +1,6 @@
 ﻿using Application.Shared.Enums;
 using Application.Shared.Responses;
+using AutoMapper;
 using Event.Application.Interfaces;
 using Event.Application.Models.Events;
 using Event.Application.Models.Members;
@@ -16,15 +17,18 @@ namespace Event.Application.Implementations
         private readonly IEventRepository eventRepository;
         private readonly IBlobService blobService;
         private readonly ICachService cachService;
+        private readonly IMapper mapper;
 
         public EventService(
             IEventRepository eventRepository,
             IBlobService blobService,
-            ICachService cachService)
+            ICachService cachService,
+            IMapper mapper)
         {
             this.eventRepository = eventRepository;
             this.blobService = blobService;
             this.cachService = cachService;
+            this.mapper = mapper;
         }
 
         public async Task<BaseResponse> CancelEvent(long eventId)
@@ -63,21 +67,11 @@ namespace Event.Application.Implementations
                 {
                     StatusCode = StatusCode.Ok,
                     Description = "Get Event",
-                    Data = new EventResponse
-                    {
-                        Id = eventCach.Value.Id,
-                        Description = eventCach.Value.Description,
-                        Category = eventCach.Value.Category,
-                        Location = eventCach.Value.Location,
-                        MaxMembers = eventCach.Value.MaxMembers,
-                        Name = eventCach.Value.Name,
-                        TimeEvent = eventCach.Value.TimeEvent,
-                        UrlImages = eventCach.Value.UrlImages
-                    }
+                    Data = eventCach.Value
                 };
             }
 
-            var eventEntity = await eventRepository.GetEvent(eventId);
+            var eventEntity = await eventRepository.GetEventWithMembers(eventId);
 
             if (eventEntity.IsFailure)
             {
@@ -89,18 +83,11 @@ namespace Event.Application.Implementations
                 };
             }
 
-            var eventResponse = new EventResponse
-            {
-                Id = eventEntity.Value.Id,
-                Description = eventEntity.Value.Description,
-                Category = eventEntity.Value.Category,
-                Location = eventEntity.Value.Location,
-                MaxMembers = eventEntity.Value.MaxMember,
-                Name = eventEntity.Value.Name,
-                TimeEvent = eventEntity.Value.TimeEvent,
-                UrlImages = await blobService
-                        .DownloadBlobs(eventEntity.Value.ImagesFolder)
-            };
+            var eventResponse = mapper.Map<EventResponse>(eventEntity.Value);
+            eventResponse.Members = mapper
+                .Map<IEnumerable<MemberResponse>>(eventEntity.Value.Members);
+            eventResponse.UrlImages = await blobService
+                .DownloadBlobs(eventEntity.Value.ImagesFolder);
 
             await cachService.SetData("Events:" + eventResponse.Id, eventResponse);
             await cachService.SetData("Events:" + eventResponse.Name, eventResponse);
@@ -123,21 +110,11 @@ namespace Event.Application.Implementations
                 {
                     StatusCode = StatusCode.Ok,
                     Description = "Get Event",
-                    Data = new EventResponse
-                    {
-                        Id = eventCach.Value.Id,
-                        Description = eventCach.Value.Description,
-                        Category = eventCach.Value.Category,
-                        Location = eventCach.Value.Location,
-                        MaxMembers = eventCach.Value.MaxMembers,
-                        Name = eventCach.Value.Name,
-                        TimeEvent = eventCach.Value.TimeEvent,
-                        UrlImages = eventCach.Value.UrlImages
-                    }
+                    Data = eventCach.Value
                 };
             }
 
-            var eventEntity = await eventRepository.GetEvent(eventName);
+            var eventEntity = await eventRepository.GetEventWithMembers(eventName);
 
             if (eventEntity.IsFailure)
             {
@@ -149,18 +126,11 @@ namespace Event.Application.Implementations
                 };
             }
 
-            var eventResponse = new EventResponse
-            {
-                Id = eventEntity.Value.Id,
-                Description = eventEntity.Value.Description,
-                Category = eventEntity.Value.Category,
-                Location = eventEntity.Value.Location,
-                MaxMembers = eventEntity.Value.MaxMember,
-                Name = eventEntity.Value.Name,
-                TimeEvent = eventEntity.Value.TimeEvent,
-                UrlImages = await blobService
-                        .DownloadBlobs(eventEntity.Value.ImagesFolder)
-            };
+            var eventResponse = mapper.Map<EventResponse>(eventEntity.Value);
+            eventResponse.Members = mapper
+                .Map<IEnumerable<MemberResponse>>(eventEntity.Value.Members);
+            eventResponse.UrlImages = await blobService
+                .DownloadBlobs(eventEntity.Value.ImagesFolder);
 
             await cachService.SetData("Events:" + eventResponse.Id, eventResponse);
             await cachService.SetData("Events:" + eventResponse.Name, eventResponse);
@@ -190,25 +160,15 @@ namespace Event.Application.Implementations
             var events = eventRepository.GetEventsWithMembers()
                 .ToList();
 
-            var eventTasks = events.Select(async x => new EventResponse
+            var eventTasks = events.Select(async x =>
             {
-                Id = x.Id,
-                Name = x.Name,
-                Description = x.Description,
-                Category = x.Category,
-                Location = x.Location,
-                MaxMembers = x.MaxMember,
-                TimeEvent = x.TimeEvent,
-                Members = x.Members.Select(y => new MemberResponse
-                {
-                    Id = y.Id,
-                    FirstName = y.FirstName,
-                    SecondName = y.SecondName,
-                    Email = y.Email,
-                    BirthDate = y.BirthDate,
-                    RegistrationDate = y.RegistrationDate
-                }).AsEnumerable(),
-                UrlImages = await blobService.DownloadBlobs(x.ImagesFolder)
+                var eventResponse = mapper.Map<EventResponse>(x);
+                eventResponse.Members = mapper
+                    .Map<IEnumerable<MemberResponse>>(x.Members);
+                eventResponse.UrlImages = await blobService
+                    .DownloadBlobs(x.ImagesFolder);
+
+                return eventResponse;
             }).ToList();
 
             var eventsResponse = await Task.WhenAll(eventTasks);
@@ -252,25 +212,15 @@ namespace Event.Application.Implementations
                 .GetEvents(specification)
                 .ToList();
 
-            var eventTasks = events.Select(async x => new EventResponse
+            var eventTasks = events.Select(async x =>
             {
-                Id = x.Id,
-                Name = x.Name,
-                Description = x.Description,
-                Category = x.Category,
-                Location = x.Location,
-                MaxMembers = x.MaxMember,
-                TimeEvent = x.TimeEvent,
-                Members = x.Members.Select(y => new MemberResponse
-                {
-                    Id = y.Id,
-                    FirstName = y.FirstName,
-                    SecondName = y.SecondName,
-                    Email = y.Email,
-                    BirthDate = y.BirthDate,
-                    RegistrationDate = y.RegistrationDate
-                }).ToList(),
-                UrlImages = await blobService.DownloadBlobs(x.ImagesFolder)
+                var eventResponse = mapper.Map<EventResponse>(x);
+                eventResponse.Members = mapper
+                    .Map<IEnumerable<MemberResponse>>(x.Members);
+                eventResponse.UrlImages = await blobService
+                    .DownloadBlobs(x.ImagesFolder);
+
+                return eventResponse;
             }).ToList();
 
             var eventsResponse = await Task.WhenAll(eventTasks);
@@ -332,18 +282,9 @@ namespace Event.Application.Implementations
 
             var urlImages = await Task.WhenAll(tasks);
 
-            var newEvent = new EventResponse
-            {
-                Id = entityFromDb.Value.Id,
-                Description = entityFromDb.Value.Description,
-                Category = entityFromDb.Value.Category,
-                Location = entityFromDb.Value.Location,
-                Name = entityFromDb.Value.Name,
-                MaxMembers = entityFromDb.Value.MaxMember,
-                TimeEvent = entityFromDb.Value.TimeEvent,
-                UrlImages = urlImages,
-                Members = Enumerable.Empty<MemberResponse>()
-            };
+            var newEvent = mapper.Map<EventResponse>(eventEntity.Value);
+            newEvent.Members = Enumerable.Empty<MemberResponse>();
+            newEvent.UrlImages = urlImages;
 
             await cachService.SetData("Events:" + newEvent.Id, newEvent);
             await cachService.SetData("Events:" + newEvent.Name, newEvent);

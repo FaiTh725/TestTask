@@ -1,7 +1,11 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AC74CF49-63C5-40D7-A5FB-8DD3E9ED58DF}|..\\Authentication.Application\\Authentication.Application.csproj|c:\\vsprojects\\testtask\\backend\\authentication.application\\implmentations\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +13,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +30,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Implmentations\\AuthService.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Application\\Implmentations\\AuthService.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Implmentations\\AuthService.cs",
+              "RelativeToolTip": "..\\Authentication.Application\\Implmentations\\AuthService.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHYAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T18:26:14.569Z",
+              "EditorCaption": ""
             }
           ]
         }

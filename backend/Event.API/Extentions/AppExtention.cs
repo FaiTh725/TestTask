@@ -5,6 +5,7 @@ using Event.API.Contracts.Event;
 using Event.API.Contracts.Member;
 using Event.API.Validators.Event;
 using Event.API.Validators.Member;
+using Event.Application.Mappings;
 using Event.Application.Models.Events;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -48,6 +49,15 @@ namespace Event.API.Extentions
             services.AddScoped<IValidator<CreateEventRequest>, CreateEventValidator>();
             services.AddScoped<IValidator<UpdateEventRequest>, UpdateEventValidator>();
             services.AddScoped<IValidator<CreateMemberRequest>, CreateMemberValidator>();
+        }
+
+        public static void AddAutoMapperProfiles(this IServiceCollection service)
+        {
+            service.AddAutoMapper(conf =>
+                {
+                    conf.AddProfile<EventMemberProfile>();
+                    conf.AddProfile<EventProfile>();
+                });
         }
     }
 }

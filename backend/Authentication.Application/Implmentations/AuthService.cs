@@ -1,5 +1,4 @@
 ﻿using Application.Shared.Enums;
-using Application.Shared.Exceptions;
 using Application.Shared.Responses;
 using Authentication.Application.Interfaces;
 using Authentication.Application.Model.Token;
@@ -139,8 +138,6 @@ namespace Authentication.Application.Implmentations
                     Data = new()
                 };      
             }
-
-            // TODO: Create Transaction
 
             await dbTransaction.StartTransaction();
 

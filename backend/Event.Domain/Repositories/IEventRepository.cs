@@ -19,6 +19,7 @@ namespace Event.Domain.Repositories
         Task<Result<EventEntity>> GetEvent(string eventName);
 
         Task<Result<EventEntity>> GetEventWithMembers(long eventId);
+        Task<Result<EventEntity>> GetEventWithMembers(string eventName);
 
         Task RemoveEvent(long eventId);
 

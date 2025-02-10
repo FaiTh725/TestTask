@@ -1,5 +1,6 @@
 ﻿using Application.Shared.Enums;
 using Application.Shared.Responses;
+using AutoMapper;
 using Event.Application.Interfaces;
 using Event.Application.Models.Members;
 using Event.Domain.Entities;
@@ -12,15 +13,18 @@ namespace Event.Application.Implementations
         private readonly IEventMemberRepository memberRepository;
         private readonly IEventRepository eventRepository;
         private readonly ICachService cachService;
+        private readonly IMapper mapper;
 
         public MemberService(
             IEventMemberRepository memberRepository, 
             IEventRepository eventRepository,
-            ICachService cachService)
+            ICachService cachService,
+            IMapper mapper)
         {
             this.memberRepository = memberRepository;
             this.eventRepository = eventRepository;
             this.cachService = cachService;
+            this.mapper = mapper;
         }
 
         public async Task<DataResponse<MemberResponse>> AddEventMember(long eventId, MemberRequest request)
@@ -77,15 +81,7 @@ namespace Event.Application.Implementations
 
             await memberRepository.AddEventMember(newMember.Value);
 
-            var newMemberResponse = new MemberResponse
-            {
-                Id = newMember.Value.Id,
-                BirthDate = newMember.Value.BirthDate,
-                FirstName = newMember.Value.FirstName,
-                SecondName = newMember.Value.SecondName,
-                Email = newMember.Value.Email,
-                RegistrationDate = newMember.Value.RegistrationDate,
-            };
+            var newMemberResponse = mapper.Map<MemberResponse>(newMember.Value);
 
             await cachService.SetData("Members:" + newMemberResponse.Id, newMemberResponse, 60);
 
@@ -146,15 +142,7 @@ namespace Event.Application.Implementations
                 };
             }
 
-            var memberResponse = new MemberResponse
-            {
-                Id = member.Value.Id,
-                BirthDate = member.Value.BirthDate,
-                Email = member.Value.Email,
-                FirstName = member.Value.FirstName,
-                SecondName = member.Value.SecondName,
-                RegistrationDate = member.Value.RegistrationDate
-            };
+            var memberResponse = mapper.Map<MemberResponse>(member.Value);
 
             await cachService.SetData("Members:" + memberResponse.Id, memberResponse, 60);
 
@@ -180,20 +168,13 @@ namespace Event.Application.Implementations
                 };
             }
 
+            var eventMembers = mapper.Map<IEnumerable<MemberResponse>>(eventEntity.Value.Members);
+
             return new DataResponse<IEnumerable<MemberResponse>>
             {
                 StatusCode = StatusCode.Ok,
                 Description = "Get Members Event",
-                Data = eventEntity.Value.Members
-                    .Select(x => new MemberResponse
-                    {
-                        Id = x.Id,
-                        FirstName= x.FirstName,
-                        SecondName= x.SecondName,
-                        Email = x.Email,
-                        RegistrationDate = x.RegistrationDate,
-                        BirthDate = x.BirthDate,
-                    })
+                Data = eventMembers
             };
         }
     }
