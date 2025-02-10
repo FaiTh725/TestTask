@@ -9,7 +9,5 @@ namespace Authentication.Application.Interfaces
         Task<DataResponse<UserResponse>> LoginUser(UserRequest request);
 
         Task<DataResponse<UserResponse>> RegisterUser(UserRequest request);
-
-        Task InitializeRoles(params string[] roles);
     }
 }

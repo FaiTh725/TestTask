@@ -4,6 +4,7 @@ using Application.Shared.Responses;
 using Authentication.Application.Interfaces;
 using Authentication.Application.Model.Token;
 using Authentication.Application.Model.User;
+using Authentication.Domain.Common;
 using Authentication.Domain.Entities;
 using Authentication.Domain.Repositories;
 
@@ -15,66 +16,37 @@ namespace Authentication.Application.Implmentations
         private readonly IRoleRepository roleRepository;
         private readonly IAuthTokenService tokenService;
         private readonly IHashService hashService;
+        private readonly IDBTransaction dbTransaction;
 
         public AuthService(
             IUserRepository userRepository,
             IRoleRepository roleRepository, 
             IAuthTokenService tokenService,
-            IHashService hashService)
+            IHashService hashService,
+            IDBTransaction dbTransaction)
         {
             this.userRepository = userRepository;
             this.roleRepository = roleRepository;
             this.tokenService = tokenService;
             this.hashService = hashService; 
-        }
-
-        // TODO: db transaction
-        public async Task InitializeRoles(params string[] roles)
-        {
-            var existedRole = roleRepository.GetRoles();
-
-            var removeRolesTasks = new List<Task>();
-
-            foreach(var role in existedRole)
-            {
-                removeRolesTasks.Add(roleRepository.DeleteRole(role.RoleName));
-            }
-
-            await Task.WhenAll(removeRolesTasks);
-
-            var addRolesTasks = new List<Task>();
-
-            foreach(var role in roles)
-            {
-                var roleEntity = Role.Initialize(role);
-
-                if(roleEntity.IsFailure)
-                {
-                    throw new ApplicationConfigurationException("", "Inialize Roles");
-                }
-
-                addRolesTasks.Add(roleRepository
-                    .AddRole(roleEntity.Value));
-            }
-
-            await Task.WhenAll(addRolesTasks);
+            this.dbTransaction = dbTransaction;
         }
 
         public async Task<DataResponse<UserResponse>> LoginUser(UserRequest request)
         {
             var user = await userRepository.GetUser(request.Email);
 
-            if (user.IsSuccess)
+            if (user.IsFailure)
             {
                 return new DataResponse<UserResponse>
                 {
                     StatusCode = StatusCode.BadRequest,
-                    Description = "Current Email Already Registered",
+                    Description = "Current Email Does Not Exist",
                     Data = new()
                 };
             }
 
-            if(hashService.VerifyHash(request.Password, user.Value.Password))
+            if(!hashService.VerifyHash(request.Password, user.Value.Password))
             {
                 return new DataResponse<UserResponse>
                 {
@@ -100,7 +72,7 @@ namespace Authentication.Application.Implmentations
             return new DataResponse<UserResponse> 
             {
                 StatusCode = StatusCode.Ok,
-                Description = "User Has Entered",
+                Description = "User Enter",
                 Data = new UserResponse
                 {
                     Token = token,
@@ -123,6 +95,18 @@ namespace Authentication.Application.Implmentations
                 {
                     StatusCode = StatusCode.BadRequest,
                     Description = "Current Email Already Registered",
+                    Data = new()
+                };
+            }
+
+            var isCorrectPassword = User.CheckPasswordForValid(request.Password);
+
+            if(!isCorrectPassword)
+            {
+                return new DataResponse<UserResponse>
+                {
+                    StatusCode = StatusCode.BadRequest,
+                    Description = "Password Should Has One Letter And One Number",
                     Data = new()
                 };
             }
@@ -158,6 +142,8 @@ namespace Authentication.Application.Implmentations
 
             // TODO: Create Transaction
 
+            await dbTransaction.StartTransaction();
+
             var newUser = await userRepository.AddUser(initUser.Value);
 
             if(newUser.IsFailure)
@@ -176,6 +162,7 @@ namespace Authentication.Application.Implmentations
 
             if(tokenData.IsFailure)
             {
+                await dbTransaction.RollBack();
                 return new DataResponse<UserResponse>
                 {
                     StatusCode = StatusCode.InternalServerError,
@@ -184,10 +171,12 @@ namespace Authentication.Application.Implmentations
                 };
             }
 
+            await dbTransaction.Commit();
+
             return new DataResponse<UserResponse>
             {
                 StatusCode = StatusCode.Ok,
-                Description = "Use Has Registered",
+                Description = "Register User",
                 Data = new UserResponse
                 {
                     Token = token, 

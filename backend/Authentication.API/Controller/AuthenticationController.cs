@@ -19,8 +19,14 @@ namespace Authentication.API.Controller
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> Login(UserRequest request)
+        public async Task<IActionResult> Login(string email, string password)
         {
+            var request = new UserRequest 
+            { 
+                Email = email, 
+                Password = password 
+            };
+
             var response = await authService.LoginUser(request);
 
             if (response.StatusCode == CustomStatusCode.Ok)

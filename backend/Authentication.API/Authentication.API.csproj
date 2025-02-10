@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Infastructure\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Authentication.Application\Authentication.Application.csproj" />
     <ProjectReference Include="..\Authentication.Dal\Authentication.Dal.csproj" />
     <ProjectReference Include="..\Authentication.Domain\Authentication.Domain.csproj" />

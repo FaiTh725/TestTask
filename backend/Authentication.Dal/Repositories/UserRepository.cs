@@ -31,6 +31,7 @@ namespace Authentication.Dal.Repositories
         public async Task<Result<User>> GetUser(string userEmail)
         {
             var user = await context.Users
+                .Include(x => x.Role)
                 .FirstOrDefaultAsync(x => x.Email == userEmail);
         
             if(user is null)
@@ -44,6 +45,7 @@ namespace Authentication.Dal.Repositories
         public async Task<Result<User>> GetUser(long userId)
         {
             var user = await context.Users
+                .Include(x => x.Role)
                 .FirstOrDefaultAsync(x => x.Id == userId);
 
             if (user is null)

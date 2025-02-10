@@ -29,6 +29,13 @@ namespace Authentication.Domain.Entities
             Role = role;
         }
 
+        public static bool CheckPasswordForValid(string password)
+        {
+            Regex passwordRegex = new Regex(@"^(?=.*[A-Za-z])(?=.*\d).+$");
+
+            return passwordRegex.IsMatch(password);
+        }
+
         public static Result<User> Initialize(
             string email,
             string password,
@@ -42,20 +49,9 @@ namespace Authentication.Domain.Entities
                     "Invalid Signature");
             }
 
-            if(password is null ||
-                password.Length < PASSWORD_MIN_LENGTH ||
-                password.Length > PASSWORD_MAX_LENGTH)
+            if(password is null)
             {
-                return Result.Failure<User>("Password Is Null Or " +
-                    $"Out Of Length from {PASSWORD_MIN_LENGTH} {PASSWORD_MAX_LENGTH}");
-            }
-
-            Regex passwordRegex = new Regex(@"^(?=.*[A-Za-z])(?=.*\d).+$");
-
-            if(!passwordRegex.IsMatch(password))
-            {
-                return Result.Failure<User>("Password does not contains one letter " +
-                    "and one number");
+                return Result.Failure<User>("Password Is Null");
             }
 
             if (role is null)

@@ -53,7 +53,7 @@ namespace Authentication.Infastructure.Implementations
 
             var signingCredentials = new SigningCredentials(
                 new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSetting.SecretKey)),
-                SecurityAlgorithms.Sha256);
+                SecurityAlgorithms.HmacSha256);
 
             var claims = new Claim[]
             {

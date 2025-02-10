@@ -14,8 +14,7 @@ namespace Authentication.Dal.Configurations
                 .IsUnique();
 
             builder.Property(x => x.Password)
-                .IsRequired()
-                .HasMaxLength(User.PASSWORD_MAX_LENGTH);
+                .IsRequired();
 
             builder.HasOne(x => x.Role)
                 .WithMany(x => x.Users)

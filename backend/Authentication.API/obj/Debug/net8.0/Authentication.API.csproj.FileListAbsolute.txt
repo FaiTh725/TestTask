@@ -177,7 +177,6 @@ C:\VSProjects\TestTask\backend\Authentication.API\obj\Debug\net8.0\refint\Authen
 C:\VSProjects\TestTask\backend\Authentication.API\obj\Debug\net8.0\Authentication.API.pdb
 C:\VSProjects\TestTask\backend\Authentication.API\obj\Debug\net8.0\Authentication.API.genruntimeconfig.cache
 C:\VSProjects\TestTask\backend\Authentication.API\obj\Debug\net8.0\ref\Authentication.API.dll
-C:\VSProjects\TestTask\backend\Authentication.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\VSProjects\TestTask\backend\Authentication.API\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\VSProjects\TestTask\backend\Authentication.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\VSProjects\TestTask\backend\Authentication.API\bin\Debug\net8.0\Authentication.Application.dll
@@ -187,3 +186,4 @@ C:\VSProjects\TestTask\backend\Authentication.API\bin\Debug\net8.0\Authenticatio
 C:\VSProjects\TestTask\backend\Authentication.API\bin\Debug\net8.0\FluentValidation.dll
 C:\VSProjects\TestTask\backend\Authentication.API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\VSProjects\TestTask\backend\Authentication.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\VSProjects\TestTask\backend\Authentication.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
