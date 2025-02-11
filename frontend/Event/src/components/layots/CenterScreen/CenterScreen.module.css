@@ -1,0 +1,11 @@
+.CenterScreen__Main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.CenterScreen__Body {
+  padding: 10px;
+}

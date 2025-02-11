@@ -1,0 +1,29 @@
+.Login__Main {
+  font-family: var(--font-family-global);
+  color: var(--color-global);
+  font-weight: 300;
+  font-size: 16px;
+  min-width: 350px;
+}
+
+.Login__TopText {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.Login__SubText {
+  margin: 20px 0;
+  color: var(--color-shadow);
+}
+
+.Login__Inputs {
+  margin-bottom: 25px;
+}
+
+.Login__Inputs * + * {
+  margin-top: 20px;
+}
+
+.Login__Navigation {
+  margin-top: 10px;
+}

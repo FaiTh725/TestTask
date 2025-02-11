@@ -1,0 +1,18 @@
+.PrimaryButton__Main {
+  width: 100%;
+}
+
+.PrimaryButton__Button {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 800px;
+  color: #fff;
+  background-color: var(--color-primary);
+  border-radius: 7px;
+  padding: 10px;
+  transition: all .3s;
+}
+
+.PrimaryButton__Button:hover {
+  background-color: var(--color-primary-hover);
+}

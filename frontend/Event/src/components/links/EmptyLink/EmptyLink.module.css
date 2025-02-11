@@ -1,0 +1,11 @@
+.EmptyLink__Main {
+  font-size: 14px;
+  color: var(--color-primary);
+  transition: all .3s;
+  padding: 3px 0;
+  cursor: pointer;
+}
+
+.EmptyLink__Main:hover {
+  color: var(--color-primary-hover);
+}
