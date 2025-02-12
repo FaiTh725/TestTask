@@ -1,6 +1,5 @@
 ﻿using Application.Shared.Exceptions;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading;
 
 namespace Authentication.API.Middlewares
 {
@@ -26,10 +25,10 @@ namespace Authentication.API.Middlewares
             {
                 await next(httpContext);
             }
-            catch(ApplicationConfigurationException appEx)
+            catch(AplicationConfigurationException appEx)
             {
                 logger.LogError(appEx, "Error With Configuration." +
-                    "Section With Error " + appEx.ConfigurationErrorSection);
+                    "Section With Error " + appEx.ErrorConfigurationSection);
 
                 await HandleException(httpContext, appEx);
 

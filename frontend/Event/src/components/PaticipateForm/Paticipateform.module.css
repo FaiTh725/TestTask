@@ -1,0 +1,22 @@
+.PaticipateForm__Main {
+  font-family: var(--font-family-global);
+  color: var(--color-global);
+  font-size: 16px;
+}
+
+.PaticipateForm__Header {
+  font-size: 20px;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.PaticipateForm__InputSection + .PaticipateForm__InputSection {
+  margin-top: 10px;
+}
+
+.PaticipateForm__Action {
+  margin-top: 30px;
+  min-width: 300px;
+}

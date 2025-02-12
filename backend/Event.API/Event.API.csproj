@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.13" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
@@ -21,7 +22,7 @@
 
   <ItemGroup>
     <Reference Include="Application.Shared">
-      <HintPath>..\..\..\DurakOnline\backend\Application.Shared\bin\Debug\net8.0\Application.Shared.dll</HintPath>
+      <HintPath>..\Application.Shared\bin\Debug\net8.0\Application.Shared.dll</HintPath>
     </Reference>
   </ItemGroup>
 

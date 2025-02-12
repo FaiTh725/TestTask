@@ -15,10 +15,13 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>();
 
+builder.Services.AddJwtService(builder.Configuration);
 builder.Services.AddBlobStorage(builder.Configuration);
 builder.Services.AddRedisCach(builder.Configuration);
+builder.Services.AddCorses(builder.Configuration);
 builder.Services.AddAutoMapperProfiles();
 builder.Services.AddValidators();
+builder.Services.AddAuthToSwagger();
 
 builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<ICachService, CashService>();
@@ -37,8 +40,11 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+app.UseCors("Client");
+
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseExceptionHandler();

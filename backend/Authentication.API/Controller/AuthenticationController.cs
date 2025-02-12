@@ -31,7 +31,17 @@ namespace Authentication.API.Controller
 
             if (response.StatusCode == CustomStatusCode.Ok)
             {
-                Response.Cookies.Append("token", response.Data.Token);
+                // Only for local
+                var cookiesOptions = new CookieOptions
+                {
+                    Secure = true,
+                    SameSite = SameSiteMode.None,
+                    HttpOnly = true
+                };
+
+                Response.Cookies.Append("token", 
+                    response.Data.Token,
+                    cookiesOptions);
             }
 
             return new JsonResult(new DataResponse<TokenResponse>
@@ -50,7 +60,17 @@ namespace Authentication.API.Controller
 
             if (response.StatusCode == CustomStatusCode.Ok)
             {
-                Response.Cookies.Append("token", response.Data.Token);
+                // Only for local
+                var cookiesOptions = new CookieOptions
+                {
+                    Secure = true,
+                    SameSite = SameSiteMode.None,
+                    HttpOnly = true
+                };
+
+                Response.Cookies.Append("token", 
+                    response.Data.Token,
+                    cookiesOptions);
             }
 
             return new JsonResult(new DataResponse<TokenResponse> 

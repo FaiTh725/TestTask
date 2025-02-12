@@ -2,7 +2,7 @@
 {
     public class AplicationConfigurationException : Exception
     {
-        public required string ErrorConfigurationSection { get; set; }
+        public string ErrorConfigurationSection { get; } = string.Empty;
 
         public AplicationConfigurationException(
             string errorconfigurationSection,

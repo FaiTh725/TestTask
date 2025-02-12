@@ -1,9 +1,22 @@
+.Login__Content {
+  width: 100vw;
+  height: 100vh;
+}
+
 .Login__Main {
   font-family: var(--font-family-global);
   color: var(--color-global);
   font-weight: 300;
   font-size: 16px;
   min-width: 350px;
+}
+
+.Login__Logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .Login__TopText {
@@ -26,4 +39,14 @@
 
 .Login__Navigation {
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.Login__Error {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--color-shadow);
+  font-weight: 400;
 }

@@ -32,7 +32,7 @@ namespace Authentication.Dal
         {
             optionsBuilder.UseSqlServer(
                 configuration.GetConnectionString("SQLServerConnection") ??
-                throw new ApplicationConfigurationException("SqlServer Connection String"));
+                throw new AplicationConfigurationException("SqlServer Connection String"));
         }
     }
 }

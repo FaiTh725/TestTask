@@ -6,6 +6,7 @@
             Stream stream,
             string blobName,
             string contentType, 
+            string folder = "",
             CancellationToken cancellationToken = default);
 
         Task<string> DownLoadBlob(string blobName, 

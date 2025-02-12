@@ -49,7 +49,7 @@ namespace Authentication.Infastructure.BackGroundServices
                 if (role.IsFailure)
                 {
                     await dbTransaction.RollBack();
-                    throw new ApplicationConfigurationException("", "Initialize Roles");
+                    throw new AplicationConfigurationException("", "Initialize Roles");
                 }
 
                 await roleRepository.AddRole(role.Value);

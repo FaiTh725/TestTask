@@ -1,0 +1,8 @@
+.CenterVert__Main {
+  width: 100%;
+}
+
+.CenterVert__Wrapper{
+  margin: 0 auto;
+  max-width: var(--max-width-page);
+}

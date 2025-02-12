@@ -49,8 +49,7 @@ namespace Event.Infastructure.Implementations
             await foreach(var blob in blobs)
             {
                 var blobClient = blobContainerClient.GetBlobClient(blob.Name);
-
-                urls.Add(blobClient.Uri.ToString());
+                urls.Add(blobClient.Uri.AbsoluteUri.ToString());
             }
 
             return urls;
@@ -59,9 +58,10 @@ namespace Event.Infastructure.Implementations
         public async Task<string> UploadBlob(Stream stream, 
             string blobName,
             string contentType, 
+            string folder = "",
             CancellationToken cancellationToken = default)
         {
-            var blobPath = blobName + " - " + Guid.NewGuid().ToString();
+            var blobPath =  folder + "/" +Guid.NewGuid().ToString() + "-" + blobName ;
 
             var blobClient = blobContainerClient.GetBlobClient(blobPath);
 
@@ -69,7 +69,7 @@ namespace Event.Infastructure.Implementations
                 new BlobHttpHeaders { ContentType = contentType},
                 cancellationToken: cancellationToken);
             
-            return blobClient.Uri.ToString();
+            return blobClient.Uri.AbsoluteUri.ToString();
         }
     }
 }

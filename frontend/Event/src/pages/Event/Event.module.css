@@ -1,0 +1,55 @@
+.Event__Main {
+  width: 100%;
+  margin: 40px 0;
+  font-family: var(--font-family-global);
+  color: var(--color-global);
+  display: flex;
+  align-items: start;
+  position: relative;
+}
+
+.Event__Images {
+  flex: 1;
+  padding: 10px 140px;
+}
+
+.Event__Inform {
+  min-width: 350px;
+  max-width: 350px;
+}
+
+.Event__Name {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.Event__Description {
+  max-height: 300px;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+
+.Event__Time {
+  font-size: 24px;
+  color: var(--color-primary);
+  text-align: right;
+  margin: 20px 0;
+  margin-right: 15px;
+}
+
+.Event__ExtraInfo + .Event__ExtraInfo {
+  margin-top: 10px;
+}
+
+.Event__ExtraInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-shadow);
+}
+
+.Event__Raticipate {
+  margin-top: 30px;
+  padding: 10px;
+}

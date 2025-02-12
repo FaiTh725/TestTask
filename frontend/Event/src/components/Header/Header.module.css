@@ -1,0 +1,27 @@
+.Header__Main {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--color-primary);
+  font-family: var(--font-family-global);
+}
+
+.Header__Navigation {
+  display: flex;
+  margin-right: 50px;
+}
+
+.Header__Navigation p{
+  font-size: 20px;
+  min-width: 100px;
+}
+
+.Header__LogoutContent {
+  color: var(--color-primary);
+  font-size: 20px;
+  transition: all .3s;
+}
+
+.Header__LogoutContent:hover {
+  color: var(--color-primary-hover)
+
+}

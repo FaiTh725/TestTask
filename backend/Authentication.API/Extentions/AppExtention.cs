@@ -12,5 +12,20 @@ namespace Authentication.API.Extentions
             service.AddFluentValidationAutoValidation();
             service.AddScoped<IValidator<UserRequest>, UserRequestValidator>();
         }
+
+        public static void AddCorses(this IServiceCollection service, IConfiguration configuration) 
+        {
+            var clientUrl = configuration
+                .GetValue<string>("ApiList:Client") ??
+                throw new ArgumentException("Cleint cors doesnt configure");
+
+            service.AddCors(conf => conf.AddPolicy("Client", policy =>
+            {
+                policy.WithOrigins(clientUrl);
+                policy.AllowAnyHeader();
+                policy.AllowAnyMethod();
+                policy.AllowCredentials();
+            }));
+        }
     }
 }

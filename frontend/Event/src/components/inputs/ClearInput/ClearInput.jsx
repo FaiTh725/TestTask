@@ -4,11 +4,13 @@ const ClearInput = ({
     value, 
     setValue, 
     typeInput = "text", 
-    placeHolder = ""}) => {
+    placeHolder = "",
+    name = ""}) => {
   return (
     <div className={styles.ClearInput__Main}>
       <input className={styles.ClearInput__Input}
         type={typeInput} 
+        name={name}
         value={value}
         onChange={setValue}
         placeholder={placeHolder}

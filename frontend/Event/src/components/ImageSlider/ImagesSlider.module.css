@@ -1,0 +1,36 @@
+.ImagesSlider__Main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ImagesSlider__SelectedImage {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 100%;
+  height: 100%;
+  
+}
+
+.ImagesSlider__Images {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: none;
+  height: 400px;  
+}
+
+.ImagesSlider__Btn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  /* left: 0; */
+}
+
+.ImagesSlider__BtnRight {
+  left: auto;
+  right: 0;
+}

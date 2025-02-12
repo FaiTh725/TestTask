@@ -1,0 +1,9 @@
+.ClearButton__Main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ClearButton__Button:hover {
+  background-color: transparent;
+}

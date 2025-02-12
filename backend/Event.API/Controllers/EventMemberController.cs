@@ -1,6 +1,7 @@
 ﻿using Event.API.Contracts.Member;
 using Event.Application.Interfaces;
 using Event.Application.Models.Members;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Event.API.Controllers
@@ -18,6 +19,7 @@ namespace Event.API.Controllers
         }
 
         [HttpPost("[action]")]
+        [Authorize]
         public async Task<IActionResult> AddMember(CreateMemberRequest request)
         {
             var member = new MemberRequest
@@ -61,6 +63,7 @@ namespace Event.API.Controllers
         }
 
         [HttpPatch("[action]")]
+        [Authorize]
         public async Task<IActionResult> CancelPaticipationMember(RemoveMember request)
         {
             var response = await memberService.CancelMemberParticipation(request.Id);

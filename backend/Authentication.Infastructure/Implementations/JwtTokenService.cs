@@ -49,7 +49,7 @@ namespace Authentication.Infastructure.Implementations
             var jwtSetting = configuration
                 .GetSection("JwtSetting")
                 .Get<JwtConf>() ?? 
-                throw new ApplicationConfigurationException("Jwt Setting");
+                throw new AplicationConfigurationException("Jwt Setting");
 
             var signingCredentials = new SigningCredentials(
                 new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSetting.SecretKey)),

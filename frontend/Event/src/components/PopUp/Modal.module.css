@@ -1,0 +1,33 @@
+.Modal__Main {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #afafaf9f;
+  top: 0;
+  left: 0;
+  transition: opacity .5s;
+}
+
+.Modal__Hiden {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Modal__Content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 7px;
+  border: 2px solid var(--color-primary);
+  padding: 5px
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}

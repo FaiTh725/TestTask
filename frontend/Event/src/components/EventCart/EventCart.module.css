@@ -1,0 +1,43 @@
+.EventCart__Main {
+  width: 100%;
+  height: 100%;
+  color: var(--color-global);
+  font-family: var(--font-family-global);
+  font-size: 16px;
+  border: 2px solid var(--color-primary);
+  padding: 10px 15px;
+  border-radius: 7px;
+}
+
+.EventCart__Image {
+  height: 100px;
+  width: 80px;
+}
+
+.EventCart__Info {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.EventCart__Info p {
+  width: 100px;
+  text-align: start;
+  display: inline-block;
+  word-wrap: break-word;
+}
+
+.EventCart__Info p + p{
+  margin-top: 5px;
+}
+
+.EventCart__EventTime {
+  font-size: 18px;
+  color: var(--color-primary-hover);
+}
+
+.EventCart__Description {
+  max-height: 95px;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}

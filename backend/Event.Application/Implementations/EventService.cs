@@ -337,13 +337,14 @@ namespace Event.Application.Implementations
             {
                 tasks.Add(blobService.UploadBlob(
                     blob.Content,
-                    $"{entityFromDb.Value.ImagesFolder}/{entityFromDb.Value.Name}",
-                    blob.ContentType));
+                    blob.Name,
+                    blob.ContentType,
+                    entityFromDb.Value.ImagesFolder));
             }
 
             var urlImages = await Task.WhenAll(tasks);
 
-            var newEvent = mapper.Map<EventResponse>(eventEntity.Value);
+            var newEvent = mapper.Map<EventResponse>(entityFromDb.Value);
             newEvent.Members = Enumerable.Empty<MemberResponse>();
             newEvent.UrlImages = urlImages;
 

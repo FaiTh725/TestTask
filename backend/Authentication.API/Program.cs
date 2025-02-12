@@ -19,6 +19,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>();
 
+builder.Services.AddCorses(builder.Configuration);
 builder.Services.AddValidators();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
@@ -37,6 +38,8 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseMiddleware<ExceptionHandlerMiddleware>();
+
+app.UseCors("Client");
 
 app.UseHttpsRedirection();
 

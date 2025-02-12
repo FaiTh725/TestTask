@@ -31,10 +31,10 @@ namespace Event.API.Infastructure
                 Extensions = new Dictionary<string, object?>()
             };
 
-            if(exception is ApplicationConfigurationException confEx)
+            if(exception is AplicationConfigurationException confEx)
             {
                 logger.LogError(confEx, "Error with configuration application." +
-                    "Section with error " + confEx.ConfigurationErrorSection);
+                    "Section with error " + confEx.ErrorConfigurationSection);
 
                 application.StopApplication();
             }

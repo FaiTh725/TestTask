@@ -2,6 +2,7 @@
 using Event.Application.Interfaces;
 using Event.Application.Models.Events;
 using Event.Application.Models.Files;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Event.API.Controllers
@@ -51,6 +52,7 @@ namespace Event.API.Controllers
         }
 
         [HttpPatch("[action]")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateEvent(UpdateEventRequest request)
         {
             var response = await eventService.UpdateEvent(request);
@@ -59,6 +61,7 @@ namespace Event.API.Controllers
         }
 
         [HttpDelete("[action]")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CancelEvent(long id)
         {
             var response = await eventService.CancelEvent(id);
@@ -75,6 +78,7 @@ namespace Event.API.Controllers
         }
 
         [HttpPost("[action]")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateEvent(CreateEventRequest request)
         {
             var eventRequest = new EventRequest

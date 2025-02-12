@@ -3,10 +3,91 @@
   "WorkspaceRootPath": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB259471-BDAE-4D5D-880F-442E079C552B}|..\\Authentication.Infastructure\\Authentication.Infastructure.csproj|c:\\vsprojects\\testtask\\backend\\authentication.infastructure\\backgroundservices\\initializeroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9CE7D77F-D25F-4424-997B-F48097B296C1}|Authentication.API.csproj|c:\\vsprojects\\testtask\\backend\\authentication.api\\controller\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CE7D77F-D25F-4424-997B-F48097B296C1}|Authentication.API.csproj|solutionrelative:controller\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AC74CF49-63C5-40D7-A5FB-8DD3E9ED58DF}|..\\Authentication.Application\\Authentication.Application.csproj|c:\\vsprojects\\testtask\\backend\\authentication.application\\implmentations\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB259471-BDAE-4D5D-880F-442E079C552B}|..\\Authentication.Infastructure\\Authentication.Infastructure.csproj|c:\\vsprojects\\testtask\\backend\\authentication.infastructure\\implementations\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CE7D77F-D25F-4424-997B-F48097B296C1}|Authentication.API.csproj|c:\\vsprojects\\testtask\\backend\\authentication.api\\extentions\\appextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CE7D77F-D25F-4424-997B-F48097B296C1}|Authentication.API.csproj|solutionrelative:extentions\\appextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CE7D77F-D25F-4424-997B-F48097B296C1}|Authentication.API.csproj|c:\\vsprojects\\testtask\\backend\\authentication.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9CE7D77F-D25F-4424-997B-F48097B296C1}|Authentication.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CE7D77F-D25F-4424-997B-F48097B296C1}|Authentication.API.csproj|c:\\vsprojects\\testtask\\backend\\authentication.api\\authentication.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9CE7D77F-D25F-4424-997B-F48097B296C1}|Authentication.API.csproj|solutionrelative:authentication.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CE7D77F-D25F-4424-997B-F48097B296C1}|Authentication.API.csproj|c:\\vsprojects\\testtask\\backend\\authentication.api\\middlewares\\exceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CE7D77F-D25F-4424-997B-F48097B296C1}|Authentication.API.csproj|solutionrelative:middlewares\\exceptionhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB259471-BDAE-4D5D-880F-442E079C552B}|..\\Authentication.Infastructure\\Authentication.Infastructure.csproj|c:\\vsprojects\\testtask\\backend\\authentication.infastructure\\authentication.infastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB259471-BDAE-4D5D-880F-442E079C552B}|..\\Authentication.Infastructure\\Authentication.Infastructure.csproj|c:\\vsprojects\\testtask\\backend\\authentication.infastructure\\implementations\\hashservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB259471-BDAE-4D5D-880F-442E079C552B}|..\\Authentication.Infastructure\\Authentication.Infastructure.csproj|c:\\vsprojects\\testtask\\backend\\authentication.infastructure\\helpers\\jwt\\jwtconf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB259471-BDAE-4D5D-880F-442E079C552B}|..\\Authentication.Infastructure\\Authentication.Infastructure.csproj|c:\\vsprojects\\testtask\\backend\\authentication.infastructure\\backgroundservices\\initializeroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC74CF49-63C5-40D7-A5FB-8DD3E9ED58DF}|..\\Authentication.Application\\Authentication.Application.csproj|c:\\vsprojects\\testtask\\backend\\authentication.application\\model\\user\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC74CF49-63C5-40D7-A5FB-8DD3E9ED58DF}|..\\Authentication.Application\\Authentication.Application.csproj|c:\\vsprojects\\testtask\\backend\\authentication.application\\model\\user\\userrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC74CF49-63C5-40D7-A5FB-8DD3E9ED58DF}|..\\Authentication.Application\\Authentication.Application.csproj|c:\\vsprojects\\testtask\\backend\\authentication.application\\model\\token\\tokenresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC74CF49-63C5-40D7-A5FB-8DD3E9ED58DF}|..\\Authentication.Application\\Authentication.Application.csproj|c:\\vsprojects\\testtask\\backend\\authentication.application\\interfaces\\ihashservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC74CF49-63C5-40D7-A5FB-8DD3E9ED58DF}|..\\Authentication.Application\\Authentication.Application.csproj|c:\\vsprojects\\testtask\\backend\\authentication.application\\interfaces\\iauthtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC74CF49-63C5-40D7-A5FB-8DD3E9ED58DF}|..\\Authentication.Application\\Authentication.Application.csproj|c:\\vsprojects\\testtask\\backend\\authentication.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC74CF49-63C5-40D7-A5FB-8DD3E9ED58DF}|..\\Authentication.Application\\Authentication.Application.csproj|c:\\vsprojects\\testtask\\backend\\authentication.application\\authentication.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BF146EA-4D3D-4209-8207-828143AB37E0}|..\\Authentication.Dal\\Authentication.Dal.csproj|c:\\vsprojects\\testtask\\backend\\authentication.dal\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BF146EA-4D3D-4209-8207-828143AB37E0}|..\\Authentication.Dal\\Authentication.Dal.csproj|c:\\vsprojects\\testtask\\backend\\authentication.dal\\authentication.dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7333A024-B785-4CCA-89E0-025E1CEB2853}|..\\Authentication.Domain\\Authentication.Domain.csproj|c:\\vsprojects\\testtask\\backend\\authentication.domain\\authentication.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BF146EA-4D3D-4209-8207-828143AB37E0}|..\\Authentication.Dal\\Authentication.Dal.csproj|c:\\vsprojects\\testtask\\backend\\authentication.dal\\transactions\\dbtransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BF146EA-4D3D-4209-8207-828143AB37E0}|..\\Authentication.Dal\\Authentication.Dal.csproj|c:\\vsprojects\\testtask\\backend\\authentication.dal\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BF146EA-4D3D-4209-8207-828143AB37E0}|..\\Authentication.Dal\\Authentication.Dal.csproj|c:\\vsprojects\\testtask\\backend\\authentication.dal\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BF146EA-4D3D-4209-8207-828143AB37E0}|..\\Authentication.Dal\\Authentication.Dal.csproj|c:\\vsprojects\\testtask\\backend\\authentication.dal\\configurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BF146EA-4D3D-4209-8207-828143AB37E0}|..\\Authentication.Dal\\Authentication.Dal.csproj|c:\\vsprojects\\testtask\\backend\\authentication.dal\\configurations\\roleconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CE7D77F-D25F-4424-997B-F48097B296C1}|Authentication.API.csproj|c:\\vsprojects\\testtask\\backend\\authentication.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CE7D77F-D25F-4424-997B-F48097B296C1}|Authentication.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -16,7 +97,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -36,15 +117,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 11,
+              "Title": "UserResponse.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Model\\User\\UserResponse.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Application\\Model\\User\\UserResponse.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Model\\User\\UserResponse.cs",
+              "RelativeToolTip": "..\\Authentication.Application\\Model\\User\\UserResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:14:36.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "InitializeRoles.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Infastructure\\BackGroundServices\\InitializeRoles.cs",
               "RelativeDocumentMoniker": "..\\Authentication.Infastructure\\BackGroundServices\\InitializeRoles.cs",
               "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Infastructure\\BackGroundServices\\InitializeRoles.cs",
               "RelativeToolTip": "..\\Authentication.Infastructure\\BackGroundServices\\InitializeRoles.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowCgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowDMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T21:39:02.305Z",
+              "WhenOpened": "2025-02-10T21:39:02.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\Controller\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "Controller\\AuthenticationController.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\Controller\\AuthenticationController.cs",
+              "RelativeToolTip": "Controller\\AuthenticationController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAUwEgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T13:57:19.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "JwtTokenService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Infastructure\\Implementations\\JwtTokenService.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Infastructure\\Implementations\\JwtTokenService.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Infastructure\\Implementations\\JwtTokenService.cs",
+              "RelativeToolTip": "..\\Authentication.Infastructure\\Implementations\\JwtTokenService.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAowDUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:13:46.264Z",
               "EditorCaption": ""
             },
             {
@@ -55,10 +173,281 @@
               "RelativeDocumentMoniker": "..\\Authentication.Application\\Implmentations\\AuthService.cs",
               "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Implmentations\\AuthService.cs",
               "RelativeToolTip": "..\\Authentication.Application\\Implmentations\\AuthService.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHYAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAUwDkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-10T18:26:14.569Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Authentication.Infastructure.csproj",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Infastructure\\Authentication.Infastructure.csproj",
+              "RelativeDocumentMoniker": "..\\Authentication.Infastructure\\Authentication.Infastructure.csproj",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Infastructure\\Authentication.Infastructure.csproj",
+              "RelativeToolTip": "..\\Authentication.Infastructure\\Authentication.Infastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-12T15:14:57.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Application\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "..\\Authentication.Application\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:29:41.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IAuthTokenService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Interfaces\\IAuthTokenService.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Application\\Interfaces\\IAuthTokenService.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Interfaces\\IAuthTokenService.cs",
+              "RelativeToolTip": "..\\Authentication.Application\\Interfaces\\IAuthTokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:29:50.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IHashService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Interfaces\\IHashService.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Application\\Interfaces\\IHashService.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Interfaces\\IHashService.cs",
+              "RelativeToolTip": "..\\Authentication.Application\\Interfaces\\IHashService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:29:53.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "JwtConf.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Infastructure\\Helpers\\Jwt\\JwtConf.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Infastructure\\Helpers\\Jwt\\JwtConf.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Infastructure\\Helpers\\Jwt\\JwtConf.cs",
+              "RelativeToolTip": "..\\Authentication.Infastructure\\Helpers\\Jwt\\JwtConf.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:13:38.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HashService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Infastructure\\Implementations\\HashService.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Infastructure\\Implementations\\HashService.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Infastructure\\Implementations\\HashService.cs",
+              "RelativeToolTip": "..\\Authentication.Infastructure\\Implementations\\HashService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:13:43.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Authentication.API.csproj",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\Authentication.API.csproj",
+              "RelativeDocumentMoniker": "Authentication.API.csproj",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\Authentication.API.csproj",
+              "RelativeToolTip": "Authentication.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-12T15:09:16.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ExceptionHandlerMiddleware.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\Middlewares\\ExceptionHandlerMiddleware.cs",
+              "RelativeDocumentMoniker": "Middlewares\\ExceptionHandlerMiddleware.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\Middlewares\\ExceptionHandlerMiddleware.cs",
+              "RelativeToolTip": "Middlewares\\ExceptionHandlerMiddleware.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowDgAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:13:12.518Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-11T14:25:31.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppExtention.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\Extentions\\AppExtention.cs",
+              "RelativeDocumentMoniker": "Extentions\\AppExtention.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\Extentions\\AppExtention.cs",
+              "RelativeToolTip": "Extentions\\AppExtention.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T14:26:09.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TokenResponse.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Model\\Token\\TokenResponse.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Application\\Model\\Token\\TokenResponse.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Model\\Token\\TokenResponse.cs",
+              "RelativeToolTip": "..\\Authentication.Application\\Model\\Token\\TokenResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:30:10.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserRequest.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Model\\User\\UserRequest.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Application\\Model\\User\\UserRequest.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Model\\User\\UserRequest.cs",
+              "RelativeToolTip": "..\\Authentication.Application\\Model\\User\\UserRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:30:40.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Dal\\AppDbContext.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\AppDbContext.cs",
+              "RelativeToolTip": "..\\Authentication.Dal\\AppDbContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCEAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:15:59.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Authentication.Dal.csproj",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\Authentication.Dal.csproj",
+              "RelativeDocumentMoniker": "..\\Authentication.Dal\\Authentication.Dal.csproj",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\Authentication.Dal.csproj",
+              "RelativeToolTip": "..\\Authentication.Dal\\Authentication.Dal.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-12T15:14:37.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Authentication.Domain.csproj",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Domain\\Authentication.Domain.csproj",
+              "RelativeDocumentMoniker": "..\\Authentication.Domain\\Authentication.Domain.csproj",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Domain\\Authentication.Domain.csproj",
+              "RelativeToolTip": "..\\Authentication.Domain\\Authentication.Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-12T15:14:55.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "RoleConfiguration.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\Configurations\\RoleConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Dal\\Configurations\\RoleConfiguration.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\Configurations\\RoleConfiguration.cs",
+              "RelativeToolTip": "..\\Authentication.Dal\\Configurations\\RoleConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:17:20.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\Configurations\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Dal\\Configurations\\UserConfiguration.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\Configurations\\UserConfiguration.cs",
+              "RelativeToolTip": "..\\Authentication.Dal\\Configurations\\UserConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:17:22.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "RoleRepository.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\Repositories\\RoleRepository.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Dal\\Repositories\\RoleRepository.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\Repositories\\RoleRepository.cs",
+              "RelativeToolTip": "..\\Authentication.Dal\\Repositories\\RoleRepository.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:17:23.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Dal\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "..\\Authentication.Dal\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:17:26.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DBTransaction.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\Transactions\\DBTransaction.cs",
+              "RelativeDocumentMoniker": "..\\Authentication.Dal\\Transactions\\DBTransaction.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Dal\\Transactions\\DBTransaction.cs",
+              "RelativeToolTip": "..\\Authentication.Dal\\Transactions\\DBTransaction.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T15:17:29.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Authentication.Application.csproj",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Authentication.Application.csproj",
+              "RelativeDocumentMoniker": "..\\Authentication.Application\\Authentication.Application.csproj",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.Application\\Authentication.Application.csproj",
+              "RelativeToolTip": "..\\Authentication.Application\\Authentication.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-12T15:14:27.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Authentication.API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T14:31:33.38Z"
             }
           ]
         }

@@ -1,8 +1,8 @@
-﻿using Application.Shared.Exceptions;
-using Event.Dal.Configuration;
+﻿using Event.Dal.Configuration;
 using Event.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Application.Shared.Exceptions;
 
 namespace Event.Dal
 {
@@ -26,7 +26,7 @@ namespace Event.Dal
         {
             optionsBuilder.UseSqlServer(
                 configuration.GetConnectionString("SQLServerConnection") ??
-                throw new ApplicationConfigurationException("SqlServer connection string"));
+                throw new AplicationConfigurationException("SqlServer connection string"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

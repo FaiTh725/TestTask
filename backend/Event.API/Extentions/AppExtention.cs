@@ -9,7 +9,11 @@ using Event.Application.Mappings;
 using Event.Application.Models.Events;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
+using System.Text;
 
 namespace Event.API.Extentions
 {
@@ -19,7 +23,7 @@ namespace Event.API.Extentions
         {
             var blobConf = configuration.GetSection("BlobStorage")
                 .Get<BlobStorage>()
-                ?? throw new ApplicationConfigurationException("Blob Storage");
+                ?? throw new AplicationConfigurationException("Blob Storage");
 
             var connectionString = $"DefaultEndpointsProtocol=http;AccountName={blobConf.AccountName};" +
                 $"AccountKey={blobConf.Key};" +
@@ -31,7 +35,7 @@ namespace Event.API.Extentions
         public static void AddRedisCach(this IServiceCollection services, IConfiguration configuration)
         {
             var redisConnection = configuration.GetConnectionString("RedisConnection") ??
-                throw new ApplicationConfigurationException("Redis Connection String");
+                throw new AplicationConfigurationException("Redis Connection String");
 
             services.AddStackExchangeRedisCache(options =>
             {
@@ -58,6 +62,95 @@ namespace Event.API.Extentions
                     conf.AddProfile<EventMemberProfile>();
                     conf.AddProfile<EventProfile>();
                 });
+        }
+
+        public static void AddCorses(this IServiceCollection service, IConfiguration configuration)
+        {
+            var clientUrl = configuration.GetValue<string>("ApiList:Client")
+                ?? throw new ArgumentException("Client Url Is Null");
+
+            Console.WriteLine(clientUrl);
+
+            service.AddCors(conf => conf.AddPolicy("Client", policy =>
+            {
+                policy.WithOrigins(clientUrl);
+                policy.AllowAnyHeader();
+                policy.AllowAnyMethod();
+                policy.AllowCredentials();
+            }));
+        }
+
+        public static void AddJwtService(this IServiceCollection service, IConfiguration configuration)
+        {
+            var jwtConf = configuration.GetSection("JwtSetting").Get<JwtToken>() ??
+                throw new AplicationConfigurationException("Jwt Token") ;
+
+            service.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateAudience = true,
+                        ValidateIssuer = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidAudience = jwtConf.Audience,
+                        ValidIssuer = jwtConf.Issuer,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
+                            .GetBytes(jwtConf.SecretKey))
+                    };
+
+                    options.Events = new JwtBearerEvents
+                    {
+                        OnMessageReceived = ctx =>
+                        {
+                            var token = ctx.Request.Cookies["token"];
+                            if(!string.IsNullOrEmpty(token))
+                            {
+                                ctx.Token = token;
+                            }
+
+                            return Task.CompletedTask;
+                        }
+                    };
+                });
+
+            service.AddAuthorization();
+        }
+
+        public static void AddAuthToSwagger(this IServiceCollection service)
+        {
+            service.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Event API",
+                    Version = "v1",
+                });
+
+                var jwtSecurityScheme = new OpenApiSecurityScheme
+                {
+                    BearerFormat = "JWT",
+                    Name = "Jwt Auth",
+                    In = ParameterLocation.Header | ParameterLocation.Cookie,
+                    Type = SecuritySchemeType.Http,
+                    Scheme = JwtBearerDefaults.AuthenticationScheme,
+                    Description = "Input Jwt Token",
+
+                    Reference = new OpenApiReference
+                    {
+                        Id = JwtBearerDefaults.AuthenticationScheme,
+                        Type = ReferenceType.SecurityScheme
+                    }
+                };
+
+                options.AddSecurityDefinition("Bearer", jwtSecurityScheme);
+
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {jwtSecurityScheme, Array.Empty<string>() }
+                });
+            });
         }
     }
 }

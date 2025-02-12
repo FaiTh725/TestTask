@@ -1,5 +1,4 @@
 ﻿using Application.Shared.Responses;
-using Authentication.Application.Model.Token;
 using Authentication.Application.Model.User;
 
 namespace Authentication.Application.Interfaces

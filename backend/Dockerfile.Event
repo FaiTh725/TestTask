@@ -1,0 +1,24 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0 as build
+
+WORKDIR /src
+COPY ["Event.API/Event.API.csproj", "Event.API/"]
+COPY ["Application.Shared/Application.Shared.csproj", "Application.Shared/"]
+
+RUN dotnet restore 'Event.API/Event.API.csproj'
+
+COPY . .
+
+WORKDIR /src/Event.API
+RUN dotnet build -c Release -o /app/build
+
+FROM build as publish
+RUN dotnet publish -c Release -o /app/publish
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 
+ENV ASPNETCORE_HTTP_PORTS=5201
+ENV ASPNETCORE_HTTPS_PORTS=5202
+EXPOSE 5201
+EXPOSE 5202
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT [ "dotnet", "Event.API.dll" ]
