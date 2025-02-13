@@ -178,6 +178,7 @@ namespace Event.Application.Implementations
             };
         }
 
+        // TODO: add page and size validation
         public async Task<DataResponse<IEnumerable<MemberResponse>>> GetMembersEvent(
             long eventId, int page, int size)
         {
