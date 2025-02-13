@@ -1,7 +1,7 @@
 ﻿
 using Authentication.Domain.Common;
 
-namespace Authentication.Dal.Transactions
+namespace Authentication.Dal.Common
 {
     public class DBTransaction : IDBTransaction
     {

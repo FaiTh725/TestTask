@@ -1,6 +1,7 @@
 ﻿using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using Event.Application.Interfaces;
+using System.Security.Policy;
 
 namespace Event.Infastructure.Implementations
 {
@@ -32,7 +33,7 @@ namespace Event.Infastructure.Implementations
 
             if (await blobClient.ExistsAsync(cancellationToken))
             { 
-                return blobClient.Uri.ToString();
+                return $"http://localhost:10000/faith725/{BLOB_FOLDER}/{blobClient.Name}";
             }
 
             return "";
@@ -49,7 +50,10 @@ namespace Event.Infastructure.Implementations
             await foreach(var blob in blobs)
             {
                 var blobClient = blobContainerClient.GetBlobClient(blob.Name);
-                urls.Add(blobClient.Uri.AbsoluteUri.ToString());
+
+                var blobUrl = $"http://localhost:10000/faith725/{BLOB_FOLDER}/{blobClient.Name}";
+
+                urls.Add(blobUrl);
             }
 
             return urls;
@@ -68,8 +72,10 @@ namespace Event.Infastructure.Implementations
             await blobClient.UploadAsync(stream,
                 new BlobHttpHeaders { ContentType = contentType},
                 cancellationToken: cancellationToken);
-            
-            return blobClient.Uri.AbsoluteUri.ToString();
+
+            var blobUrl = $"http://localhost:10000/faith725/{BLOB_FOLDER}/{blobClient.Name}";
+
+            return blobUrl;
         }
     }
 }

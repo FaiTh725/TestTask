@@ -13,15 +13,19 @@ namespace Authentication.API.Extentions
             service.AddScoped<IValidator<UserRequest>, UserRequestValidator>();
         }
 
+        // Implement Proxy(Yarp or using Nginx)
         public static void AddCorses(this IServiceCollection service, IConfiguration configuration) 
         {
-            var clientUrl = configuration
-                .GetValue<string>("ApiList:Client") ??
+            var clientUrlHttp = configuration
+                .GetValue<string>("ApiList:ClientHttp") ??
+                throw new ArgumentException("Cleint cors doesnt configure");
+            var clientUrlHttps = configuration
+                .GetValue<string>("ApiList:ClientHttps") ??
                 throw new ArgumentException("Cleint cors doesnt configure");
 
             service.AddCors(conf => conf.AddPolicy("Client", policy =>
             {
-                policy.WithOrigins(clientUrl);
+                policy.WithOrigins(clientUrlHttp, clientUrlHttps);
                 policy.AllowAnyHeader();
                 policy.AllowAnyMethod();
                 policy.AllowCredentials();

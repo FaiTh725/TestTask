@@ -19,6 +19,8 @@ namespace Authentication.Infastructure.BackGroundServices
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            await WaitDatabase(stoppingToken);
+
             using var scope = scopeFactory.CreateAsyncScope();
 
             var dbTransaction = scope.ServiceProvider.GetRequiredService<IDBTransaction>();
@@ -57,6 +59,22 @@ namespace Authentication.Infastructure.BackGroundServices
 
             await Task.WhenAll(addRolesTasks);
             await dbTransaction.Commit();
+        }
+
+        private async Task WaitDatabase(CancellationToken cancellationToken)
+        {
+            using var scope = scopeFactory.CreateAsyncScope();
+            var dbContextFactory = scope.ServiceProvider.GetRequiredService<IDBContextFactory>();
+
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                if (await dbContextFactory.CanConnection(cancellationToken))
+                {
+                    return;
+                }
+
+                await Task.Delay(5000, cancellationToken);
+            }
         }
     }
 }

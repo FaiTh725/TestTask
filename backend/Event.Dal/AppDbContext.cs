@@ -3,6 +3,7 @@ using Event.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Application.Shared.Exceptions;
+using Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal;
 
 namespace Event.Dal
 {

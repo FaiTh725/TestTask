@@ -13,7 +13,7 @@ const EventList = () => {
   const handleGetEvents = async (abortSignal) => {
     try
     {
-      var response = await axios.get(`https://localhost:7178/api/Event/GetEventsPagination?page=${page}&size=${size}`,
+      var response = await axios.get(`https://localhost:5202/api/Event/GetEventsPagination?page=${page}&size=${size}`,
         {
           headers:{
             "Content-Type": "application/json"

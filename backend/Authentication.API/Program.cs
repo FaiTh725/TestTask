@@ -5,10 +5,11 @@ using Authentication.Dal.Repositories;
 using Authentication.Domain.Repositories;
 using Authentication.Infastructure.Implementations;
 using Authentication.API.Extentions;
-using Authentication.Dal.Transactions;
 using Authentication.Infastructure.BackGroundServices;
 using Authentication.API.Middlewares;
 using Authentication.Domain.Common;
+using Authentication.API.Infastructure;
+using Authentication.Dal.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,9 +28,11 @@ builder.Services.AddSingleton<IAuthTokenService, JwtTokenService>();
 builder.Services.AddSingleton<IHashService, HashService>();
 
 builder.Services.AddScoped<IDBTransaction, DBTransaction>();
+builder.Services.AddScoped<IDBContextFactory, DBContextFactory>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 
+builder.Services.AddHostedService<InitializeDBBackgroundService>();
 builder.Services.AddHostedService<InitializeRoles>();
 
 var app = builder.Build();
@@ -40,8 +43,6 @@ app.UseSwaggerUI();
 app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 app.UseCors("Client");
-
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

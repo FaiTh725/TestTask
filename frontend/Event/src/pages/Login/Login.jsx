@@ -32,7 +32,7 @@ const Login = () => {
   const handleLogin = async () => {
     try
     {
-      const response = await axios.get("https://localhost:7068/api/Authentication/Login?" + 
+      const response = await axios.get("https://localhost:5102/api/Authentication/Login?" + 
       `email=${credentials.email}&password=${credentials.password}`,
       {
         headers:{

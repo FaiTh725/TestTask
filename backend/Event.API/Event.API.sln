@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Application", "..\Eve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Infastructure", "..\Event.Infastructure\Event.Infastructure.csproj", "{075A74E8-F7F0-4983-B8F7-D24D07E5E9CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event.Tests", "..\Event.Tests\Event.Tests.csproj", "{9AE5B2A6-00CF-4A3C-8907-DEC064CC9C7E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventServices.Tests", "..\EventServices.Tests\EventServices.Tests.csproj", "{FA743F4E-2F43-4343-847D-68B106814B1A}"
 EndProject
 Global
@@ -43,10 +41,6 @@ Global
 		{075A74E8-F7F0-4983-B8F7-D24D07E5E9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{075A74E8-F7F0-4983-B8F7-D24D07E5E9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{075A74E8-F7F0-4983-B8F7-D24D07E5E9CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9AE5B2A6-00CF-4A3C-8907-DEC064CC9C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9AE5B2A6-00CF-4A3C-8907-DEC064CC9C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9AE5B2A6-00CF-4A3C-8907-DEC064CC9C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9AE5B2A6-00CF-4A3C-8907-DEC064CC9C7E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA743F4E-2F43-4343-847D-68B106814B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA743F4E-2F43-4343-847D-68B106814B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA743F4E-2F43-4343-847D-68B106814B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU

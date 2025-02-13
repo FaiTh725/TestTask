@@ -33,7 +33,7 @@ const Event = () => {
   const handleGetEvent = async (eventId, signal) => {
     try
     {
-      var response = await axios.get(`https://localhost:7178/api/Event/GetEventById?id=${eventId}`, {
+      var response = await axios.get(`https://localhost:5202/api/Event/GetEventById?id=${eventId}`, {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json"
@@ -100,7 +100,7 @@ const Event = () => {
 
     try
     {
-      var response = await axios.post("https://localhost:7178/api/EventMember/AddMember", {
+      var response = await axios.post("https://localhost:5202/api/EventMember/AddMember", {
         eventId: 0,
         firstName: eventRequest.firstName,
         secondName: eventRequest.secondName,
