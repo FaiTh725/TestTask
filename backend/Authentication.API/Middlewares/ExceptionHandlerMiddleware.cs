@@ -8,15 +8,18 @@ namespace Authentication.API.Middlewares
         private readonly RequestDelegate next;
         private readonly IHostApplicationLifetime application;
         private readonly ILogger<ExceptionHandlerMiddleware> logger;
+        private readonly IProblemDetailsService problemDetailsService;
 
         public ExceptionHandlerMiddleware(
             RequestDelegate next,
             IHostApplicationLifetime application,
-            ILogger<ExceptionHandlerMiddleware> logger)
+            ILogger<ExceptionHandlerMiddleware> logger,
+            IProblemDetailsService problemDetailsService)
         {
             this.next = next;
             this.application = application;
             this.logger = logger;
+            this.problemDetailsService = problemDetailsService;
         }
 
         public async Task InvokeAsync(HttpContext httpContext)
@@ -25,36 +28,44 @@ namespace Authentication.API.Middlewares
             {
                 await next(httpContext);
             }
-            catch(AplicationConfigurationException appEx)
-            {
-                logger.LogError(appEx, "Error With Configuration." +
-                    "Section With Error " + appEx.ErrorConfigurationSection);
-
-                await HandleException(httpContext, appEx);
-
-                application.StopApplication();
-            }
             catch(Exception ex)
             {
-                logger.LogError(ex, "Error With Configuration.");
-
-                await HandleException(httpContext, ex);
+                await TryHandleAsync(httpContext, ex, httpContext.RequestAborted);
             }
         }
 
-        private static async Task HandleException(HttpContext httpContext, Exception ex)
+        private async ValueTask<bool> TryHandleAsync(
+            HttpContext context,
+            Exception exception,
+            CancellationToken cancellationToken)
         {
-            var problemDetails = new ProblemDetails
+            if(exception is AplicationConfigurationException appConf)
             {
-                Status = StatusCodes.Status500InternalServerError,
-                Title = "API Error",
-                Detail = "Internal Server Error",
-                Instance = "API"
+                logger.LogError("Error With Configuration." +
+                    " Section With Error " + appConf.ErrorConfigurationSection);
+                application.StopApplication();
+            }
+
+            context.Response.StatusCode = exception switch
+            {
+                NotFoundApiException => StatusCodes.Status404NotFound,
+                BadRequestApiException => StatusCodes.Status400BadRequest,
+                ConflictApiException => StatusCodes.Status409Conflict,
+                InternalServerApiException => StatusCodes.Status500InternalServerError,
+                _ => StatusCodes.Status500InternalServerError
             };
 
-            httpContext.Response.ContentType = "application/json";
-            httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
-            await httpContext.Response.WriteAsJsonAsync(problemDetails);
+            return await problemDetailsService.TryWriteAsync(new ProblemDetailsContext
+            {
+                HttpContext = context,
+                ProblemDetails = new ProblemDetails
+                {
+                    Type = exception.GetType().Name,
+                    Title = "Error iccured",
+                    Detail = exception.Message,
+                    Instance = $"{context.Request.Method} {context.Request.Path}"
+                }
+            });
         }
     }
 }

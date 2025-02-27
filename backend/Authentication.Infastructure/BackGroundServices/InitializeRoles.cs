@@ -23,7 +23,7 @@ namespace Authentication.Infastructure.BackGroundServices
 
             using var scope = scopeFactory.CreateAsyncScope();
 
-            var dbTransaction = scope.ServiceProvider.GetRequiredService<IDBTransaction>();
+            var unitOfWork = scope.ServiceProvider.GetRequiredService<IUnitOfWork>();
 
             var roles = new string[]
             {
@@ -31,17 +31,20 @@ namespace Authentication.Infastructure.BackGroundServices
                 "Admin"
             };
 
-           
-            await dbTransaction.StartTransaction();
+            var existingRoles = unitOfWork.RoleRepository.GetRoles();
+
+            await unitOfWork.BeginTransactionAsync();
 
             var addRolesTasks = roles.Select(async x  =>
             {
                 using var innerScope = scopeFactory.CreateAsyncScope();
-                var roleRepository = innerScope.ServiceProvider.GetRequiredService<IRoleRepository>();
+                var innerUnitOfWork = innerScope.ServiceProvider
+                    .GetRequiredService<IUnitOfWork>();
 
-                var roleDB = await roleRepository.GetRole(x);
-
-                if (roleDB.IsSuccess)
+                var roleDB = existingRoles
+                    .FirstOrDefault(role => role.RoleName == x);
+                
+                if (roleDB is not null)
                 {
                     return;
                 }
@@ -50,25 +53,27 @@ namespace Authentication.Infastructure.BackGroundServices
 
                 if (role.IsFailure)
                 {
-                    await dbTransaction.RollBack();
+                    await innerUnitOfWork.RollBackAsync();
                     throw new AplicationConfigurationException("", "Initialize Roles");
                 }
 
-                await roleRepository.AddRole(role.Value);
+                await innerUnitOfWork.RoleRepository.AddRole(role.Value);
+                await innerUnitOfWork.SaveChangesAsync();
             }).ToList();
 
             await Task.WhenAll(addRolesTasks);
-            await dbTransaction.Commit();
+            await unitOfWork.CommitTransactionAsync();
         }
 
         private async Task WaitDatabase(CancellationToken cancellationToken)
         {
             using var scope = scopeFactory.CreateAsyncScope();
-            var dbContextFactory = scope.ServiceProvider.GetRequiredService<IDBContextFactory>();
+            var unitOfWork = scope.ServiceProvider
+                .GetRequiredService<IUnitOfWork>();
 
             while (!cancellationToken.IsCancellationRequested)
             {
-                if (await dbContextFactory.CanConnection(cancellationToken))
+                if (await unitOfWork.CanConnectAsync())
                 {
                     return;
                 }

@@ -5,10 +5,10 @@ namespace Authentication.Domain.Repositories
 {
     public interface IUserRepository
     {
-        Task<Result<User>> AddUser(User user);
+        Task<User> AddUser(User user);
 
-        Task<Result<User>> GetUser(string userEmail);
+        Task<User?> GetUser(string userEmail);
 
-        Task<Result<User>> GetUser(long userId);
+        Task<User?> GetUser(long userId);
     }
 }

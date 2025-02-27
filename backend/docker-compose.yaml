@@ -3,74 +3,74 @@ version: "3.8"
 name: testTask
 
 services:
-  authorize_api:
-    image: test_authorize
-    container_name: authorize_api-application
-    ports:
-      - '5101:5101'
-      - '5102:5102'
-    environment:
-      - "ConnectionStrings__SQLServerConnection=Server=ms-sql-database, 1433;Database=AuthTest;User Id=sa;Password=goblinusik111W;MultipleActiveResultSets=true;TrustServerCertificate=True;Integrated Security=False;"
-      - "JwtSetting__SecretKey=SuperSecretKey8234064.SaltyForKey023.495"
-      - "JwtSetting__Issuer=Issuer"
-      - "JwtSetting__Audience=Audience"
-      - "ApiList__ClientHttp=http://localhost:8080"
-      - "ApiList__ClientHttps=https://localhost:8081"
-      - ASPNETCORE_URLS=https://+:5102;http://+:5101
-      - ASPNETCORE_Kestrel__Certificates__Default__Password=goblinusik111
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
-    volumes:
-      - .\Certs:/https:ro
-    depends_on:
-      - ms-sql-database
-    networks:
-      - app_network
+  # authorize_api:
+  #   image: test_authorize
+  #   container_name: authorize_api-application
+  #   ports:
+  #     - '5101:5101'
+  #     - '5102:5102'
+  #   environment:
+  #     - "ConnectionStrings__SQLServerConnection=Server=ms-sql-database, 1433;Database=AuthTest;User Id=sa;Password=goblinusik111W;MultipleActiveResultSets=true;TrustServerCertificate=True;Integrated Security=False;"
+  #     - "JwtSetting__SecretKey=SuperSecretKey8234064.SaltyForKey023.495"
+  #     - "JwtSetting__Issuer=Issuer"
+  #     - "JwtSetting__Audience=Audience"
+  #     - "ApiList__ClientHttp=http://localhost:8080"
+  #     - "ApiList__ClientHttps=https://localhost:8081"
+  #     - ASPNETCORE_URLS=https://+:5102;http://+:5101
+  #     - ASPNETCORE_Kestrel__Certificates__Default__Password=goblinusik111
+  #     - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+  #   volumes:
+  #     - .\Certs:/https:ro
+  #   depends_on:
+  #     - ms-sql-database
+  #   networks:
+  #     - app_network
   
-  event_api:
-    image: test_event
-    container_name: event_api-application
-    ports:
-      - '5201:5201'
-      - '5202:5202'
-    environment:
-      - "ConnectionStrings__SQLServerConnection=Server=ms-sql-database, 1433;Database=EventTest;User Id=sa;Password=goblinusik111W;MultipleActiveResultSets=true;TrustServerCertificate=True;Integrated Security=False;"
-      - "ConnectionStrings__RedisConnection=redis:6379"
-      - "JwtSetting__SecretKey=SuperSecretKey8234064.SaltyForKey023.495"
-      - "JwtSetting__Issuer=Issuer"
-      - "JwtSetting__Audience=Audience"
-      - "BlobStorage__Port=10000"
-      - "BlobStorage__Key=ZGV2c3RvcmVhY2NvdW50Mw=="
-      - "BlobStorage__BaseUrl=http://azurite"
-      - "BlobStorage__AccountName=faith725"
-      - "ApiList__ClientHttp=http://localhost:8080"
-      - "ApiList__ClientHttps=https://localhost:8081"
-      - ASPNETCORE_URLS=https://+:5202;http://+:5201
-      - ASPNETCORE_Kestrel__Certificates__Default__Password=goblinusik111
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
-    volumes:
-      - .\Certs:/https:ro
-    depends_on:
-      - ms-sql-database
-      - azurite
-      - redis
-    networks:
-      - app_network
+  # event_api:
+  #   image: test_event
+  #   container_name: event_api-application
+  #   ports:
+  #     - '5201:5201'
+  #     - '5202:5202'
+  #   environment:
+  #     - "ConnectionStrings__SQLServerConnection=Server=ms-sql-database, 1433;Database=EventTest;User Id=sa;Password=goblinusik111W;MultipleActiveResultSets=true;TrustServerCertificate=True;Integrated Security=False;"
+  #     - "ConnectionStrings__RedisConnection=redis:6379"
+  #     - "JwtSetting__SecretKey=SuperSecretKey8234064.SaltyForKey023.495"
+  #     - "JwtSetting__Issuer=Issuer"
+  #     - "JwtSetting__Audience=Audience"
+  #     - "BlobStorage__Port=10000"
+  #     - "BlobStorage__Key=ZGV2c3RvcmVhY2NvdW50Mw=="
+  #     - "BlobStorage__BaseUrl=http://azurite"
+  #     - "BlobStorage__AccountName=faith725"
+  #     - "ApiList__ClientHttp=http://localhost:8080"
+  #     - "ApiList__ClientHttps=https://localhost:8081"
+  #     - ASPNETCORE_URLS=https://+:5202;http://+:5201
+  #     - ASPNETCORE_Kestrel__Certificates__Default__Password=goblinusik111
+  #     - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+  #   volumes:
+  #     - .\Certs:/https:ro
+  #   depends_on:
+  #     - ms-sql-database
+  #     - azurite
+  #     - redis
+  #   networks:
+  #     - app_network
 
-  frontend:
-    image: frontend_test
-    container_name: frontend_test_application
-    entrypoint:
-    ports:
-      - "8081:5173"
-      - "8080:80"
-    environment:
-      - DEFAULT_CONF=C:\VSProjects\CourceCRUD\frontend\CRUD\nginx.conf
-      - SERVER_CONF=C:\VSProjects\CourceCRUD\frontend\CRUD\default.conf
-    depends_on:
-      - event_api
-      - authorize_api
-    networks:
-      - app_network
+  # frontend:
+  #   image: frontend_test
+  #   container_name: frontend_test_application
+  #   entrypoint:
+  #   ports:
+  #     - "8081:5173"
+  #     - "8080:80"
+  #   environment:
+  #     - DEFAULT_CONF=C:\VSProjects\CourceCRUD\frontend\CRUD\nginx.conf
+  #     - SERVER_CONF=C:\VSProjects\CourceCRUD\frontend\CRUD\default.conf
+  #   depends_on:
+  #     - event_api
+  #     - authorize_api
+  #   networks:
+  #     - app_network
 
   ms-sql-database:
     image: mcr.microsoft.com/mssql/server:2022-latest

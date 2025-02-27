@@ -1,6 +1,5 @@
 ﻿using Authentication.Domain.Entities;
 using Authentication.Domain.Repositories;
-using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Authentication.Dal.Repositories
@@ -14,18 +13,11 @@ namespace Authentication.Dal.Repositories
             this.context = context;
         }
 
-        public async Task<Result<Role>> AddRole(Role role)
+        public async Task<Role> AddRole(Role role)
         {
-            if (role is null)
-            {
-                return Result.Failure<Role>("Role Is Null");
-            }
-
             var resultEntity = await context.AddAsync(role);
 
-            await context.SaveChangesAsync();
-
-            return Result.Success(resultEntity.Entity);
+            return resultEntity.Entity;
         }
 
         public async Task DeleteRole(string roleName)
@@ -33,24 +25,15 @@ namespace Authentication.Dal.Repositories
             await context.Roles
                 .Where(x => x.RoleName == roleName)
                 .ExecuteDeleteAsync();
-
-            await context.SaveChangesAsync();
         }
 
-        public async Task<Result<Role>> GetRole(string roleName)
+        public async Task<Role?> GetRole(string roleName)
         {
-            var role = await context.Roles
+            return await context.Roles
                 .FirstOrDefaultAsync(x => x.RoleName == roleName);
-
-            if(role is null)
-            {
-                return Result.Failure<Role>("Role Not Found");
-            }
-
-            return Result.Success(role);
         }
 
-        public IQueryable<Role> GetRoles()
+        public IEnumerable<Role> GetRoles()
         {
             return context.Roles;
         }

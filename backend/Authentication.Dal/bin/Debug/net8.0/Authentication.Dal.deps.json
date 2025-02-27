@@ -53,11 +53,11 @@
           }
         }
       },
-      "CSharpFunctionalExtensions/3.4.3": {
+      "CSharpFunctionalExtensions/3.5.1": {
         "runtime": {
           "lib/net8.0/CSharpFunctionalExtensions.dll": {
-            "assemblyVersion": "3.4.3.0",
-            "fileVersion": "3.4.3.0"
+            "assemblyVersion": "3.5.1.0",
+            "fileVersion": "3.5.1.0"
           }
         }
       },
@@ -1050,11 +1050,11 @@
       },
       "Authentication.Domain/1.0.0": {
         "dependencies": {
-          "CSharpFunctionalExtensions": "3.4.3"
+          "CSharpFunctionalExtensions": "3.5.1"
         },
         "runtime": {
           "Authentication.Domain.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -1089,12 +1089,12 @@
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
     },
-    "CSharpFunctionalExtensions/3.4.3": {
+    "CSharpFunctionalExtensions/3.5.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-q2b5Zf2FGON2E3ti8J784x7Ov4b5b+uwi1wfMNCK12BOakJSLT4TwRSxg1j8KLtCOIeFpcO5TBR0eZZBL9wR0Q==",
-      "path": "csharpfunctionalextensions/3.4.3",
-      "hashPath": "csharpfunctionalextensions.3.4.3.nupkg.sha512"
+      "sha512": "sha512-J9wNzOzRdc4pfO3WREYR19zjp585y7/y9TKQXKkbxxnXt7N6h2Q8AjP0+bayrgRVxpU9COaFMA8961xbptYsUg==",
+      "path": "csharpfunctionalextensions/3.5.1",
+      "hashPath": "csharpfunctionalextensions.3.5.1.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",

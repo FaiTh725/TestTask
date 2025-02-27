@@ -1,4 +1,3 @@
-using Authentication.Application.Implmentations;
 using Authentication.Application.Interfaces;
 using Authentication.Dal;
 using Authentication.Dal.Repositories;
@@ -21,14 +20,14 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>();
 
 builder.Services.AddCorses(builder.Configuration);
+builder.Services.ConfigureMediatR();
 builder.Services.AddValidators();
+builder.Services.AddProblemDetails();
 
-builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddSingleton<IAuthTokenService, JwtTokenService>();
 builder.Services.AddSingleton<IHashService, HashService>();
 
-builder.Services.AddScoped<IDBTransaction, DBTransaction>();
-builder.Services.AddScoped<IDBContextFactory, DBContextFactory>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 

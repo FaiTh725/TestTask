@@ -1,12 +1,12 @@
-﻿using Authentication.Application.Model.User;
+﻿using Authentication.Application.Commands.User.Register;
 using FluentValidation;
 using UserEntity = Authentication.Domain.Entities.User;
     
 namespace Authentication.API.Validators.User
 {
-    public class UserRequestValidator : AbstractValidator<UserRequest>
+    public class UserRegisterValidator : AbstractValidator<RegisterUserCommand>
     {
-        public UserRequestValidator()
+        public UserRegisterValidator()
         {
             RuleFor(x => x.Email)
                 .NotNull()

@@ -1,6 +1,5 @@
 ﻿using Authentication.Domain.Entities;
 using Authentication.Domain.Repositories;
-using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Authentication.Dal.Repositories
@@ -14,46 +13,25 @@ namespace Authentication.Dal.Repositories
             this.context = context;
         }
 
-        public async Task<Result<User>> AddUser(User user)
+        public async Task<User> AddUser(User user)
         {
-            if(user is null)
-            {
-                return Result.Failure<User>("User Is Null");
-            }
-
             var userEntity = await context.AddAsync(user);
 
-            await context.SaveChangesAsync();
-
-            return Result.Success<User>(userEntity.Entity);
+            return userEntity.Entity;
         }
 
-        public async Task<Result<User>> GetUser(string userEmail)
+        public async Task<User?> GetUser(string userEmail)
         {
-            var user = await context.Users
+            return await context.Users
                 .Include(x => x.Role)
                 .FirstOrDefaultAsync(x => x.Email == userEmail);
-        
-            if(user is null)
-            {
-                return Result.Failure<User>("User Not Found");
-            }
-
-            return Result.Success(user);
         }
 
-        public async Task<Result<User>> GetUser(long userId)
+        public async Task<User?> GetUser(long userId)
         {
-            var user = await context.Users
+            return await context.Users
                 .Include(x => x.Role)
                 .FirstOrDefaultAsync(x => x.Id == userId);
-
-            if (user is null)
-            {
-                return Result.Failure<User>("User Not Found");
-            }
-
-            return Result.Success(user);
         }
     }
 }

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "CSharpFunctionalExtensions/3.4.3": {
+      "CSharpFunctionalExtensions/3.5.1": {
         "type": "package",
         "compile": {
           "lib/net8.0/CSharpFunctionalExtensions.dll": {
@@ -18,14 +18,14 @@
     }
   },
   "libraries": {
-    "CSharpFunctionalExtensions/3.4.3": {
-      "sha512": "q2b5Zf2FGON2E3ti8J784x7Ov4b5b+uwi1wfMNCK12BOakJSLT4TwRSxg1j8KLtCOIeFpcO5TBR0eZZBL9wR0Q==",
+    "CSharpFunctionalExtensions/3.5.1": {
+      "sha512": "J9wNzOzRdc4pfO3WREYR19zjp585y7/y9TKQXKkbxxnXt7N6h2Q8AjP0+bayrgRVxpU9COaFMA8961xbptYsUg==",
       "type": "package",
-      "path": "csharpfunctionalextensions/3.4.3",
+      "path": "csharpfunctionalextensions/3.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "csharpfunctionalextensions.3.4.3.nupkg.sha512",
+        "csharpfunctionalextensions.3.5.1.nupkg.sha512",
         "csharpfunctionalextensions.nuspec",
         "lib/net6.0/CSharpFunctionalExtensions.dll",
         "lib/net6.0/CSharpFunctionalExtensions.pdb",
@@ -41,7 +41,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "CSharpFunctionalExtensions >= 3.4.3"
+      "CSharpFunctionalExtensions >= 3.5.1"
     ]
   },
   "packageFolders": {
@@ -70,7 +70,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -89,7 +88,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -97,7 +96,7 @@
         "dependencies": {
           "CSharpFunctionalExtensions": {
             "target": "Package",
-            "version": "[3.4.3, )"
+            "version": "[3.5.1, )"
           }
         },
         "imports": [
@@ -116,7 +115,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,9 +1,9 @@
-﻿using Application.Shared.Responses;
+﻿using Authentication.Application.Commands.User.Login;
+using Authentication.Application.Commands.User.Register;
 using Authentication.Application.Interfaces;
-using Authentication.Application.Model.Token;
-using Authentication.Application.Model.User;
+using Authentication.Application.Queries.User.GetUserByEmail;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using CustomStatusCode = Application.Shared.Enums.StatusCode;
 
 namespace Authentication.API.Controller
 {
@@ -11,75 +11,67 @@ namespace Authentication.API.Controller
     [Route("api/[controller]")]
     public class AuthenticationController : ControllerBase
     {
-        private readonly IAuthService authService;
+        private readonly IMediator mediator;
+        private readonly IAuthTokenService tokenService;
 
-        public AuthenticationController(IAuthService authService)
+        public AuthenticationController(
+            IMediator mediator,
+            IAuthTokenService tokenService)
         {
-            this.authService = authService;
+            this.mediator = mediator;
+            this.tokenService = tokenService;
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> Login(string email, string password)
+        public async Task<IActionResult> Login([FromQuery] LoginUserCommand command)
         {
-            var request = new UserRequest 
-            { 
-                Email = email, 
-                Password = password 
+            var userEmail = await mediator.Send(command);
+
+            var userData = await mediator.Send(new GetUserByEmailQuery
+            {
+                Email = userEmail.ToString()
+            });
+
+            var token = tokenService.GenerateToken(userData);
+
+            var cookiesOptions = new CookieOptions
+            {
+                Secure = true,
+                SameSite = SameSiteMode.None,
+                HttpOnly = true
             };
 
-            var response = await authService.LoginUser(request);
+            Response.Cookies.Append("token",
+                token,
+                cookiesOptions);
 
-            if (response.StatusCode == CustomStatusCode.Ok)
-            {
-                // Only for local
-                var cookiesOptions = new CookieOptions
-                {
-                    Secure = true,
-                    SameSite = SameSiteMode.None,
-                    HttpOnly = true
-                };
-
-                Response.Cookies.Append("token", 
-                    response.Data.Token,
-                    cookiesOptions);
-            }
-
-            return new JsonResult(new DataResponse<TokenResponse>
-            {
-                StatusCode = response.StatusCode,
-                Description = response.Description,
-                Data = response.Data.TokenResponse ??
-                    new TokenResponse()
-            });
+            return Ok(userData);
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> Register(UserRequest request)
+        public async Task<IActionResult> Register(RegisterUserCommand command)
         {
-            var response = await authService.RegisterUser(request);
+            var newUserEmail = await mediator.Send(command);
 
-            if (response.StatusCode == CustomStatusCode.Ok)
+            var userData = await mediator.Send(new GetUserByEmailQuery
             {
-                // Only for local
-                var cookiesOptions = new CookieOptions
-                {
-                    Secure = true,
-                    SameSite = SameSiteMode.None,
-                    HttpOnly = true
-                };
-
-                Response.Cookies.Append("token", 
-                    response.Data.Token,
-                    cookiesOptions);
-            }
-
-            return new JsonResult(new DataResponse<TokenResponse> 
-            {
-                StatusCode = response.StatusCode,
-                Description = response.Description,
-                Data = response.Data.TokenResponse ?? 
-                    new TokenResponse()
+                Email = newUserEmail
             });
+
+            var token = tokenService.GenerateToken(userData);
+
+            var cookiesOptions = new CookieOptions
+            {
+                Secure = true,
+                SameSite = SameSiteMode.None,
+                HttpOnly = true
+            };
+
+            Response.Cookies.Append("token",
+                token,
+                cookiesOptions);
+
+            return Ok(userData);
         }
     }
 }

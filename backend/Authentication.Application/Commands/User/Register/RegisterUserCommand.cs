@@ -1,6 +1,8 @@
-﻿namespace Authentication.Application.Model.User
+﻿using MediatR;
+
+namespace Authentication.Application.Commands.User.Register
 {
-    public class UserRequest
+    public class RegisterUserCommand : IRequest<string>
     {
         public string Email { get; set; } = string.Empty;
 
