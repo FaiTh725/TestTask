@@ -1,0 +1,259 @@
+[
+  {
+    "ContainingType": "Event.API.Controllers.EventController",
+    "Method": "CancelEvent",
+    "RelativePath": "api/Event/CancelEvent",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Event.Application.Command.Event.CancelEvent.CancelEventCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventController",
+    "Method": "CreateEvent",
+    "RelativePath": "api/Event/CreateEvent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Location",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Category",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TimeEvent",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "MaxMember",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Files",
+        "Type": "Microsoft.AspNetCore.Http.IFormFileCollection",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventController",
+    "Method": "GetEventById",
+    "RelativePath": "api/Event/GetEventById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventController",
+    "Method": "GetEventByName",
+    "RelativePath": "api/Event/GetEventByName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventController",
+    "Method": "GetEvents",
+    "RelativePath": "api/Event/GetEvents",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventController",
+    "Method": "GetEventsByQuery",
+    "RelativePath": "api/Event/GetEventsByQuery",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Location",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Category",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "EventTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventController",
+    "Method": "GetEventsPagination",
+    "RelativePath": "api/Event/GetEventsPagination",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventController",
+    "Method": "UpdateEvent",
+    "RelativePath": "api/Event/UpdateEvent",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Event.Application.Command.Event.UpdateEvent.UpdateEventCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventMemberController",
+    "Method": "AddMember",
+    "RelativePath": "api/EventMember/AddMember",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Event.Application.Command.EventMember.PaticipateMember.PaticipateMemberCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventMemberController",
+    "Method": "CancelPaticipationMember",
+    "RelativePath": "api/EventMember/CancelPaticipationMember",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Event.Application.Command.EventMember.CancelPaticipateMember.CancelPaticipateMemberCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventMemberController",
+    "Method": "GetEventMember",
+    "RelativePath": "api/EventMember/GetEventMember",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MemberId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventMemberController",
+    "Method": "GetEventMembers",
+    "RelativePath": "api/EventMember/GetEventMembers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EventId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Event.API.Controllers.EventMemberController",
+    "Method": "GetEventMembersPagination",
+    "RelativePath": "api/EventMember/GetEventMembersPagination",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EventId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

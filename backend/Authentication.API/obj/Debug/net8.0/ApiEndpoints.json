@@ -8,12 +8,12 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "email",
+        "Name": "Email",
         "Type": "System.String",
         "IsRequired": false
       },
       {
-        "Name": "password",
+        "Name": "Password",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -29,8 +29,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "Authentication.Application.Model.User.UserRequest",
+        "Name": "command",
+        "Type": "Authentication.Application.Commands.User.Register.RegisterUserCommand",
         "IsRequired": true
       }
     ],

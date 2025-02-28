@@ -35,7 +35,7 @@ namespace Authentication.Dal.Repositories
 
         public IEnumerable<Role> GetRoles()
         {
-            return context.Roles;
+            return context.Roles.AsEnumerable();
         }
     }
 }

@@ -2,11 +2,12 @@
 using Azure.Storage.Blobs;
 using Event.API.Configuraions;
 using Event.API.Contracts.Event;
-using Event.API.Contracts.Member;
 using Event.API.Validators.Event;
 using Event.API.Validators.Member;
+using Event.Application;
+using Event.Application.Command.Event.UpdateEvent;
+using Event.Application.Command.EventMember.PaticipateMember;
 using Event.Application.Mappings;
-using Event.Application.Models.Events;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -51,8 +52,8 @@ namespace Event.API.Extentions
         {
             services.AddFluentValidationAutoValidation();
             services.AddScoped<IValidator<CreateEventRequest>, CreateEventValidator>();
-            services.AddScoped<IValidator<UpdateEventRequest>, UpdateEventValidator>();
-            services.AddScoped<IValidator<CreateMemberRequest>, CreateMemberValidator>();
+            services.AddScoped<IValidator<UpdateEventCommand>, UpdateEventValidator>();
+            services.AddScoped<IValidator<PaticipateMemberCommand>, CreateMemberValidator>();
         }
 
         public static void AddAutoMapperProfiles(this IServiceCollection service)
@@ -155,6 +156,12 @@ namespace Event.API.Extentions
                     {jwtSecurityScheme, Array.Empty<string>() }
                 });
             });
+        }
+
+        public static void ConfigureMediatR(this IServiceCollection services)
+        {
+            services.AddMediatR(cfg =>
+                cfg.RegisterServicesFromAssembly(typeof(AppAssemblyReference).Assembly));
         }
     }
 }

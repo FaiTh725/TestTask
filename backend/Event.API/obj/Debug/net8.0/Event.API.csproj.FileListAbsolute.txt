@@ -204,3 +204,5 @@ C:\VSProjects\TestTask\backend\Event.API\obj\Debug\net8.0\Event.API.pdb
 C:\VSProjects\TestTask\backend\Event.API\obj\Debug\net8.0\Event.API.genruntimeconfig.cache
 C:\VSProjects\TestTask\backend\Event.API\obj\Debug\net8.0\ref\Event.API.dll
 C:\VSProjects\TestTask\backend\Event.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\VSProjects\TestTask\backend\Event.API\bin\Debug\net8.0\MediatR.dll
+C:\VSProjects\TestTask\backend\Event.API\bin\Debug\net8.0\MediatR.Contracts.dll

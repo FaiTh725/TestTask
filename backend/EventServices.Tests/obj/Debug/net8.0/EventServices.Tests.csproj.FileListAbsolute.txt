@@ -138,3 +138,5 @@ C:\VSProjects\TestTask\backend\EventServices.Tests\obj\Debug\net8.0\refint\Event
 C:\VSProjects\TestTask\backend\EventServices.Tests\obj\Debug\net8.0\EventServices.Tests.pdb
 C:\VSProjects\TestTask\backend\EventServices.Tests\obj\Debug\net8.0\EventServices.Tests.genruntimeconfig.cache
 C:\VSProjects\TestTask\backend\EventServices.Tests\obj\Debug\net8.0\ref\EventServices.Tests.dll
+C:\VSProjects\TestTask\backend\EventServices.Tests\bin\Debug\net8.0\MediatR.dll
+C:\VSProjects\TestTask\backend\EventServices.Tests\bin\Debug\net8.0\MediatR.Contracts.dll

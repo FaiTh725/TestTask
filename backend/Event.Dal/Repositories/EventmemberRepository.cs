@@ -14,18 +14,11 @@ namespace Event.Dal.Repositories
             this.context = context;
         }
 
-        public async Task<Result<EventMember>> AddEventMember(EventMember eventMember)
+        public async Task<EventMember> AddEventMember(EventMember eventMember)
         {
-            if(eventMember is null)
-            {
-                return Result.Failure<EventMember>("Add null value");
-            }
-
             var entity = await context.Members.AddAsync(eventMember);
         
-            await context.SaveChangesAsync();
-
-            return Result.Success(entity.Entity);
+            return entity.Entity;
         }
 
         public async Task RemoveEventMember(long memberId)
@@ -35,25 +28,33 @@ namespace Event.Dal.Repositories
                 .ExecuteDeleteAsync();
         }
 
-        public async Task<Result<EventMember>> GetEventMember(long eventMemberId)
+        public async Task<EventMember?> GetEventMember(long eventMemberId)
         {
-            var member = await context.Members
+            return  await context.Members
                 .FirstOrDefaultAsync(x => x.Id == eventMemberId);
-
-            if (member is null)
-            {
-                return Result.Failure<EventMember>("Not Found");
-            }
-
-            return Result.Success(member);
         }
 
-        public IQueryable<EventMember> GetEventMembers(long eventId)
+        public IEnumerable<EventMember> GetEventMembers(long eventId)
         {
             return context.Members
                 .Include(x => x.EventEntity)
                 .Where(x => x.EventEntity == null ? 
-                    false : x.EventEntity.Id == eventId);
+                    false : x.EventEntity.Id == eventId)
+                .AsEnumerable();
+        }
+
+        public IEnumerable<EventMember> GetEventMembers(
+            long eventId, 
+            int page, 
+            int size)
+        {
+            return context.Members.Include(x => x.EventEntity)
+                .Where(x => x.EventEntity == null ?
+                    false : x.EventEntity.Id == eventId)
+                .Skip((page - 1) * size)
+                .Take(size)
+                .OrderBy(x => x.Id)
+                .AsEnumerable();
         }
     }
 }

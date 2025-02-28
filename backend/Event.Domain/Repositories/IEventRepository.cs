@@ -1,26 +1,27 @@
-﻿using CSharpFunctionalExtensions;
-using Event.Domain.Common.Specifications;
+﻿using Event.Domain.Common.Specifications;
 using Event.Domain.Entities;
 
 namespace Event.Domain.Repositories
 {
     public interface IEventRepository
     {
-        IQueryable<EventEntity> GetEvents();
+        IEnumerable<EventEntity> GetEvents();
 
-        IQueryable<EventEntity> GetEventsWithMembers();
+        IEnumerable<EventEntity> GetEventsWithMembers();
 
-        IQueryable<EventEntity> GetEvents(Specification<EventEntity> specification);
+        IEnumerable<EventEntity> GetEventsWithMembers(int page, int size);
 
-        Task<Result<EventEntity>> AddEvent(EventEntity eventEntity);
+        IEnumerable<EventEntity> GetEvents(Specification<EventEntity> specification);
 
-        Task<Result<EventEntity>> GetEvent(long eventId);
+        Task<EventEntity> AddEvent(EventEntity eventEntity);
 
-        Task<Result<EventEntity>> GetEvent(string eventName);
+        Task<EventEntity?> GetEvent(long eventId);
 
-        Task<Result<EventEntity>> GetEventWithMembers(long eventId);
+        Task<EventEntity?> GetEvent(string eventName);
 
-        Task<Result<EventEntity>> GetEventWithMembers(string eventName);
+        Task<EventEntity?> GetEventWithMembers(long eventId);
+
+        Task<EventEntity?> GetEventWithMembers(string eventName);
 
         Task RemoveEvent(long eventId);
 

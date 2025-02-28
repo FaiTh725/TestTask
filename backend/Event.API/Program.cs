@@ -1,9 +1,10 @@
 using Event.API.Extentions;
 using Event.API.Infastructure;
-using Event.Application.Implementations;
 using Event.Application.Interfaces;
 using Event.Dal;
+using Event.Dal.Common;
 using Event.Dal.Repositories;
+using Event.Domain.Common;
 using Event.Domain.Repositories;
 using Event.Infastructure.Implementations;
 
@@ -22,13 +23,12 @@ builder.Services.AddCorses(builder.Configuration);
 builder.Services.AddAutoMapperProfiles();
 builder.Services.AddValidators();
 builder.Services.AddAuthToSwagger();
+builder.Services.ConfigureMediatR();
 
-builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<ICachService, CashService>();
-builder.Services.AddScoped<IMemberService, MemberService>();
 builder.Services.AddSingleton<IBlobService, BlobService>();
 
-
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<IEventMemberRepository, EventmemberRepository>();
 

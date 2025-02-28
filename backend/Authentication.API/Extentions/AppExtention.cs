@@ -1,7 +1,6 @@
 ﻿using Authentication.API.Validators.User;
 using Authentication.Application;
 using Authentication.Application.Commands.User.Register;
-using Authentication.Application.Model.User;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 

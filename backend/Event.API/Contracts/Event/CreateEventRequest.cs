@@ -1,6 +1,4 @@
-﻿using Event.Application.Models.Files;
-
-namespace Event.API.Contracts.Event
+﻿namespace Event.API.Contracts.Event
 {
     public class CreateEventRequest
     {

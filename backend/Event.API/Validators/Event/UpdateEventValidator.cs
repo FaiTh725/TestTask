@@ -1,9 +1,9 @@
-﻿using Event.Application.Models.Events;
+﻿using Event.Application.Command.Event.UpdateEvent;
 using FluentValidation;
 
 namespace Event.API.Validators.Event
 {
-    public class UpdateEventValidator : AbstractValidator<UpdateEventRequest>
+    public class UpdateEventValidator : AbstractValidator<UpdateEventCommand>
     {
         public UpdateEventValidator()
         {

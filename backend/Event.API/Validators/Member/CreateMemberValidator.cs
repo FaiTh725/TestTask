@@ -1,9 +1,9 @@
-﻿using Event.API.Contracts.Member;
+﻿using Event.Application.Command.EventMember.PaticipateMember;
 using FluentValidation;
 
 namespace Event.API.Validators.Member
 {
-    public class CreateMemberValidator : AbstractValidator<CreateMemberRequest>
+    public class CreateMemberValidator : AbstractValidator<PaticipateMemberCommand>
     {
         public CreateMemberValidator()
         {

@@ -1,7 +1,15 @@
 ﻿using Event.API.Contracts.Event;
+using Event.Application.Command.Event.CancelEvent;
+using Event.Application.Command.Event.CreateEvent;
+using Event.Application.Command.Event.UpdateEvent;
 using Event.Application.Interfaces;
-using Event.Application.Models.Events;
 using Event.Application.Models.Files;
+using Event.Application.Queries.Event.GetEventById;
+using Event.Application.Queries.Event.GetEventByName;
+using Event.Application.Queries.Event.GetEvents;
+using Event.Application.Queries.Event.GetEventsByQuery;
+using Event.Application.Queries.Event.GetEventsPagination;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,77 +19,77 @@ namespace Event.API.Controllers
     [Route("api/[controller]")]
     public class EventController : ControllerBase
     {
-        private readonly IEventService eventService;
+        private readonly IMediator mediator;
 
         public EventController(
-            IEventService eventService)
+            IMediator mediator)
         {
-            this.eventService = eventService;   
+            this.mediator = mediator;
         }
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetEvents()
         {
-            var response = await eventService.GetEvents();
+            var events = await mediator.Send(new GetEventsQuery());
 
-            return new JsonResult(response);
+            return Ok(events);
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetEventsPagination(int page, int size)
+        public async Task<IActionResult> GetEventsPagination([FromQuery]GetEventPaginationQuery request)
         {
-            var events = await eventService.GetEvents(page, size);
+            var events = await mediator.Send(request);
 
-            return new JsonResult(events);
+            return Ok(events);
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetEventById([FromQuery] long id)
+        public async Task<IActionResult> GetEventById([FromQuery] GetEventByIdQuery request)
         {
-            var response = await eventService.GetEvent(id);
+            var eventEntity = await mediator.Send(request);
 
-            return new JsonResult(response);
+            return Ok(eventEntity);
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetEventByName([FromQuery] string name)
+        public async Task<IActionResult> GetEventByName([FromQuery]GetEventByNameQuery request)
         {
-            var response = await eventService.GetEvent(name);
+            var eventEntity = await mediator.Send(request);
 
-            return new JsonResult(response);
+            return Ok(eventEntity);
         }
 
         [HttpPatch("[action]")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> UpdateEvent(UpdateEventRequest request)
+        public async Task<IActionResult> UpdateEvent(UpdateEventCommand request)
         {
-            var response = await eventService.UpdateEvent(request);
+            await mediator.Send(request);
 
-            return new JsonResult(response);
+            return Ok();
         }
 
         [HttpDelete("[action]")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> CancelEvent(long id)
+        public async Task<IActionResult> CancelEvent(CancelEventCommand request)
         {
-            var response = await eventService.CancelEvent(id);
+            await mediator.Send(request);
 
-            return new JsonResult(response);
+            return Ok();
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetEventsByQuery(string? location, string? category, DateTime? eventTime)
+        public async Task<IActionResult> GetEventsByQuery([FromQuery] GetEventsByQueryQuery request)
         {
-            var response = await eventService.GetEvents(location, category, eventTime);
+            var events = await mediator.Send(request);
 
-            return new JsonResult(response);
+            return Ok(events);
         }
 
         [HttpPost("[action]")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateEvent(CreateEventRequest request)
         {
-            var eventRequest = new EventRequest
+            var eventRequest = new CreateEventCommand
             {
                 Name = request.Name,
                 Description = request.Description,
@@ -99,9 +107,11 @@ namespace Event.API.Controllers
                     }).ToList()
             };
 
-            var response = await eventService.RegistrNewEvent(eventRequest);
+            var eventId = await mediator.Send(eventRequest);
 
-            return new JsonResult(response);
+            var eventEntity = await mediator.Send(new GetEventByIdQuery { Id = eventId});
+
+            return Ok(eventEntity);
         }
     }
 }

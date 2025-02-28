@@ -12,14 +12,14 @@
         ],
         "parameters": [
           {
-            "name": "email",
+            "name": "Email",
             "in": "query",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "password",
+            "name": "Password",
             "in": "query",
             "schema": {
               "type": "string"
@@ -42,17 +42,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequest"
+                "$ref": "#/components/schemas/RegisterUserCommand"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequest"
+                "$ref": "#/components/schemas/RegisterUserCommand"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRequest"
+                "$ref": "#/components/schemas/RegisterUserCommand"
               }
             }
           }
@@ -67,7 +67,7 @@
   },
   "components": {
     "schemas": {
-      "UserRequest": {
+      "RegisterUserCommand": {
         "type": "object",
         "properties": {
           "email": {

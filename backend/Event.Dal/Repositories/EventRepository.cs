@@ -16,89 +16,74 @@ namespace Event.Dal.Repositories
             this.context = context;    
         }
 
-        public async Task<Result<EventEntity>> AddEvent(EventEntity eventEntity)
+        public async Task<EventEntity> AddEvent(EventEntity eventEntity)
         {
-            if(eventEntity is null)
-            {
-                return Result.Failure<EventEntity>("Event is null");
-            }
-
             var entity = await context.Events.AddAsync(eventEntity);
 
-            await context.SaveChangesAsync();
-
-            return Result.Success(entity.Entity);
+            return entity.Entity;
         }
 
-        public async Task<Result<EventEntity>> GetEvent(long eventId)
+        public async Task<EventEntity?> GetEvent(long eventId)
         {
             var eventEntity = await context.Events
                 .FirstOrDefaultAsync(x => x.Id == eventId);
 
-            if(eventEntity is null)
-            {
-                return Result.Failure<EventEntity>("Not Found");
-            }
-
-            return Result.Success(eventEntity);
+            return eventEntity;
         }
 
-        public async Task<Result<EventEntity>> GetEvent(string eventName)
+        public async Task<EventEntity?> GetEvent(string eventName)
         {
             var eventEntity = await context.Events
                 .FirstOrDefaultAsync(x => x.Name == eventName);
 
-            if (eventEntity is null)
-            {
-                return Result.Failure<EventEntity>("Not Found");
-            }
-
-            return Result.Success(eventEntity);
+            return eventEntity;
         }
 
-        public IQueryable<EventEntity> GetEvents()
+        public IEnumerable<EventEntity> GetEvents()
         {
-            return context.Events;
+            return context.Events.AsEnumerable();
         }
 
-        public IQueryable<EventEntity> GetEvents(Specification<EventEntity> specification)
+        public IEnumerable<EventEntity> GetEvents(Specification<EventEntity> specification)
         {
             return SpecificationEvaluator
-                .GetQuery(context.Events, specification);
+                .GetQuery(context.Events, specification)
+                .AsEnumerable();
         }
 
-        public IQueryable<EventEntity> GetEventsWithMembers()
+        public IEnumerable<EventEntity> GetEventsWithMembers()
         {
             return context.Events.
-                Include(x => x.Members);
+                Include(x => x.Members)
+                .AsEnumerable();
         }
 
-        public async Task<Result<EventEntity>> GetEventWithMembers(long eventId)
+        public IEnumerable<EventEntity> GetEventsWithMembers(int page, int size)
+        {
+            return context.Events
+                .Include(x => x.Members)
+                .Skip((page - 1) * size)
+                .Take(size)
+                .OrderBy(x => x.Id)
+                .AsEnumerable();
+        }
+
+        public async Task<EventEntity?> GetEventWithMembers(long eventId)
         {
             var eventEntity = await context.Events
                 .Include(x => x.Members)
                 .FirstOrDefaultAsync(x => x.Id == eventId);
 
-            if (eventEntity is null)
-            {
-                return Result.Failure<EventEntity>("Not Found");
-            }
-
-            return Result.Success(eventEntity);
+            return eventEntity;
         }
 
-        public async Task<Result<EventEntity>> GetEventWithMembers(string eventName)
+        public async Task<EventEntity?> GetEventWithMembers(string eventName)
         {
             var eventEntity = await context.Events
                 .Include(x => x.Members)
                 .FirstOrDefaultAsync(x => x.Name == eventName);
 
-            if (eventEntity is null)
-            {
-                return Result.Failure<EventEntity>("Not Found");
-            }
-
-            return Result.Success(eventEntity);
+            return eventEntity;
         }
 
         public async Task RemoveEvent(long eventId)

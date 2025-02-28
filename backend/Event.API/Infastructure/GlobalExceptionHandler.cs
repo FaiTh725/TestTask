@@ -8,13 +8,16 @@ namespace Event.API.Infastructure
     {
         private readonly ILogger<GlobalExceptionHandler> logger;
         private readonly IHostApplicationLifetime application;
+        private readonly IProblemDetailsService problemDetailsService;
 
         public GlobalExceptionHandler(
             ILogger<GlobalExceptionHandler> logger,
-            IHostApplicationLifetime application)
+            IHostApplicationLifetime application,
+            IProblemDetailsService problemDetailsService)
         {
             this.logger = logger;
             this.application = application;
+            this.problemDetailsService = problemDetailsService;
         }
 
         public async ValueTask<bool> TryHandleAsync(
@@ -22,33 +25,33 @@ namespace Event.API.Infastructure
             Exception exception, 
             CancellationToken cancellationToken)
         {
-            var problemDetails = new ProblemDetails
+            if (exception is AplicationConfigurationException appConf)
             {
-                Status = StatusCodes.Status500InternalServerError,
-                Title = "API Error",
-                Detail = "Internal Server Error",
-                Instance = "API",
-                Extensions = new Dictionary<string, object?>()
-            };
-
-            if(exception is AplicationConfigurationException confEx)
-            {
-                logger.LogError(confEx, "Error with configuration application." +
-                    "Section with error " + confEx.ErrorConfigurationSection);
-
+                logger.LogError("Error With Configuration." +
+                    " Section With Error " + appConf.ErrorConfigurationSection);
                 application.StopApplication();
             }
-            else
+
+            httpContext.Response.StatusCode = exception switch
             {
-                logger.LogError(exception, "Inner api exception - " + 
-                    exception.Message);
-            }
+                NotFoundApiException => StatusCodes.Status404NotFound,
+                BadRequestApiException => StatusCodes.Status400BadRequest,
+                ConflictApiException => StatusCodes.Status409Conflict,
+                InternalServerApiException => StatusCodes.Status500InternalServerError,
+                _ => StatusCodes.Status500InternalServerError
+            };
 
-            httpContext.Response.ContentType = "application/json";
-            httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
-            await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken);
-
-            return true;
+            return await problemDetailsService.TryWriteAsync(new ProblemDetailsContext
+            {
+                HttpContext = httpContext,
+                ProblemDetails = new ProblemDetails
+                {
+                    Type = exception.GetType().Name,
+                    Title = "Error iccured",
+                    Detail = exception.Message,
+                    Instance = $"{httpContext.Request.Method} {httpContext.Request.Path}"
+                }
+            });
         }
     }
 }

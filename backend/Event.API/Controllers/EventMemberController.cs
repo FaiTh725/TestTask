@@ -1,6 +1,9 @@
-﻿using Event.API.Contracts.Member;
-using Event.Application.Interfaces;
-using Event.Application.Models.Members;
+﻿using Event.Application.Command.EventMember.CancelPaticipateMember;
+using Event.Application.Command.EventMember.PaticipateMember;
+using Event.Application.Queries.EventMember.GetMemberById;
+using Event.Application.Queries.EventMember.GetMembersByEventId;
+using Event.Application.Queries.EventMember.GetMembersPagination;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,65 +13,63 @@ namespace Event.API.Controllers
     [Route("api/[controller]")]
     public class EventMemberController : ControllerBase
     {
-        private readonly IMemberService memberService;
+        private readonly IMediator mediator;
 
         public EventMemberController(
-            IMemberService memberService)
+            IMediator mediator)
         {
-            this.memberService = memberService;
+            this.mediator = mediator;
         }
 
         [HttpPost("[action]")]
         [Authorize]
-        public async Task<IActionResult> AddMember(CreateMemberRequest request)
+        public async Task<IActionResult> AddMember(PaticipateMemberCommand request)
         {
-            var member = new MemberRequest
-            {
-                FirstName = request.FirstName,
-                SecondName = request.SecondName,
-                Email = request.Email,
-                BirthDate = request.BirthDate
-            };
+            var memberId = await mediator.Send(request);
 
-            var response = await memberService.AddEventMember(request.EventId, member);
+            var member = await mediator.Send(new GetMemberByIdQuery 
+            { 
+                MemberId = memberId
+            });
 
-            return new JsonResult(response);
+            return Ok(member);
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetEventMembers([FromQuery] long eventId)
+        public async Task<IActionResult> GetEventMembers(
+            [FromQuery]GetMembersByEventIdQuery request)
         {
-            var response = await memberService.GetMembersEvent(eventId);
+            var members = await mediator.Send(request);
+            
 
-            return new JsonResult(response);
+            return Ok(members);
         }
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetEventMembersPagination(
-            [FromQuery] long eventId, 
-            [FromQuery] int page, 
-            [FromQuery] int size)
+            [FromQuery]GetMembersPaginationQuery request)
         {
-            var response = await memberService.GetMembersEvent(eventId, page, size);
-
-            return new JsonResult(response);
+            var members = await mediator.Send(request);
+            
+            return Ok(members);
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetEventMember([FromQuery] long id)
+        public async Task<IActionResult> GetEventMember(
+            [FromQuery]GetMemberByIdQuery request)
         {
-            var response = await memberService.GetMember(id);
+            var member = await mediator.Send(request);
 
-            return new JsonResult(response);
+            return Ok(member);
         }
 
         [HttpPatch("[action]")]
         [Authorize]
-        public async Task<IActionResult> CancelPaticipationMember(RemoveMember request)
+        public async Task<IActionResult> CancelPaticipationMember(CancelPaticipateMemberCommand request)
         {
-            var response = await memberService.CancelMemberParticipation(request.Id);
+            await mediator.Send(request);
 
-            return new JsonResult(response);    
+            return Ok();    
         }
     }
 }
