@@ -48,7 +48,7 @@ namespace Event.Application.Queries.Event.GetEventsPagination
                 eventResponse.Members = mapper
                     .Map<IEnumerable<MemberResponse>>(x.Members);
                 eventResponse.UrlImages = await blobService
-                .DownloadBlobs(x.ImagesFolder);
+                .DownloadBlobs(x.ImagesFolder, cancellationToken);
                 return eventResponse;
             }).ToList();
 

@@ -32,7 +32,7 @@ namespace Event.Application.Command.Event.CreateEvent
         public async Task<long> Handle(CreateEventCommand request, CancellationToken cancellationToken)
         {
             var eventEntity = await unitOfWork.EventRepository
-                .GetEvent(request.Name);
+                .GetEvent(request.Name, cancellationToken);
 
             if (eventEntity is not null)
             {
@@ -55,7 +55,7 @@ namespace Event.Application.Command.Event.CreateEvent
 
             var entityFromDb = await unitOfWork
                 .EventRepository
-                .AddEvent(newEntity.Value);
+                .AddEvent(newEntity.Value, cancellationToken);
 
             await unitOfWork.SaveChangesAsync();
 

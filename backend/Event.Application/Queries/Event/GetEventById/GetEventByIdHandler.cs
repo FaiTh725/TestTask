@@ -38,7 +38,7 @@ namespace Event.Application.Queries.Event.GetEventById
             }
 
             var eventEntity = await unitOfWork.EventRepository
-                .GetEventWithMembers(request.Id);
+                .GetEventWithMembers(request.Id, cancellationToken);
 
             if (eventEntity is null)
             {
@@ -49,7 +49,7 @@ namespace Event.Application.Queries.Event.GetEventById
             eventResponse.Members = mapper
                 .Map<IEnumerable<MemberResponse>>(eventEntity.Members);
             eventResponse.UrlImages = await blobService
-                .DownloadBlobs(eventEntity.ImagesFolder);
+                .DownloadBlobs(eventEntity.ImagesFolder, cancellationToken);
 
             var setEvent = new List<Task>()
             {

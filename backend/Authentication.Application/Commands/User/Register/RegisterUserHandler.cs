@@ -21,7 +21,8 @@ namespace Authentication.Application.Commands.User.Register
 
         public async Task<string> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
         {
-            var user = await unitOfWork.UserRepository.GetUser(request.Email);
+            var user = await unitOfWork.UserRepository
+                .GetUser(request.Email, cancellationToken);
 
             if(user is not null)
             {
@@ -35,7 +36,8 @@ namespace Authentication.Application.Commands.User.Register
                 throw new BadRequestApiException("Password Should Has One Letter And One Number");
             }
 
-            var userRole = await unitOfWork.RoleRepository.GetRole("User") ??
+            var userRole = await unitOfWork.RoleRepository
+                .GetRole("User", cancellationToken) ??
                 throw new InternalServerApiException("Unknown Server Error");
 
             var passwordHash = hashService.GenerateHash(request.Password);
@@ -49,7 +51,9 @@ namespace Authentication.Application.Commands.User.Register
             {
                 throw new BadRequestApiException(initUser.Error);
             }
-            var newUser = await unitOfWork.UserRepository.AddUser(initUser.Value);
+
+            var newUser = await unitOfWork.UserRepository
+                .AddUser(initUser.Value, cancellationToken);
 
             await unitOfWork.SaveChangesAsync();
 

@@ -23,23 +23,27 @@ namespace Event.API.Controllers
 
         [HttpPost("[action]")]
         [Authorize]
-        public async Task<IActionResult> AddMember(PaticipateMemberCommand request)
+        public async Task<IActionResult> AddMember(
+            PaticipateMemberCommand request, 
+            CancellationToken token)
         {
-            var memberId = await mediator.Send(request);
+            var memberId = await mediator.Send(request, token);
 
             var member = await mediator.Send(new GetMemberByIdQuery 
             { 
                 MemberId = memberId
-            });
+            }, 
+            token);
 
             return Ok(member);
         }
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetEventMembers(
-            [FromQuery]GetMembersByEventIdQuery request)
+            [FromQuery]GetMembersByEventIdQuery request,
+            CancellationToken token)
         {
-            var members = await mediator.Send(request);
+            var members = await mediator.Send(request, token);
             
 
             return Ok(members);
@@ -47,18 +51,20 @@ namespace Event.API.Controllers
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetEventMembersPagination(
-            [FromQuery]GetMembersPaginationQuery request)
+            [FromQuery]GetMembersPaginationQuery request,
+            CancellationToken token)
         {
-            var members = await mediator.Send(request);
+            var members = await mediator.Send(request, token);
             
             return Ok(members);
         }
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetEventMember(
-            [FromQuery]GetMemberByIdQuery request)
+            [FromQuery]GetMemberByIdQuery request, 
+            CancellationToken token)
         {
-            var member = await mediator.Send(request);
+            var member = await mediator.Send(request, token);
 
             return Ok(member);
         }

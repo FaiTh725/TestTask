@@ -13,25 +13,31 @@ namespace Authentication.Dal.Repositories
             this.context = context;
         }
 
-        public async Task<User> AddUser(User user)
+        public async Task<User> AddUser(
+            User user, 
+            CancellationToken token = default)
         {
-            var userEntity = await context.AddAsync(user);
+            var userEntity = await context.AddAsync(user, token);
 
             return userEntity.Entity;
         }
 
-        public async Task<User?> GetUser(string userEmail)
+        public async Task<User?> GetUser(
+            string userEmail, 
+            CancellationToken token = default)
         {
             return await context.Users
                 .Include(x => x.Role)
-                .FirstOrDefaultAsync(x => x.Email == userEmail);
+                .FirstOrDefaultAsync(x => x.Email == userEmail, token);
         }
 
-        public async Task<User?> GetUser(long userId)
+        public async Task<User?> GetUser(
+            long userId, 
+            CancellationToken token = default)
         {
             return await context.Users
                 .Include(x => x.Role)
-                .FirstOrDefaultAsync(x => x.Id == userId);
+                .FirstOrDefaultAsync(x => x.Id == userId, token);
         }
     }
 }

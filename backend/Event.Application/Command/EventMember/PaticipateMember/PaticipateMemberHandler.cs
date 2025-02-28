@@ -19,7 +19,7 @@ namespace Event.Application.Command.EventMember.PaticipateMember
         public async Task<long> Handle(PaticipateMemberCommand request, CancellationToken cancellationToken)
         {
             var eventEntity = await unitOfWork.EventRepository
-                .GetEventWithMembers(request.EventId) ?? 
+                .GetEventWithMembers(request.EventId, cancellationToken) ?? 
                 throw new BadRequestApiException("Event Does Not Exist");
             
             if (eventEntity.MaxMember == eventEntity.Members.Count)
@@ -44,7 +44,8 @@ namespace Event.Application.Command.EventMember.PaticipateMember
             }
 
             newMember.Value.EventEntity = eventEntity;
-            await unitOfWork.EventMemberRepository.AddEventMember(newMember.Value);
+            await unitOfWork.EventMemberRepository
+                .AddEventMember(newMember.Value, cancellationToken);
 
             await unitOfWork.SaveChangesAsync();
 

@@ -24,7 +24,7 @@ namespace Event.Application.Command.Event.CancelEvent
         public async Task Handle(CancelEventCommand request, CancellationToken cancellationToken)
         {
             var eventEntity = await unitOfWork.
-                EventRepository.GetEvent(request.EventId);
+                EventRepository.GetEvent(request.EventId, cancellationToken);
 
             if (eventEntity is null)
             {
@@ -32,7 +32,7 @@ namespace Event.Application.Command.Event.CancelEvent
             }
 
             await unitOfWork.EventRepository
-                .RemoveEvent(request.EventId);
+                .RemoveEvent(request.EventId, cancellationToken);
 
             await unitOfWork.SaveChangesAsync();
 

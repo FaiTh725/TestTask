@@ -13,19 +13,19 @@ namespace Event.Domain.Repositories
 
         IEnumerable<EventEntity> GetEvents(Specification<EventEntity> specification);
 
-        Task<EventEntity> AddEvent(EventEntity eventEntity);
+        Task<EventEntity> AddEvent(EventEntity eventEntity, CancellationToken token = default);
 
-        Task<EventEntity?> GetEvent(long eventId);
+        Task<EventEntity?> GetEvent(long eventId, CancellationToken token = default);
 
-        Task<EventEntity?> GetEvent(string eventName);
+        Task<EventEntity?> GetEvent(string eventName, CancellationToken token = default);
 
-        Task<EventEntity?> GetEventWithMembers(long eventId);
+        Task<EventEntity?> GetEventWithMembers(long eventId, CancellationToken token = default);
 
-        Task<EventEntity?> GetEventWithMembers(string eventName);
+        Task<EventEntity?> GetEventWithMembers(string eventName, CancellationToken token = default);
 
-        Task RemoveEvent(long eventId);
+        Task RemoveEvent(long eventId, CancellationToken token = default);
 
-        Task UpdateEvent(long eventId, EventEntity updateEntity);
+        Task UpdateEvent(long eventId, EventEntity updateEntity, CancellationToken token = default);
 
         // TODO: add images to event
     }

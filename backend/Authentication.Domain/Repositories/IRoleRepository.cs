@@ -5,12 +5,12 @@ namespace Authentication.Domain.Repositories
 {
     public interface IRoleRepository
     {
-        Task<Role> AddRole(Role role);
+        Task<Role> AddRole(Role role, CancellationToken token = default);
 
         IEnumerable<Role> GetRoles();
 
-        Task DeleteRole(string roleName);
+        Task DeleteRole(string roleName, CancellationToken token = default);
 
-        Task<Role?> GetRole(string roleName);
+        Task<Role?> GetRole(string roleName, CancellationToken token = default);
     }
 }

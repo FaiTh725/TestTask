@@ -21,11 +21,11 @@ namespace Event.Application.Command.EventMember.CancelPaticipateMember
         public async Task Handle(CancelPaticipateMemberCommand request, CancellationToken cancellationToken)
         {
             var member = await unitOfWork.EventMemberRepository
-                .GetEventMember(request.MemberId) ??
+                .GetEventMember(request.MemberId, cancellationToken) ??
                 throw new NotFoundApiException("Member Does Not Exist");
 
             await unitOfWork.EventMemberRepository
-                .RemoveEventMember(request.MemberId);
+                .RemoveEventMember(request.MemberId, cancellationToken);
             await cachService.RemoveData("Members:" + member.Id);
         }
     }

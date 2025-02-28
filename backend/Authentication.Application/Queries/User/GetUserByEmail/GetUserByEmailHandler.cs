@@ -18,7 +18,7 @@ namespace Authentication.Application.Queries.User.GetUserByEmail
         public async Task<UserResponse> Handle(GetUserByEmailQuery request, CancellationToken cancellationToken)
         {
             var user = await unitOfWork.UserRepository
-                .GetUser(request.Email) ?? 
+                .GetUser(request.Email, cancellationToken) ?? 
                 throw new NotFoundApiException($"User With Email {request.Email} Doesnt Exist");
 
             return new UserResponse

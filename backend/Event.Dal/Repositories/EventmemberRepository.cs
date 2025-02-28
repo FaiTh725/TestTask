@@ -14,24 +14,30 @@ namespace Event.Dal.Repositories
             this.context = context;
         }
 
-        public async Task<EventMember> AddEventMember(EventMember eventMember)
+        public async Task<EventMember> AddEventMember(
+            EventMember eventMember,
+            CancellationToken token = default)
         {
-            var entity = await context.Members.AddAsync(eventMember);
+            var entity = await context.Members.AddAsync(eventMember, token);
         
             return entity.Entity;
         }
 
-        public async Task RemoveEventMember(long memberId)
+        public async Task RemoveEventMember(
+            long memberId,
+            CancellationToken token = default)
         {
             await context.Members.
                 Where(x => x.Id == memberId)
-                .ExecuteDeleteAsync();
+                .ExecuteDeleteAsync(token);
         }
 
-        public async Task<EventMember?> GetEventMember(long eventMemberId)
+        public async Task<EventMember?> GetEventMember(
+            long eventMemberId,
+            CancellationToken token = default)
         {
             return  await context.Members
-                .FirstOrDefaultAsync(x => x.Id == eventMemberId);
+                .FirstOrDefaultAsync(x => x.Id == eventMemberId, token);
         }
 
         public IEnumerable<EventMember> GetEventMembers(long eventId)

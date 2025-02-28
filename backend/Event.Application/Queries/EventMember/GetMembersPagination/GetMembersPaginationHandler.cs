@@ -22,7 +22,7 @@ namespace Event.Application.Queries.EventMember.GetMembersPagination
         public async Task<IEnumerable<MemberResponse>> Handle(GetMembersPaginationQuery request, CancellationToken cancellationToken)
         {
             var eventEntity = await unitOfWork.EventRepository
-                .GetEventWithMembers(request.EventId) ?? 
+                .GetEventWithMembers(request.EventId, cancellationToken) ?? 
                 throw new NotFoundApiException("Such Event Does Not Exist");
 
             var eventsPagination = unitOfWork.EventMemberRepository

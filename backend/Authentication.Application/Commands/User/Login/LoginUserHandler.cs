@@ -20,7 +20,8 @@ namespace Authentication.Application.Commands.User.Login
 
         public async Task<string> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
-            var user = await unitOfWork.UserRepository.GetUser(request.Email) ?? 
+            var user = await unitOfWork.UserRepository
+                .GetUser(request.Email, cancellationToken) ?? 
                 throw new NotFoundApiException("Current Email Does Not Exist");
 
             if (!hashService.VerifyHash(request.Password, user.Password))

@@ -23,7 +23,7 @@ namespace Event.Application.Queries.EventMember.GetMembersByEventId
         public async Task<IEnumerable<MemberResponse>> Handle(GetMembersByEventIdQuery request, CancellationToken cancellationToken)
         {
             var eventEntity = await unitOfWork.EventRepository
-                .GetEventWithMembers(request.EventId) ?? 
+                .GetEventWithMembers(request.EventId, cancellationToken) ?? 
                 throw new NotFoundApiException("Such Event Does Not Exist");
             
             var eventMembers = mapper.Map<IEnumerable<MemberResponse>>(eventEntity.Members);

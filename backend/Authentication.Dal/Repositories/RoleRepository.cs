@@ -13,24 +13,30 @@ namespace Authentication.Dal.Repositories
             this.context = context;
         }
 
-        public async Task<Role> AddRole(Role role)
+        public async Task<Role> AddRole(
+            Role role, 
+            CancellationToken token = default)
         {
-            var resultEntity = await context.AddAsync(role);
+            var resultEntity = await context.AddAsync(role, token);
 
             return resultEntity.Entity;
         }
 
-        public async Task DeleteRole(string roleName)
+        public async Task DeleteRole(
+            string roleName, 
+            CancellationToken token = default)
         {
             await context.Roles
                 .Where(x => x.RoleName == roleName)
-                .ExecuteDeleteAsync();
+                .ExecuteDeleteAsync(token);
         }
 
-        public async Task<Role?> GetRole(string roleName)
+        public async Task<Role?> GetRole(
+            string roleName, 
+            CancellationToken token = default)
         {
             return await context.Roles
-                .FirstOrDefaultAsync(x => x.RoleName == roleName);
+                .FirstOrDefaultAsync(x => x.RoleName == roleName, token);
         }
 
         public IEnumerable<Role> GetRoles()

@@ -27,7 +27,7 @@ namespace Event.Application.Command.Event.UpdateEvent
         {
             var eventEntity = await unitOfWork
                 .EventRepository
-                .GetEventWithMembers(request.EventId);
+                .GetEventWithMembers(request.EventId, cancellationToken);
 
             if (eventEntity is null)
             {
@@ -56,7 +56,7 @@ namespace Event.Application.Command.Event.UpdateEvent
 
             await unitOfWork.EventRepository
                 .UpdateEvent(
-                eventEntity.Id, eventToUpdate.Value);
+                eventEntity.Id, eventToUpdate.Value, cancellationToken);
 
             await unitOfWork.SaveChangesAsync();
 

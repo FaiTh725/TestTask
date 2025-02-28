@@ -23,14 +23,17 @@ namespace Authentication.API.Controller
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> Login([FromQuery] LoginUserCommand command)
+        public async Task<IActionResult> Login(
+            [FromQuery]LoginUserCommand command,
+            CancellationToken cancellationToken)
         {
-            var userEmail = await mediator.Send(command);
+            var userEmail = await mediator.Send(command, cancellationToken);
 
             var userData = await mediator.Send(new GetUserByEmailQuery
             {
                 Email = userEmail.ToString()
-            });
+            },
+            cancellationToken);
 
             var token = tokenService.GenerateToken(userData);
 
@@ -49,14 +52,16 @@ namespace Authentication.API.Controller
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> Register(RegisterUserCommand command)
+        public async Task<IActionResult> Register(
+            RegisterUserCommand command,
+            CancellationToken cancellationToken)
         {
-            var newUserEmail = await mediator.Send(command);
+            var newUserEmail = await mediator.Send(command, cancellationToken);
 
             var userData = await mediator.Send(new GetUserByEmailQuery
             {
                 Email = newUserEmail
-            });
+            }, cancellationToken);
 
             var token = tokenService.GenerateToken(userData);
 

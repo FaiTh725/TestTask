@@ -36,7 +36,7 @@ namespace Event.Application.Queries.EventMember.GetMemberById
             }
 
             var member = await unitOfWork.EventMemberRepository
-                .GetEventMember(request.MemberId) ?? 
+                .GetEventMember(request.MemberId, cancellationToken) ?? 
                 throw new NotFoundApiException("Not Found Member");
             
             var memberResponse = mapper.Map<MemberResponse>(member);

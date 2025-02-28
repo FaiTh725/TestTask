@@ -1,7 +1,6 @@
 ﻿using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using Event.Application.Interfaces;
-using System.Security.Policy;
 
 namespace Event.Infastructure.Implementations
 {

@@ -28,23 +28,28 @@ namespace Event.API.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetEvents()
+        public async Task<IActionResult> GetEvents(
+            CancellationToken token)
         {
-            var events = await mediator.Send(new GetEventsQuery());
+            var events = await mediator.Send(new GetEventsQuery(), token);
 
             return Ok(events);
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetEventsPagination([FromQuery]GetEventPaginationQuery request)
+        public async Task<IActionResult> GetEventsPagination(
+            [FromQuery]GetEventPaginationQuery request,
+            CancellationToken token)
         {
-            var events = await mediator.Send(request);
+            var events = await mediator.Send(request, token);
 
             return Ok(events);
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetEventById([FromQuery] GetEventByIdQuery request)
+        public async Task<IActionResult> GetEventById(
+            [FromQuery]GetEventByIdQuery request,
+            CancellationToken token)
         {
             var eventEntity = await mediator.Send(request);
 
@@ -52,42 +57,52 @@ namespace Event.API.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetEventByName([FromQuery]GetEventByNameQuery request)
+        public async Task<IActionResult> GetEventByName(
+            [FromQuery]GetEventByNameQuery request,
+            CancellationToken token)
         {
-            var eventEntity = await mediator.Send(request);
+            var eventEntity = await mediator.Send(request, token);
 
             return Ok(eventEntity);
         }
 
         [HttpPatch("[action]")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> UpdateEvent(UpdateEventCommand request)
+        public async Task<IActionResult> UpdateEvent(
+            UpdateEventCommand request, 
+            CancellationToken token)
         {
-            await mediator.Send(request);
+            await mediator.Send(request, token);
 
             return Ok();
         }
 
         [HttpDelete("[action]")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> CancelEvent(CancelEventCommand request)
+        public async Task<IActionResult> CancelEvent(
+            CancelEventCommand request,
+            CancellationToken token)
         {
-            await mediator.Send(request);
+            await mediator.Send(request, token);
 
             return Ok();
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetEventsByQuery([FromQuery] GetEventsByQueryQuery request)
+        public async Task<IActionResult> GetEventsByQuery(
+            [FromQuery]GetEventsByQueryQuery request,
+            CancellationToken token)
         {
-            var events = await mediator.Send(request);
+            var events = await mediator.Send(request, token);
 
             return Ok(events);
         }
 
         [HttpPost("[action]")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> CreateEvent(CreateEventRequest request)
+        public async Task<IActionResult> CreateEvent(
+            CreateEventRequest request,
+            CancellationToken token)
         {
             var eventRequest = new CreateEventCommand
             {
@@ -107,9 +122,14 @@ namespace Event.API.Controllers
                     }).ToList()
             };
 
-            var eventId = await mediator.Send(eventRequest);
+            var eventId = await mediator.Send(eventRequest, token);
 
-            var eventEntity = await mediator.Send(new GetEventByIdQuery { Id = eventId});
+            var eventEntity = await mediator.Send(
+                new GetEventByIdQuery 
+                { 
+                    Id = eventId
+                }, 
+                token);
 
             return Ok(eventEntity);
         }
