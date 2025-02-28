@@ -1,5 +1,6 @@
 ﻿using Event.Application.Command.EventMember.CancelPaticipateMember;
 using Event.Application.Command.EventMember.PaticipateMember;
+using Event.Application.Queries.Event.GetEventById;
 using Event.Application.Queries.EventMember.GetMemberById;
 using Event.Application.Queries.EventMember.GetMembersByEventId;
 using Event.Application.Queries.EventMember.GetMembersPagination;
@@ -61,10 +62,15 @@ namespace Event.API.Controllers
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetEventMember(
-            [FromQuery]GetMemberByIdQuery request, 
+            long id, 
             CancellationToken token)
         {
-            var member = await mediator.Send(request, token);
+            var member = await mediator.Send(
+                new GetEventByIdQuery
+                {
+                    Id = id
+                }, 
+                token);
 
             return Ok(member);
         }

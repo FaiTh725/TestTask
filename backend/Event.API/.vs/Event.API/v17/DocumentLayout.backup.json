@@ -3,16 +3,27 @@
   "WorkspaceRootPath": "C:\\VSProjects\\TestTask\\backend\\Event.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|c:\\vsprojects\\testtask\\backend\\event.api\\controllers\\eventmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|solutionrelative:controllers\\eventmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|c:\\vsprojects\\testtask\\backend\\event.api\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|solutionrelative:controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\event\\cancelevent\\canceleventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\event\\cancelevent\\canceleventcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventbyid\\geteventbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventspagination\\geteventpaginationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventspagination\\geteventpaginationquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventsbyquery\\geteventsbyqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventsbyquery\\geteventsbyqueryquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\getevents\\geteventshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -24,24 +35,70 @@
       "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventbyname\\geteventbynamehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventbyid\\geteventbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventbyname\\geteventbynamequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventbyid\\geteventbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\eventmember\\getmemberbyid\\getmemberbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\eventmember\\getmemberbyid\\getmemberbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\eventmember\\getmembersbyeventid\\getmembersbyeventidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\eventmember\\getmemberspagination\\getmemberspaginationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\eventmember\\getmemberspagination\\getmemberspaginationquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\eventmember\\getmembersbyeventid\\getmembersbyeventidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventsbyquery\\geteventsbyqueryquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventspagination\\geteventpaginationquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|c:\\vsprojects\\testtask\\backend\\event.api\\infastructure\\initializedbbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|solutionrelative:infastructure\\initializedbbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|c:\\vsprojects\\testtask\\backend\\event.api\\infastructure\\globalexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|solutionrelative:infastructure\\globalexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\behaviors\\cachingbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\interfaces\\icachquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\event\\createevent\\createeventcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\eventmember\\paticipatemember\\paticipatememberhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|c:\\vsprojects\\testtask\\backend\\event.api\\extentions\\appextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|solutionrelative:extentions\\appextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\interfaces\\icachservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\event.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{075A74E8-F7F0-4983-B8F7-D24D07E5E9CA}|..\\Event.Infastructure\\Event.Infastructure.csproj|c:\\vsprojects\\testtask\\backend\\event.infastructure\\implementations\\cashservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{075A74E8-F7F0-4983-B8F7-D24D07E5E9CA}|..\\Event.Infastructure\\Event.Infastructure.csproj|c:\\vsprojects\\testtask\\backend\\event.infastructure\\implementations\\blobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\interfaces\\icachservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|c:\\vsprojects\\testtask\\backend\\event.api\\controllers\\eventmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|solutionrelative:controllers\\eventmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|c:\\vsprojects\\testtask\\backend\\event.api\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|solutionrelative:controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\event\\updateevent\\updateeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -53,31 +110,10 @@
       "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\event\\createevent\\createeventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\event\\cancelevent\\canceleventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\eventmember\\cancelpaticipatemember\\cancelpaticipatememberhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\eventmember\\paticipatemember\\paticipatemembercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\eventmember\\paticipatemember\\paticipatememberhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventbyid\\geteventbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\event\\geteventbyname\\geteventbynamequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\eventmember\\getmemberbyid\\getmemberbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\eventmember\\getmembersbyeventid\\getmembersbyeventidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\eventmember\\getmemberspagination\\getmemberspaginationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{16E5065D-1C0D-48F1-8D42-F35292FEE730}|..\\Event.Dal\\Event.Dal.csproj|c:\\vsprojects\\testtask\\backend\\event.dal\\repositories\\eventmemberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -90,13 +126,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{16E5065D-1C0D-48F1-8D42-F35292FEE730}|..\\Event.Dal\\Event.Dal.csproj|c:\\vsprojects\\testtask\\backend\\event.dal\\repositories\\eventrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\eventmember\\getmemberbyid\\getmemberbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|c:\\vsprojects\\testtask\\backend\\event.api\\extentions\\appextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|solutionrelative:extentions\\appextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|c:\\vsprojects\\testtask\\backend\\event.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -119,10 +148,6 @@
       "RelativeMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|solutionrelative:contracts\\event\\createeventrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|c:\\vsprojects\\testtask\\backend\\event.api\\infastructure\\globalexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|solutionrelative:infastructure\\globalexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FA743F4E-2F43-4343-847D-68B106814B1A}|..\\EventServices.Tests\\EventServices.Tests.csproj|c:\\vsprojects\\testtask\\backend\\eventservices.tests\\member\\eventmemberservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -138,22 +163,6 @@
       "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\eventmember\\cancelpaticipatemember\\cancelpaticipatemembercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\event\\createevent\\createeventcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\command\\event\\cancelevent\\canceleventcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|c:\\vsprojects\\testtask\\backend\\event.api\\infastructure\\initializedbbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19CDA644-403F-4F60-8CB5-C8F30CDC250C}|Event.API.csproj|solutionrelative:infastructure\\initializedbbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\eventmember\\getmemberspagination\\getmemberspaginationquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\queries\\eventmember\\getmembersbyeventid\\getmembersbyeventidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ADB60AF6-319D-4890-8180-03AA4AEF038F}|..\\Event.Domain\\Event.Domain.csproj|c:\\vsprojects\\testtask\\backend\\event.domain\\entities\\eventmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -161,9 +170,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\appassemblyreference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\event.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{686F4F30-A4D5-4370-A1B6-7CE2B0F55C1E}|..\\Event.Application\\Event.Application.csproj|c:\\vsprojects\\testtask\\backend\\event.application\\mappings\\eventmemberprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -221,7 +227,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -241,306 +247,228 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "GetEventByIdHandler.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdHandler.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdHandler.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdHandler.cs*",
-              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdHandler.cs*",
-              "ViewState": "AgIAACEAAAAAAAAAAAAowDIAAAA3AAAAAAAAAA==",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdHandler.cs",
+              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T23:50:05.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GetEventByNameHandler.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventByName\\GetEventByNameHandler.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEventByName\\GetEventByNameHandler.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventByName\\GetEventByNameHandler.cs*",
-              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventByName\\GetEventByNameHandler.cs*",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwDMAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T23:52:01.839Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "GetEventsQuery.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEvents\\GetEventsQuery.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEvents\\GetEventsQuery.cs",
               "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEvents\\GetEventsQuery.cs",
               "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEvents\\GetEventsQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T23:50:34.862Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "GetEventsHandler.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEvents\\GetEventsHandler.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEvents\\GetEventsHandler.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEvents\\GetEventsHandler.cs*",
-              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEvents\\GetEventsHandler.cs*",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwC4AAABEAAAAAAAAAA==",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEvents\\GetEventsHandler.cs",
+              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEvents\\GetEventsHandler.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACkAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T23:50:35.099Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GetEventsByQueryQuery.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryQuery.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryQuery.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryQuery.cs",
-              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T23:53:08.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "GetEventsByQueryHandler.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryHandler.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryHandler.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryHandler.cs*",
-              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryHandler.cs*",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowEEAAABEAAAAAAAAAA==",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryHandler.cs",
+              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryHandler.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEEAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T23:53:08.508Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GetEventPaginationQuery.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationQuery.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationQuery.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationQuery.cs",
-              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T23:51:24.672Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "GetEventPaginationHandler.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationHandler.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationHandler.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationHandler.cs*",
-              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationHandler.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAmAAAAAAAAAA==",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationHandler.cs",
+              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T23:51:24.905Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CashService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Infastructure\\Implementations\\CashService.cs",
-              "RelativeDocumentMoniker": "..\\Event.Infastructure\\Implementations\\CashService.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Infastructure\\Implementations\\CashService.cs*",
-              "RelativeToolTip": "..\\Event.Infastructure\\Implementations\\CashService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAA5AAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "CancelEventCommand.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CancelEvent\\CancelEventCommand.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\Event\\CancelEvent\\CancelEventCommand.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CancelEvent\\CancelEventCommand.cs",
+              "RelativeToolTip": "..\\Event.Application\\Command\\Event\\CancelEvent\\CancelEventCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T21:09:54.154Z",
+              "WhenOpened": "2025-02-27T23:39:29.276Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BlobService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Infastructure\\Implementations\\BlobService.cs",
-              "RelativeDocumentMoniker": "..\\Event.Infastructure\\Implementations\\BlobService.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Infastructure\\Implementations\\BlobService.cs*",
-              "RelativeToolTip": "..\\Event.Infastructure\\Implementations\\BlobService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T17:25:22.249Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ICachService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Interfaces\\ICachService.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Interfaces\\ICachService.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Interfaces\\ICachService.cs",
-              "RelativeToolTip": "..\\Event.Application\\Interfaces\\ICachService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T21:09:59.373Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "EventMemberController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Controllers\\EventMemberController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EventMemberController.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Controllers\\EventMemberController.cs",
-              "RelativeToolTip": "Controllers\\EventMemberController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T18:48:12.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "EventController.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Controllers\\EventController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EventController.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Controllers\\EventController.cs",
-              "RelativeToolTip": "Controllers\\EventController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAADwv1UAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T16:11:02.852Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UpdateEventHandler.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventHandler.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventHandler.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventHandler.cs",
-              "RelativeToolTip": "..\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventHandler.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowDoAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T23:39:30.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UpdateEventCommand.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventCommand.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventCommand.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventCommand.cs",
-              "RelativeToolTip": "..\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T23:39:29.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CreateEventHandler.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventHandler.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventHandler.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventHandler.cs",
-              "RelativeToolTip": "..\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventHandler.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAowDkAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T23:39:29.037Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 2,
               "Title": "CancelEventHandler.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CancelEvent\\CancelEventHandler.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Command\\Event\\CancelEvent\\CancelEventHandler.cs",
               "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CancelEvent\\CancelEventHandler.cs",
               "RelativeToolTip": "..\\Event.Application\\Command\\Event\\CancelEvent\\CancelEventHandler.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwCIAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T23:39:29.479Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "CancelPaticipateMemberHandler.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\CancelPaticipateMember\\CancelPaticipateMemberHandler.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\EventMember\\CancelPaticipateMember\\CancelPaticipateMemberHandler.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\CancelPaticipateMember\\CancelPaticipateMemberHandler.cs",
-              "RelativeToolTip": "..\\Event.Application\\Command\\EventMember\\CancelPaticipateMember\\CancelPaticipateMemberHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "EventController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Controllers\\EventController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EventController.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Controllers\\EventController.cs",
+              "RelativeToolTip": "Controllers\\EventController.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAYwAMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:39:21.499Z",
+              "WhenOpened": "2025-02-10T16:11:02.852Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "PaticipateMemberCommand.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberCommand.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberCommand.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberCommand.cs",
-              "RelativeToolTip": "..\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "EventMemberController.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Controllers\\EventMemberController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EventMemberController.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Controllers\\EventMemberController.cs",
+              "RelativeToolTip": "Controllers\\EventMemberController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:39:20.826Z",
+              "WhenOpened": "2025-02-10T18:48:12.35Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "PaticipateMemberHandler.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberHandler.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberHandler.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberHandler.cs",
-              "RelativeToolTip": "..\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberHandler.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwDQAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "GetEventByNameHandler.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventByName\\GetEventByNameHandler.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEventByName\\GetEventByNameHandler.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventByName\\GetEventByNameHandler.cs",
+              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventByName\\GetEventByNameHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:39:21.053Z",
+              "WhenOpened": "2025-02-27T23:52:01.839Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "GetEventByIdQuery.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdQuery.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdQuery.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdQuery.cs",
-              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T23:50:04.829Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 10,
               "Title": "GetEventByNameQuery.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventByName\\GetEventByNameQuery.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEventByName\\GetEventByNameQuery.cs",
               "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventByName\\GetEventByNameQuery.cs",
               "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventByName\\GetEventByNameQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T23:52:01.577Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 11,
+              "Title": "GetEventByIdQuery.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdQuery.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdQuery.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdQuery.cs",
+              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventById\\GetEventByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T23:50:04.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "GetMemberByIdHandler.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMemberById\\GetMemberByIdHandler.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\EventMember\\GetMemberById\\GetMemberByIdHandler.cs",
               "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMemberById\\GetMemberByIdHandler.cs",
               "RelativeToolTip": "..\\Event.Application\\Queries\\EventMember\\GetMemberById\\GetMemberByIdHandler.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAqwC0AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA6wBMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T19:42:51.267Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 13,
+              "Title": "GetMemberByIdQuery.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMemberById\\GetMemberByIdQuery.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\EventMember\\GetMemberById\\GetMemberByIdQuery.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMemberById\\GetMemberByIdQuery.cs",
+              "RelativeToolTip": "..\\Event.Application\\Queries\\EventMember\\GetMemberById\\GetMemberByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T19:42:51.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GetMembersByEventIdQuery.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersByEventId\\GetMembersByEventIdQuery.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\EventMember\\GetMembersByEventId\\GetMembersByEventIdQuery.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersByEventId\\GetMembersByEventIdQuery.cs",
+              "RelativeToolTip": "..\\Event.Application\\Queries\\EventMember\\GetMembersByEventId\\GetMembersByEventIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T19:42:51.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GetMembersPaginationHandler.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationHandler.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationHandler.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationHandler.cs",
+              "RelativeToolTip": "..\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T19:50:22.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GetMembersPaginationQuery.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationQuery.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationQuery.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationQuery.cs",
+              "RelativeToolTip": "..\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T19:50:21.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "GetMembersByEventIdHandler.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersByEventId\\GetMembersByEventIdHandler.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\EventMember\\GetMembersByEventId\\GetMembersByEventIdHandler.cs",
@@ -553,20 +481,234 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "GetMembersPaginationHandler.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationHandler.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationHandler.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationHandler.cs",
-              "RelativeToolTip": "..\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "GetEventsByQueryQuery.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryQuery.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryQuery.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryQuery.cs",
+              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventsByQuery\\GetEventsByQueryQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:50:22.252Z",
+              "WhenOpened": "2025-02-27T23:53:08.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GetEventPaginationQuery.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationQuery.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationQuery.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationQuery.cs",
+              "RelativeToolTip": "..\\Event.Application\\Queries\\Event\\GetEventsPagination\\GetEventPaginationQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T23:51:24.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "InitializeDBBackgroundService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Infastructure\\InitializeDBBackgroundService.cs",
+              "RelativeDocumentMoniker": "Infastructure\\InitializeDBBackgroundService.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Infastructure\\InitializeDBBackgroundService.cs",
+              "RelativeToolTip": "Infastructure\\InitializeDBBackgroundService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA6wB8AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T18:51:05.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GlobalExceptionHandler.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Infastructure\\GlobalExceptionHandler.cs",
+              "RelativeDocumentMoniker": "Infastructure\\GlobalExceptionHandler.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Infastructure\\GlobalExceptionHandler.cs",
+              "RelativeToolTip": "Infastructure\\GlobalExceptionHandler.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T17:30:29.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CachingBehavior.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Behaviors\\CachingBehavior.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Behaviors\\CachingBehavior.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Behaviors\\CachingBehavior.cs",
+              "RelativeToolTip": "..\\Event.Application\\Behaviors\\CachingBehavior.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T22:33:27.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ICachQuery.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Interfaces\\ICachQuery.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Interfaces\\ICachQuery.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Interfaces\\ICachQuery.cs",
+              "RelativeToolTip": "..\\Event.Application\\Interfaces\\ICachQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T22:34:48.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CreateEventCommand.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventCommand.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventCommand.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventCommand.cs",
+              "RelativeToolTip": "..\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T23:39:28.779Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
+              "Title": "PaticipateMemberHandler.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberHandler.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberHandler.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberHandler.cs",
+              "RelativeToolTip": "..\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T19:39:21.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AppExtention.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Extentions\\AppExtention.cs",
+              "RelativeDocumentMoniker": "Extentions\\AppExtention.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Extentions\\AppExtention.cs",
+              "RelativeToolTip": "Extentions\\AppExtention.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAuwKgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T15:55:00.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ICachService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Interfaces\\ICachService.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Interfaces\\ICachService.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Interfaces\\ICachService.cs",
+              "RelativeToolTip": "..\\Event.Application\\Interfaces\\ICachService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T21:09:59.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Event.Application.csproj",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Event.Application.csproj",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Event.Application.csproj",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Event.Application.csproj",
+              "RelativeToolTip": "..\\Event.Application\\Event.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-10T15:24:44.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CashService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Infastructure\\Implementations\\CashService.cs",
+              "RelativeDocumentMoniker": "..\\Event.Infastructure\\Implementations\\CashService.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Infastructure\\Implementations\\CashService.cs",
+              "RelativeToolTip": "..\\Event.Infastructure\\Implementations\\CashService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T21:09:54.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "BlobService.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Infastructure\\Implementations\\BlobService.cs",
+              "RelativeDocumentMoniker": "..\\Event.Infastructure\\Implementations\\BlobService.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Infastructure\\Implementations\\BlobService.cs",
+              "RelativeToolTip": "..\\Event.Infastructure\\Implementations\\BlobService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T17:25:22.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "UpdateEventHandler.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventHandler.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventHandler.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventHandler.cs",
+              "RelativeToolTip": "..\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventHandler.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowDoAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T23:39:30.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "UpdateEventCommand.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventCommand.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventCommand.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventCommand.cs",
+              "RelativeToolTip": "..\\Event.Application\\Command\\Event\\UpdateEvent\\UpdateEventCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T23:39:29.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "CreateEventHandler.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventHandler.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventHandler.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventHandler.cs",
+              "RelativeToolTip": "..\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventHandler.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowDkAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T23:39:29.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CancelPaticipateMemberHandler.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\CancelPaticipateMember\\CancelPaticipateMemberHandler.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\EventMember\\CancelPaticipateMember\\CancelPaticipateMemberHandler.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\CancelPaticipateMember\\CancelPaticipateMemberHandler.cs",
+              "RelativeToolTip": "..\\Event.Application\\Command\\EventMember\\CancelPaticipateMember\\CancelPaticipateMemberHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T19:39:21.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "PaticipateMemberCommand.cs",
+              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberCommand.cs",
+              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberCommand.cs",
+              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberCommand.cs",
+              "RelativeToolTip": "..\\Event.Application\\Command\\EventMember\\PaticipateMember\\PaticipateMemberCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T19:39:20.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
               "Title": "EventMemberRepository.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Dal\\Repositories\\EventMemberRepository.cs",
               "RelativeDocumentMoniker": "..\\Event.Dal\\Repositories\\EventMemberRepository.cs",
@@ -574,12 +716,11 @@
               "RelativeToolTip": "..\\Event.Dal\\Repositories\\EventMemberRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T18:38:27.952Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T18:38:27.952Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 37,
               "Title": "IEventMemberRepository.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Domain\\Repositories\\IEventMemberRepository.cs",
               "RelativeDocumentMoniker": "..\\Event.Domain\\Repositories\\IEventMemberRepository.cs",
@@ -587,12 +728,11 @@
               "RelativeToolTip": "..\\Event.Domain\\Repositories\\IEventMemberRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T18:34:03.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T18:34:03.609Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 38,
               "Title": "IEventRepository.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Domain\\Repositories\\IEventRepository.cs",
               "RelativeDocumentMoniker": "..\\Event.Domain\\Repositories\\IEventRepository.cs",
@@ -600,12 +740,11 @@
               "RelativeToolTip": "..\\Event.Domain\\Repositories\\IEventRepository.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAA1wBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T16:09:14.654Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T16:09:14.654Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 39,
               "Title": "EventRepository.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Dal\\Repositories\\EventRepository.cs",
               "RelativeDocumentMoniker": "..\\Event.Dal\\Repositories\\EventRepository.cs",
@@ -613,38 +752,11 @@
               "RelativeToolTip": "..\\Event.Dal\\Repositories\\EventRepository.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAYwBQAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T16:20:31.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T16:20:31.267Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "GetMemberByIdQuery.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMemberById\\GetMemberByIdQuery.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\EventMember\\GetMemberById\\GetMemberByIdQuery.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMemberById\\GetMemberByIdQuery.cs",
-              "RelativeToolTip": "..\\Event.Application\\Queries\\EventMember\\GetMemberById\\GetMemberByIdQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:42:51.029Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "AppExtention.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Extentions\\AppExtention.cs",
-              "RelativeDocumentMoniker": "Extentions\\AppExtention.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Extentions\\AppExtention.cs",
-              "RelativeToolTip": "Extentions\\AppExtention.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAgwDcAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T15:55:00.504Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 46,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Dal\\Common\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "..\\Event.Dal\\Common\\UnitOfWork.cs",
@@ -656,7 +768,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 41,
               "Title": "CreateMemberValidator.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Validators\\Member\\CreateMemberValidator.cs",
               "RelativeDocumentMoniker": "Validators\\Member\\CreateMemberValidator.cs",
@@ -668,7 +780,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 42,
               "Title": "UpdateEventValidator.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Validators\\Event\\UpdateEventValidator.cs",
               "RelativeDocumentMoniker": "Validators\\Event\\UpdateEventValidator.cs",
@@ -680,7 +792,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 43,
               "Title": "CreateEventValidator.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Validators\\Event\\CreateEventValidator.cs",
               "RelativeDocumentMoniker": "Validators\\Event\\CreateEventValidator.cs",
@@ -692,7 +804,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 45,
               "Title": "EventMemberServiceTests.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\EventServices.Tests\\Member\\EventMemberServiceTests.cs",
               "RelativeDocumentMoniker": "..\\EventServices.Tests\\Member\\EventMemberServiceTests.cs",
@@ -704,7 +816,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 40,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -716,7 +828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 44,
               "Title": "CreateEventRequest.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Contracts\\Event\\CreateEventRequest.cs",
               "RelativeDocumentMoniker": "Contracts\\Event\\CreateEventRequest.cs",
@@ -728,19 +840,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "GlobalExceptionHandler.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Infastructure\\GlobalExceptionHandler.cs",
-              "RelativeDocumentMoniker": "Infastructure\\GlobalExceptionHandler.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Infastructure\\GlobalExceptionHandler.cs",
-              "RelativeToolTip": "Infastructure\\GlobalExceptionHandler.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBoAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T17:30:29.462Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 47,
               "Title": "MemberResponse.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Models\\Members\\MemberResponse.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Models\\Members\\MemberResponse.cs",
@@ -752,7 +852,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 48,
               "Title": "IncludeMemberSpecification.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Models\\Events\\IncludeMemberSpecification.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Models\\Events\\IncludeMemberSpecification.cs",
@@ -764,7 +864,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 49,
               "Title": "CancelPaticipateMemberCommand.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\EventMember\\CancelPaticipateMember\\CancelPaticipateMemberCommand.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Command\\EventMember\\CancelPaticipateMember\\CancelPaticipateMemberCommand.cs",
@@ -776,67 +876,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "CreateEventCommand.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventCommand.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventCommand.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventCommand.cs",
-              "RelativeToolTip": "..\\Event.Application\\Command\\Event\\CreateEvent\\CreateEventCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T23:39:28.779Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "CancelEventCommand.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CancelEvent\\CancelEventCommand.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Command\\Event\\CancelEvent\\CancelEventCommand.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Command\\Event\\CancelEvent\\CancelEventCommand.cs",
-              "RelativeToolTip": "..\\Event.Application\\Command\\Event\\CancelEvent\\CancelEventCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T23:39:29.276Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "InitializeDBBackgroundService.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Infastructure\\InitializeDBBackgroundService.cs",
-              "RelativeDocumentMoniker": "Infastructure\\InitializeDBBackgroundService.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Infastructure\\InitializeDBBackgroundService.cs",
-              "RelativeToolTip": "Infastructure\\InitializeDBBackgroundService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAqwB8AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T18:51:05.402Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "GetMembersPaginationQuery.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationQuery.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationQuery.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationQuery.cs",
-              "RelativeToolTip": "..\\Event.Application\\Queries\\EventMember\\GetMembersPagination\\GetMembersPaginationQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:50:21.995Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "GetMembersByEventIdQuery.cs",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersByEventId\\GetMembersByEventIdQuery.cs",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Queries\\EventMember\\GetMembersByEventId\\GetMembersByEventIdQuery.cs",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Queries\\EventMember\\GetMembersByEventId\\GetMembersByEventIdQuery.cs",
-              "RelativeToolTip": "..\\Event.Application\\Queries\\EventMember\\GetMembersByEventId\\GetMembersByEventIdQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:42:51.515Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "EventMember.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Domain\\Entities\\EventMember.cs",
               "RelativeDocumentMoniker": "..\\Event.Domain\\Entities\\EventMember.cs",
@@ -848,7 +888,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "EventEntity.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Domain\\Entities\\EventEntity.cs",
               "RelativeDocumentMoniker": "..\\Event.Domain\\Entities\\EventEntity.cs",
@@ -860,7 +900,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "AppAssemblyReference.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\AppAssemblyReference.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\AppAssemblyReference.cs",
@@ -872,7 +912,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 53,
               "Title": "EventMemberProfile.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Mappings\\EventMemberProfile.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Mappings\\EventMemberProfile.cs",
@@ -884,7 +924,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 54,
               "Title": "EventProfile.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Mappings\\EventProfile.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Mappings\\EventProfile.cs",
@@ -896,19 +936,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "Event.Application.csproj",
-              "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Event.Application.csproj",
-              "RelativeDocumentMoniker": "..\\Event.Application\\Event.Application.csproj",
-              "ToolTip": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Event.Application.csproj",
-              "RelativeToolTip": "..\\Event.Application\\Event.Application.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-10T15:24:44.357Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 55,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Domain\\Common\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "..\\Event.Domain\\Common\\IUnitOfWork.cs",
@@ -920,7 +948,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 56,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Dal\\AppDbContext.cs",
               "RelativeDocumentMoniker": "..\\Event.Dal\\AppDbContext.cs",
@@ -932,7 +960,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 57,
               "Title": "Event.Dal.csproj",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Dal\\Event.Dal.csproj",
               "RelativeDocumentMoniker": "..\\Event.Dal\\Event.Dal.csproj",
@@ -944,7 +972,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 58,
               "Title": "SpecificationEvaluator.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Dal\\Specifications\\SpecificationEvaluator.cs",
               "RelativeDocumentMoniker": "..\\Event.Dal\\Specifications\\SpecificationEvaluator.cs",
@@ -956,7 +984,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 59,
               "Title": "Specification.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Domain\\Common\\Specifications\\Specification.cs",
               "RelativeDocumentMoniker": "..\\Event.Domain\\Common\\Specifications\\Specification.cs",
@@ -968,7 +996,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 60,
               "Title": "ReplaceExpressionVisitor.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Domain\\Common\\Specifications\\ReplaceExpressionVisitor.cs",
               "RelativeDocumentMoniker": "..\\Event.Domain\\Common\\Specifications\\ReplaceExpressionVisitor.cs",
@@ -980,7 +1008,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 62,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -992,7 +1020,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 61,
               "Title": "Event.Domain.csproj",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Domain\\Event.Domain.csproj",
               "RelativeDocumentMoniker": "..\\Event.Domain\\Event.Domain.csproj",
@@ -1004,7 +1032,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 63,
               "Title": "Event.Infastructure.csproj",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Infastructure\\Event.Infastructure.csproj",
               "RelativeDocumentMoniker": "..\\Event.Infastructure\\Event.Infastructure.csproj",
@@ -1016,7 +1044,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 66,
               "Title": "IBlobService.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Interfaces\\IBlobService.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Interfaces\\IBlobService.cs",
@@ -1028,7 +1056,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 64,
               "Title": "Event.API.csproj",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Event.API.csproj",
               "RelativeDocumentMoniker": "Event.API.csproj",
@@ -1040,7 +1068,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 65,
               "Title": "JwtToken.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.API\\Configuraions\\JwtToken.cs",
               "RelativeDocumentMoniker": "Configuraions\\JwtToken.cs",
@@ -1052,7 +1080,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 67,
               "Title": "AndSpecification.cs",
               "DocumentMoniker": "C:\\VSProjects\\TestTask\\backend\\Event.Application\\Specifications\\AndSpecification.cs",
               "RelativeDocumentMoniker": "..\\Event.Application\\Specifications\\AndSpecification.cs",

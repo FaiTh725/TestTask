@@ -24,7 +24,7 @@
         ],
         "parameters": [
           {
-            "name": "Page",
+            "name": "page",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -32,7 +32,7 @@
             }
           },
           {
-            "name": "Size",
+            "name": "size",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -54,7 +54,7 @@
         ],
         "parameters": [
           {
-            "name": "Id",
+            "name": "id",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -76,7 +76,7 @@
         ],
         "parameters": [
           {
-            "name": "Name",
+            "name": "name",
             "in": "query",
             "schema": {
               "type": "string"
@@ -367,7 +367,7 @@
         ],
         "parameters": [
           {
-            "name": "MemberId",
+            "name": "id",
             "in": "query",
             "schema": {
               "type": "integer",

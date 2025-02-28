@@ -2,7 +2,6 @@
 using Event.Application.Command.Event.CancelEvent;
 using Event.Application.Command.Event.CreateEvent;
 using Event.Application.Command.Event.UpdateEvent;
-using Event.Application.Interfaces;
 using Event.Application.Models.Files;
 using Event.Application.Queries.Event.GetEventById;
 using Event.Application.Queries.Event.GetEventByName;
@@ -38,30 +37,48 @@ namespace Event.API.Controllers
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetEventsPagination(
-            [FromQuery]GetEventPaginationQuery request,
+            int page, 
+            int size,
             CancellationToken token)
         {
-            var events = await mediator.Send(request, token);
+            var events = await mediator.Send(
+                new GetEventPaginationQuery
+                {
+                    Page = page,
+                    Size = size
+                }, 
+                token);
 
             return Ok(events);
         }
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetEventById(
-            [FromQuery]GetEventByIdQuery request,
+            long id,
             CancellationToken token)
         {
-            var eventEntity = await mediator.Send(request);
+
+            var eventEntity = await mediator.Send(
+                new GetEventByIdQuery
+                {
+                    Id = id
+                },
+                token);
 
             return Ok(eventEntity);
         }
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetEventByName(
-            [FromQuery]GetEventByNameQuery request,
+            string name,
             CancellationToken token)
         {
-            var eventEntity = await mediator.Send(request, token);
+            var eventEntity = await mediator.Send(
+                new GetEventByNameQuery
+                {
+                    Name = name
+                }, 
+                token);
 
             return Ok(eventEntity);
         }

@@ -5,6 +5,7 @@ using Event.API.Contracts.Event;
 using Event.API.Validators.Event;
 using Event.API.Validators.Member;
 using Event.Application;
+using Event.Application.Behaviors;
 using Event.Application.Command.Event.UpdateEvent;
 using Event.Application.Command.EventMember.PaticipateMember;
 using Event.Application.Mappings;
@@ -161,7 +162,11 @@ namespace Event.API.Extentions
         public static void ConfigureMediatR(this IServiceCollection services)
         {
             services.AddMediatR(cfg =>
-                cfg.RegisterServicesFromAssembly(typeof(AppAssemblyReference).Assembly));
+            {
+                cfg.RegisterServicesFromAssembly(typeof(AppAssemblyReference).Assembly);
+                cfg.AddOpenBehavior(typeof(CachingBehavior<,>));
+            });
+
         }
     }
 }
